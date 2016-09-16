@@ -17,17 +17,31 @@ namespace CalculadoraDeMatrizes
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            numericUpDown27.Value = numericUpDown1.Value + numericUpDown18.Value;
-            numericUpDown26.Value = numericUpDown2.Value + numericUpDown17.Value;
-            numericUpDown25.Value = numericUpDown3.Value + numericUpDown16.Value;
-            numericUpDown24.Value = numericUpDown4.Value + numericUpDown15.Value;
-            numericUpDown23.Value = numericUpDown5.Value + numericUpDown14.Value;
-            numericUpDown22.Value = numericUpDown6.Value + numericUpDown13.Value;
-            numericUpDown21.Value = numericUpDown7.Value + numericUpDown12.Value;
-            numericUpDown20.Value = numericUpDown8.Value + numericUpDown11.Value;
-            numericUpDown19.Value = numericUpDown9.Value + numericUpDown10.Value;
+            MessageBox.Show("Essa é a calculadora de matrizes!! Seja Bem Vindo!!");
         }
+
+        private void btn_GerarMatriz1_Click(object sender, EventArgs e)
+        {
+            groupBox1.Controls.Clear();
+            GenerateMatriz((int) line_Matriz1.Value, (int) col_Matriz1.Value);
+        }
+        void GenerateMatriz(int lines, int col)
+        {
+            NumericUpDown[,] nu = new NumericUpDown[col,lines];
+            for(int i = 0; i < lines; i++)
+            {
+                for(int j = 0; i < col; i++)
+                {
+                    nu[i, j] = new NumericUpDown();
+                    nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
+                    nu[i, j].Size = new Size(40, 38);
+                    nu[i, j].Location = new Point(20 * (i + 1), 20 * (j + 1));
+                    groupBox1.Controls.Add(nu[i, j]);
+                }
+            }
+        }
+
     }
 }

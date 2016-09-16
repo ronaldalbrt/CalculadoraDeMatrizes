@@ -7,3 +7,12 @@ C:\Users\usuario\Documents\Visual Studio 2015\Projects\CalculadoraDeMatrizes\Cal
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.exe
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe.config
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.exe
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csprojResolveAssemblyReference.cache
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Form1.resources
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Properties.Resources.resources
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
