@@ -12,7 +12,7 @@ namespace CalculadoraDeMatrizes
 {
     static class Matriz
     {
-        public static void GenerateMatriz(int lines, int col, GroupBox groupBox)
+        public static void GenerateMatriz(int lines, int col, Panel panel)
         {
             NumericUpDown[,] nu = new NumericUpDown[lines, col];
             for (int i = 0; i < lines; i++)
@@ -23,7 +23,7 @@ namespace CalculadoraDeMatrizes
                     nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
                     nu[i, j].Size = new Size(40, 38);
                     nu[i, j].Location = new Point(50 * i, 50 * j);
-                    groupBox.Controls.Add(nu[i, j]);
+                    panel.Controls.Add(nu[i, j]);
                 }
             }
         }

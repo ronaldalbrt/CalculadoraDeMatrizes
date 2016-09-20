@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_GerarMatriz2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.col_Matriz2 = new System.Windows.Forms.NumericUpDown();
@@ -40,13 +41,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.line_Matriz1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -77,6 +84,17 @@
             this.tabPage1.Size = new System.Drawing.Size(1262, 603);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Matriz 1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.panel2);
+            this.groupBox2.Controls.Add(this.splitContainer1);
+            this.groupBox2.Location = new System.Drawing.Point(555, 86);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(508, 491);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Matriz 2";
             // 
             // btn_GerarMatriz2
             // 
@@ -136,6 +154,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(9, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(508, 491);
@@ -204,19 +223,33 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(993, 434);
+            this.tabPage2.Size = new System.Drawing.Size(1262, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // splitContainer1
             // 
-            this.groupBox2.Location = new System.Drawing.Point(555, 86);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(508, 491);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Matriz 2";
+            this.splitContainer1.Location = new System.Drawing.Point(514, 233);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Size = new System.Drawing.Size(150, 100);
+            this.splitContainer1.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(6, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(496, 466);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Location = new System.Drawing.Point(6, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(496, 466);
+            this.panel2.TabIndex = 1;
             // 
             // Form1
             // 
@@ -230,10 +263,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -253,6 +290,9 @@
         private System.Windows.Forms.NumericUpDown line_Matriz1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

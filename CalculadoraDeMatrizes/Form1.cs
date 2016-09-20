@@ -24,14 +24,14 @@ namespace CalculadoraDeMatrizes
 
         private void btn_GerarMatriz1_Click(object sender, EventArgs e)
         {
-            groupBox1.Controls.Clear();
-            Matriz.GenerateMatriz((int) line_Matriz1.Value, (int) col_Matriz1.Value, groupBox1);
+            panel1.Controls.Clear();
+            Matriz.GenerateMatriz((int) line_Matriz1.Value, (int) col_Matriz1.Value, panel1);
         }
 
         private void btn_GerarMatriz2_Click(object sender, EventArgs e)
         {
-            groupBox2.Controls.Clear();
-            Matriz.GenerateMatriz((int)line_Matriz2.Value, (int)col_Matriz2.Value, groupBox2);
+            panel2.Controls.Clear();
+            Matriz.GenerateMatriz((int)line_Matriz2.Value, (int)col_Matriz2.Value, panel2);
         }
     }
 }
