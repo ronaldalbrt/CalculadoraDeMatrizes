@@ -22,7 +22,7 @@ namespace CalculadoraDeMatrizes
                     nu[i, j] = new NumericUpDown();
                     nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
                     nu[i, j].Size = new Size(40, 38);
-                    nu[i, j].Location = new Point(50 * i, 50 * j);
+                    nu[i, j].Location = new Point(50 * j, 50 * i);
                     panel.Controls.Add(nu[i, j]);
                 }
             }
