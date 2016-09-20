@@ -135,14 +135,19 @@
             // col_Matriz2
             // 
             this.col_Matriz2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.col_Matriz2.Location = new System.Drawing.Point(784, 5);
+            this.col_Matriz2.Location = new System.Drawing.Point(784, 8);
+            this.col_Matriz2.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.col_Matriz2.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.col_Matriz2.Name = "col_Matriz2";
-            this.col_Matriz2.Size = new System.Drawing.Size(43, 38);
+            this.col_Matriz2.Size = new System.Drawing.Size(59, 38);
             this.col_Matriz2.TabIndex = 6;
             this.col_Matriz2.Value = new decimal(new int[] {
             1,
@@ -153,14 +158,19 @@
             // line_Matriz2
             // 
             this.line_Matriz2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.line_Matriz2.Location = new System.Drawing.Point(706, 8);
+            this.line_Matriz2.Location = new System.Drawing.Point(693, 8);
+            this.line_Matriz2.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.line_Matriz2.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.line_Matriz2.Name = "line_Matriz2";
-            this.line_Matriz2.Size = new System.Drawing.Size(43, 38);
+            this.line_Matriz2.Size = new System.Drawing.Size(56, 38);
             this.line_Matriz2.TabIndex = 5;
             this.line_Matriz2.Value = new decimal(new int[] {
             1,
@@ -200,13 +210,18 @@
             // 
             this.col_Matriz1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.col_Matriz1.Location = new System.Drawing.Point(209, 2);
+            this.col_Matriz1.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.col_Matriz1.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.col_Matriz1.Name = "col_Matriz1";
-            this.col_Matriz1.Size = new System.Drawing.Size(43, 38);
+            this.col_Matriz1.Size = new System.Drawing.Size(57, 38);
             this.col_Matriz1.TabIndex = 2;
             this.col_Matriz1.Value = new decimal(new int[] {
             1,
@@ -227,14 +242,19 @@
             // line_Matriz1
             // 
             this.line_Matriz1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.line_Matriz1.Location = new System.Drawing.Point(131, 5);
+            this.line_Matriz1.Location = new System.Drawing.Point(119, 3);
+            this.line_Matriz1.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.line_Matriz1.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.line_Matriz1.Name = "line_Matriz1";
-            this.line_Matriz1.Size = new System.Drawing.Size(43, 38);
+            this.line_Matriz1.Size = new System.Drawing.Size(55, 38);
             this.line_Matriz1.TabIndex = 0;
             this.line_Matriz1.Value = new decimal(new int[] {
             1,
