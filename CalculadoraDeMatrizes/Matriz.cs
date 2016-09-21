@@ -10,8 +10,14 @@ using System.Data;
 
 namespace CalculadoraDeMatrizes
 {
-    static class Matriz
+    static class Matriz 
     {
+        /// <summary>
+        /// Gera a Matriz com as dimensões escolhidas pelo usuario.
+        /// </summary>
+        /// <param name="Número de linhas "></param>
+        /// <param name="Número de colunas"></param>
+        /// <param name="Qual painel será desenhado"></param>
         public static void GerarMatriz(int lines, int col, Panel panel)
         {
             int height = 38;
@@ -27,38 +33,122 @@ namespace CalculadoraDeMatrizes
                     nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);
                     nu[i, j].Minimum = -9999999999999;
                     nu[i, j].Maximum = 9999999999999;
+                    nu[i, j].Value = 0;
                     nu[i, j].DecimalPlaces = 3;
                     panel.Controls.Add(nu[i, j]);
                 }
             }
         }
-        public static void SomarMatrizes(Panel panel1, Panel panel2, int lines1, int col1, int lines2, int col2)
+
+        /// <summary>
+        /// Salva a Matriz contida em um painel num array float[,]
+        /// </summary>
+        /// <param name="Qual painel está a matriz"></param>
+        /// <param name="Número de linhas"></param>
+        /// <param name="Número de colunas"></param>
+        /// <returns></returns>
+        public static float[,] SalvarMatriz(Panel panel,int lines, int col)
         {
-            int i1 = 0;
-            int j1 = 0;
-            float[,] matriz = new float[lines1, col1];
-            foreach(NumericUpDown nu  in panel1.Controls)
-            {
-                Console.WriteLine(i1 + " " + j1);
-                matriz[i1, j1] = (float) nu.Value;
-                if (j1 < col1 - 1)
+            float[,] matrix = new float[lines, col];
+            int i = 0;
+            int j = 0; 
+            foreach (NumericUpDown nu in panel.Controls)
+            {               
+                matrix[i, j] = (float) nu.Value;
+                
+                if (j == col-1)
                 {
-                    i1++;
-                    j1 = 0;
+                    j = 0;
+                    i++;
                 }
-                else
-                {
-                    j1++;
-                }
-            }
-            //Console.WriteLine("Linhas: " + i1 + " Colunas:" + j1);
-            /*for(int i = 0; i < lines1; i++)
-            {
-                for(int j = 0; j < col1; j++)
-                {
-                      matriz[i, j] = panel1.Controls.GetType(,);
-                }
-            }*/
+                else j++;
+            }          
+            return matrix;
         }
+        /// <summary>
+        /// Soma as matrizes de 2 arrays float[,]
+        /// </summary>
+        /// <param name="Primeira matriz"></param>
+        /// <param name="Primeira matriz"></param>
+        /// <returns></returns>
+       public static float[,] SomarMatrizes(float[,] matrix1,float[,] matrix2)
+        {
+            float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
+          //  if (matrix1.GetLength(0) == matrix2.GetLength(0) && matrix1.GetLength(1) == matrix2.GetLength(1))
+            {
+                int lin = matrix1.GetLength(0) ;
+                int col = matrix1.GetLength(1) ;
+                for (int i = 0; i < lin; i++)
+                {
+                    for (int j = 0; j<col; j++)
+                    {
+                       matrixfinal[i, j] = matrix1[i, j] + matrix2[i, j];
+                       
+                    }
+                }
+                return matrixfinal;
+                
+            }           
+           
+        }
+       /// <summary>
+       /// Subtrai as matrizes de 2 arrays float[,]
+       /// </summary>
+       /// <param name="Primeira matriz"></param>
+       /// <param name="Primeira matriz"></param>
+       /// <returns></returns>
+       public static float[,] SubtrairMatrizes(float[,] matrix1, float[,] matrix2)
+       {
+           float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
+           //  if (matrix1.GetLength(0) == matrix2.GetLength(0) && matrix1.GetLength(1) == matrix2.GetLength(1))
+           {
+               int lin = matrix1.GetLength(0);
+               int col = matrix1.GetLength(1);
+               for (int i = 0; i < lin; i++)
+               {
+                   for (int j = 0; j < col; j++)
+                   {
+                       matrixfinal[i, j] = matrix1[i, j] - matrix2[i, j];
+
+                   }
+               }
+               return matrixfinal;
+
+           }
+
+       }
+        
+        /// <summary>
+        /// Desenha a matriz em um painel
+        /// </summary>
+        /// <param name="Painel a ser desenhado">"Painel "</param>
+        /// <param name="matrix"></param>
+        /// <param name="Essa matriz poderá sofrer mudança do usuario?"></param>
+       public static void DesenhaMatrix(Panel panel, float[,] matrix, bool interactable)
+       {
+           panel.Controls.Clear();
+           int height = 38;
+           int width = 70;
+           NumericUpDown[,] nu = new NumericUpDown[matrix.GetLength(0), matrix.GetLength(1)];
+           for (int i = 0; i < matrix.GetLength(0); i++)
+           {
+               for (int j = 0; j < matrix.GetLength(1); j++)
+               {
+                   nu[i, j] = new NumericUpDown();
+                   nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
+                   nu[i, j].Size = new Size(width, height);
+                   nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);
+                   nu[i, j].Minimum = -9999999999999;
+                   nu[i, j].Maximum = 9999999999999;
+                   nu[i, j].Value = (decimal)matrix[i,j];
+                   nu[i, j].DecimalPlaces = 3;
+                   nu[i, j].Enabled = interactable;
+                   panel.Controls.Add(nu[i, j]);
+               }
+           }
+       }
+          
+       
     }
 }
+    

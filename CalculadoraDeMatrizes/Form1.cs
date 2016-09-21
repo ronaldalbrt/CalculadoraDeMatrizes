@@ -37,7 +37,53 @@ namespace CalculadoraDeMatrizes
             col2 = (int)col_Matriz2.Value;
             panel2.Controls.Clear();
             Matriz.GerarMatriz(line2, col2, panel2);
-            Matriz.SomarMatrizes(panel1, panel2, line1, col1, line2, col2);
+           // Console.WriteLine(Matriz.SalvarMatriz(panel1, line1, col1));
+           // Matriz.SomarMatrizes(panel1, panel2, line1, col1, line2, col2);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            float[,] matriz1 = new float[line1, col1];
+            float[,] matriz2 = new float[line2, col2];
+            float[,] resultado = new float[line2, col2];
+            matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
+            matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
+            
+            try
+            {
+                resultado = Matriz.SomarMatrizes(matriz1, matriz2);
+            }
+            catch {
+                MessageBox.Show("O número de linhas e colunas das matrizes não são iguais");
+            }
+            Matriz.DesenhaMatrix(resultPanel, resultado, true);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            float[,] matriz1 = new float[line1, col1];
+            float[,] matriz2 = new float[line2, col2];
+            float[,] resultado = new float[line2, col2];
+            matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
+            matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
+
+            try
+            {
+                resultado = Matriz.SubtrairMatrizes(matriz1, matriz2);
+            }
+            catch
+            {
+                MessageBox.Show("O número de linhas e colunas das matrizes não são iguais");
+            }
+            Matriz.DesenhaMatrix(resultPanel, resultado, true);
+        }
+
+        private void MultiplicarButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }
