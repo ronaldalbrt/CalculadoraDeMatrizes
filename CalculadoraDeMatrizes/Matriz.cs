@@ -117,6 +117,24 @@ namespace CalculadoraDeMatrizes
            }
 
        }
+        public static float[,] EscalarMatriz(float[,] matriz, float valor)
+       {
+           float[,] matrixfinal = new float[matriz.GetLength(0), matriz.GetLength(1)];
+           //  if (matrix1.GetLength(0) == matrix2.GetLength(0) && matrix1.GetLength(1) == matrix2.GetLength(1))
+           {
+               int lin = matriz.GetLength(0);
+               int col = matriz.GetLength(1);
+               for (int i = 0; i < lin; i++)
+               {
+                   for (int j = 0; j < col; j++)
+                   {
+                       matrixfinal[i, j] = matriz[i, j] * valor;
+                   }
+               }
+               return matrixfinal;
+
+           }
+       }
         
         /// <summary>
         /// Desenha a matriz em um painel
