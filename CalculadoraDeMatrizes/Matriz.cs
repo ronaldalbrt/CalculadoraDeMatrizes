@@ -74,22 +74,17 @@ namespace CalculadoraDeMatrizes
        public static float[,] SomarMatrizes(float[,] matrix1,float[,] matrix2)
         {
             float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
-          //  if (matrix1.GetLength(0) == matrix2.GetLength(0) && matrix1.GetLength(1) == matrix2.GetLength(1))
+            int lin = matrix1.GetLength(0) ;
+            int col = matrix1.GetLength(1) ;
+            for (int i = 0; i < lin; i++)
             {
-                int lin = matrix1.GetLength(0) ;
-                int col = matrix1.GetLength(1) ;
-                for (int i = 0; i < lin; i++)
+                for (int j = 0; j<col; j++)
                 {
-                    for (int j = 0; j<col; j++)
-                    {
-                       matrixfinal[i, j] = matrix1[i, j] + matrix2[i, j];
+                    matrixfinal[i, j] = matrix1[i, j] + matrix2[i, j];
                        
-                    }
                 }
-                return matrixfinal;
-                
-            }           
-           
+            }
+            return matrixfinal;
         }
        /// <summary>
        /// Subtrai as matrizes de 2 arrays float[,]
@@ -100,22 +95,31 @@ namespace CalculadoraDeMatrizes
        public static float[,] SubtrairMatrizes(float[,] matrix1, float[,] matrix2)
        {
            float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
-           //  if (matrix1.GetLength(0) == matrix2.GetLength(0) && matrix1.GetLength(1) == matrix2.GetLength(1))
+           int lin = matrix1.GetLength(0);
+           int col = matrix1.GetLength(1);
+           for (int i = 0; i < lin; i++)
            {
-               int lin = matrix1.GetLength(0);
-               int col = matrix1.GetLength(1);
-               for (int i = 0; i < lin; i++)
+               for (int j = 0; j < col; j++)
                {
-                   for (int j = 0; j < col; j++)
-                   {
-                       matrixfinal[i, j] = matrix1[i, j] - matrix2[i, j];
-
-                   }
+                   matrixfinal[i, j] = matrix1[i, j] - matrix2[i, j];
                }
-               return matrixfinal;
-
            }
-
+           return matrixfinal;
+       }
+       public static float[,] MultiplicarMatrizes(float[,] matrix1, float[,] matrix2, int line1, int col1, int line2, int col2)
+       {
+            float[,] matrixfinal = new float[line1, col2];
+            if(col1 != line2)
+            {
+                throw new MultiplyException();
+            }
+            for(int i = 0; i < line1; i++)
+            {
+                for(int j = 0; j < col2; j++)
+                {
+                }
+            }
+            return matrixfinal;
        }
         
         /// <summary>
@@ -124,7 +128,7 @@ namespace CalculadoraDeMatrizes
         /// <param name="Painel a ser desenhado">"Painel "</param>
         /// <param name="matrix"></param>
         /// <param name="Essa matriz poderá sofrer mudança do usuario?"></param>
-       public static void DesenhaMatrix(Panel panel, float[,] matrix, bool interactable)
+       public static void DesenhaMatrix(Panel panel, float[,] matrix)
        {
            panel.Controls.Clear();
            int height = 38;
@@ -142,7 +146,6 @@ namespace CalculadoraDeMatrizes
                    nu[i, j].Maximum = 9999999999999;
                    nu[i, j].Value = (decimal)matrix[i,j];
                    nu[i, j].DecimalPlaces = 3;
-                   nu[i, j].Enabled = interactable;
                    panel.Controls.Add(nu[i, j]);
                }
            }
