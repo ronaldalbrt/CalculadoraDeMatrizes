@@ -70,20 +70,19 @@ namespace CalculadoraDeMatrizes
             try
             {
                 resultado = Matriz.SubtrairMatrizes(matriz1, matriz2);
-<<<<<<< HEAD
-                Matriz.DesenhaMatrix(resultPanel, resultado, true);
-=======
+
                 Matriz.DesenhaMatrix(resultPanel, resultado);
->>>>>>> origin/master
+
+                Matriz.DesenhaMatrix(resultPanel, resultado);
+
             }
             catch
             {
                 MessageBox.Show("O número de linhas e colunas das matrizes não são iguais");
             }
-<<<<<<< HEAD
+
             
-=======
->>>>>>> origin/master
+
         }
 
         private void MultiplicarButton_Click(object sender, EventArgs e)
@@ -110,7 +109,7 @@ namespace CalculadoraDeMatrizes
             float[,] resultado = new float[line1, col1];
             matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
             resultado = Matriz.EscalarMatriz(matriz1, (float)NuEscalar1.Value);
-            Matriz.DesenhaMatrix(panel1, resultado, true);
+            Matriz.DesenhaMatrix(panel1, resultado);
         }
 
         private void multiplicarPanel2_Click(object sender, EventArgs e)
@@ -119,7 +118,7 @@ namespace CalculadoraDeMatrizes
             float[,] resultado = new float[line2, col2];
             matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
             resultado = Matriz.EscalarMatriz(matriz2, (float)NuEscalar2.Value);
-            Matriz.DesenhaMatrix(panel2, resultado, true);
+            Matriz.DesenhaMatrix(panel2, resultado);
 
         }
 

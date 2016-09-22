@@ -52,3 +52,12 @@ C:\Users\usuario\Documents\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\ob
 C:\Users\usuario\Documents\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Form1.resources
 C:\Users\usuario\Documents\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Properties.Resources.resources
 C:\Users\usuario\Documents\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe.config
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.exe
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csprojResolveAssemblyReference.cache
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Form1.resources
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Properties.Resources.resources
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe
+C:\Users\NATHAN.MAGALHAES\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.pdb
