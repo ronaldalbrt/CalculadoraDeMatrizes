@@ -21,6 +21,7 @@ namespace CalculadoraDeMatrizes
         private void Form1_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Essa é a calculadora de matrizes!! Seja Bem Vindo!!");
+            Console.WriteLine(float.Parse("3,3") + float.Parse("3,3"));
         }
 
         private void btn_GerarMatriz1_Click(object sender, EventArgs e)
@@ -28,7 +29,8 @@ namespace CalculadoraDeMatrizes
             line1 = (int) line_Matriz1.Value;
             col1 = (int) col_Matriz1.Value;
             panel1.Controls.Clear();
-            Matriz.GerarMatriz(line1, col1, panel1);
+            //Matriz.GerarMatriz(line1, col1, panel1);
+            Matriz.GerarMatrizTextBox(line1, col1, panel1);
         }
 
         private void btn_GerarMatriz2_Click(object sender, EventArgs e)
@@ -36,7 +38,8 @@ namespace CalculadoraDeMatrizes
             line2 = (int)line_Matriz2.Value;
             col2 = (int)col_Matriz2.Value;
             panel2.Controls.Clear();
-            Matriz.GerarMatriz(line2, col2, panel2);
+           Matriz.GerarMatrizTextBox(line2, col2, panel2);
+            
         }
         private void btnSomar_Click(object sender, EventArgs e)
         {
@@ -50,7 +53,7 @@ namespace CalculadoraDeMatrizes
             try
             {
                 resultado = Matriz.SomarMatrizes(matriz1, matriz2);
-                Matriz.DesenhaMatrix(resultPanel, resultado);
+                Matriz.DesenhaMatrixText(resultPanel, resultado);
             }
             catch
             {
@@ -68,8 +71,8 @@ namespace CalculadoraDeMatrizes
             try
             {
                 resultado = Matriz.SubtrairMatrizes(matriz1, matriz2);
-                Matriz.DesenhaMatrix(resultPanel, resultado);
-                Matriz.DesenhaMatrix(resultPanel, resultado);
+                Matriz.DesenhaMatrixText(resultPanel, resultado);
+                Matriz.DesenhaMatrixText(resultPanel, resultado);
             }
             catch
             {
@@ -83,7 +86,7 @@ namespace CalculadoraDeMatrizes
             float[,] resultado = new float[line1, col1];
             matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
             resultado = Matriz.EscalarMatriz(matriz1, (float)NuEscalar1.Value);
-            Matriz.DesenhaMatrix(panel1, resultado);
+            Matriz.DesenhaMatrixText(panel1, resultado);
         }
 
         private void btnMultiplicarEscalar2_Click(object sender, EventArgs e)
@@ -92,7 +95,7 @@ namespace CalculadoraDeMatrizes
             float[,] resultado = new float[line2, col2];
             matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
             resultado = Matriz.EscalarMatriz(matriz2, (float)NuEscalar2.Value);
-            Matriz.DesenhaMatrix(panel2, resultado);
+            Matriz.DesenhaMatrixText(panel2, resultado);
         }
 
         private void MultiplicarButton_Click(object sender, EventArgs e)
@@ -105,12 +108,39 @@ namespace CalculadoraDeMatrizes
             try
             {
                 resultado = Matriz.MultiplicarMatrizes(matriz1, matriz2);           
-                Matriz.DesenhaMatrix(resultPanel, resultado);
+                Matriz.DesenhaMatrixText(resultPanel, resultado);
             }
             catch (MultiplyException ex)
             {
                 MessageBox.Show("O numero de colunas da matriz 1 é diferente do numero de linahs da matriz 2");
             }
         }
+        
+      
+
+        
+
+        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+       
+
+        
+
+       
+
+        
     }
 }

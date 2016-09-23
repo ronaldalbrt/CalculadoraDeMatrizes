@@ -108,6 +108,7 @@
             // 
             // NuEscalar2
             // 
+            this.NuEscalar2.DecimalPlaces = 10;
             this.NuEscalar2.Location = new System.Drawing.Point(629, 453);
             this.NuEscalar2.Maximum = new decimal(new int[] {
             1215752191,
@@ -122,6 +123,7 @@
             this.NuEscalar2.Name = "NuEscalar2";
             this.NuEscalar2.Size = new System.Drawing.Size(58, 20);
             this.NuEscalar2.TabIndex = 18;
+            this.NuEscalar2.ThousandsSeparator = true;
             // 
             // multiplicarPanel2
             // 
@@ -135,6 +137,7 @@
             // 
             // NuEscalar1
             // 
+            this.NuEscalar1.DecimalPlaces = 10;
             this.NuEscalar1.Location = new System.Drawing.Point(71, 453);
             this.NuEscalar1.Maximum = new decimal(new int[] {
             1215752191,
@@ -149,6 +152,7 @@
             this.NuEscalar1.Name = "NuEscalar1";
             this.NuEscalar1.Size = new System.Drawing.Size(58, 20);
             this.NuEscalar1.TabIndex = 16;
+            this.NuEscalar1.ThousandsSeparator = true;
             // 
             // multiplicarPanel1
             // 
@@ -366,6 +370,7 @@
             // 
             // line_Matriz1
             // 
+            this.line_Matriz1.AutoSize = true;
             this.line_Matriz1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.line_Matriz1.Location = new System.Drawing.Point(85, 4);
             this.line_Matriz1.Maximum = new decimal(new int[] {
@@ -379,7 +384,7 @@
             0,
             0});
             this.line_Matriz1.Name = "line_Matriz1";
-            this.line_Matriz1.Size = new System.Drawing.Size(55, 38);
+            this.line_Matriz1.Size = new System.Drawing.Size(60, 38);
             this.line_Matriz1.TabIndex = 0;
             this.line_Matriz1.Value = new decimal(new int[] {
             1,
@@ -404,6 +409,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1344, 627);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Calculadora de Matrizes";

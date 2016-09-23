@@ -1,0 +1,27 @@
+﻿MATEMÁTICA
+-Grupo de 1 até 4 pessoas
+-Dimensões
+ Numero de linhas e colunas maximas: 10x10
+
+-Entrada de dados
+ Somente numeros racionais 
+ 
+-Operações
+ Soma, Multiplicação escalar/matriz e subtração
+ 
+-Determinante
+ Identificar: Oposta, transposta, simétrica e inversa
+ 
+-Rotação, translação e escala
+-Representação no Plano Cartesiano (Das matrizes 2xN)
+-Mensagem de erro/invalidação caso seja impossivel realizar a operação (Pt-Br)
+-Valendo até 3 pontos para Matemática (Desenvolvimento nas Terças, Apresentação, Funcionamento)
+
+PROGRAMAÇÃO
+-Orientação Objeto
+-Tratamento de erro de interface
+-Github comitado por todos
+-Código comentado
+-Uso de método (///)
+-Entrada de dados através de uma fórmula digitada pelo usuário
+-Valendo até 4 pontos para programação

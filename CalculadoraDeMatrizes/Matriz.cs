@@ -12,6 +12,8 @@ namespace CalculadoraDeMatrizes
 {
     static class Matriz 
     {
+        
+      
         /// <summary>
         /// Gera a Matriz com as dimensões escolhidas pelo usuario.
         /// </summary>
@@ -39,6 +41,27 @@ namespace CalculadoraDeMatrizes
                 }
             }
         }
+        
+             public static void GerarMatrizTextBox(int lines, int col, Panel panel)
+        {
+            int height = 38;
+            int width = 70;
+            TextBox[,] nu = new TextBox[lines, col];
+            for (int i = 0; i < lines; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    nu[i, j] = new TextBox();
+                    nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
+                    nu[i, j].Size = new Size(width, height);
+                    nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);
+                     nu[i,j].KeyPress += new System.Windows.Forms.KeyPressEventHandler(NumericTextbox);
+                     nu[i, j].Text = "0";
+                    panel.Controls.Add(nu[i, j]);
+                }
+            }
+        }           
+
 
         /// <summary>
         /// Salva a Matriz contida em um painel num array float[,]
@@ -52,9 +75,10 @@ namespace CalculadoraDeMatrizes
             float[,] matrix = new float[lines, col];
             int i = 0;
             int j = 0; 
-            foreach (NumericUpDown nu in panel.Controls)
-            {               
-                matrix[i, j] = (float) nu.Value;
+            foreach (TextBox nu in panel.Controls)
+            {      
+               
+                matrix[i, j] = float.Parse( nu.Text);
                 
                 if (j == col-1)
                 {
@@ -179,8 +203,46 @@ namespace CalculadoraDeMatrizes
                }
            }
        }
-          
-       
+
+       public static void DesenhaMatrixText(Panel panel, float[,] matrix)
+       {
+           panel.Controls.Clear();
+           int height = 38;
+           int width = 70;
+            TextBox[,] nu = new TextBox[matrix.GetLength(0), matrix.GetLength(1)];
+           for (int i = 0; i < matrix.GetLength(0); i++)
+           {
+               for (int j = 0; j < matrix.GetLength(1); j++)
+               {
+                   nu[i, j] = new TextBox();
+                   nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
+                   nu[i, j].Size = new Size(width, height);
+                   nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);                  
+                   nu[i, j].Text =( (decimal)matrix[i, j]).ToString();                
+                   panel.Controls.Add(nu[i, j]);
+               }
+           }
+       }
+
+       public static void NumericTextbox(object sender, KeyPressEventArgs e)
+       {
+           if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != ','))
+           {
+               e.Handled = true;
+           }
+
+           // only allow one decimal point
+           if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+           {
+               e.Handled = true;
+           }
+       }
+
+
+
+
+
     }
 }
     
