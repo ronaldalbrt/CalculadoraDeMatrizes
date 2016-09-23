@@ -21,7 +21,6 @@ namespace CalculadoraDeMatrizes
         private void Form1_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Essa é a calculadora de matrizes!! Seja Bem Vindo!!");
-            Console.WriteLine(float.Parse("3,3") + float.Parse("3,3"));
         }
 
         private void btn_GerarMatriz1_Click(object sender, EventArgs e)
@@ -112,35 +111,87 @@ namespace CalculadoraDeMatrizes
             }
             catch (MultiplyException ex)
             {
-                MessageBox.Show("O numero de colunas da matriz 1 é diferente do numero de linahs da matriz 2");
+                MessageBox.Show("O numero de colunas da matriz 1 é diferente do numero de linhas da matriz 2");
             }
         }
-        
-      
 
-        
-
-        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void btnGerarOposta_Click(object sender, EventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
+            float[,] matriz1 = new float[line1, col1];
+            float[,] resultado = new float[line1, col1];
+            matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
+            resultado = Matriz.MatrizOposta(matriz1);
+            Matriz.DesenhaMatrixText(panel1, resultado);
+        }
+        private void btnGerarOposta2_Click(object sender, EventArgs e)
+        {
+            float[,] matriz2 = new float[line2, col2];
+            float[,] resultado = new float[line2, col2];
+            matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
+            resultado = Matriz.MatrizOposta(matriz2);
+            Matriz.DesenhaMatrixText(panel2, resultado);
+        }
+        private void btnGerarTransposta_Click(object sender, EventArgs e)
+        {
+            float[,] matriz1 = new float[line1, col1];
+            float[,] resultado = new float[col1, line1];
+            matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
+            resultado = Matriz.MatrizTransposta(matriz1);
+            Matriz.DesenhaMatrixText(panel1, resultado);
+            line1 = resultado.GetLength(0);
+            col1 = resultado.GetLength(1);
+        }
+        private void btnGerarTransposta2_Click(object sender, EventArgs e)
+        {
+            float[,] matriz2 = new float[line2, col2];
+            float[,] resultado = new float[col2, line2];
+            matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
+            resultado = Matriz.MatrizTransposta(matriz2);
+            Matriz.DesenhaMatrixText(panel2, resultado);
+            line2 = resultado.GetLength(0);
+            col2 = resultado.GetLength(1);
+        }
+        private void btnIdentidade_Click(object sender, EventArgs e)
+        {
+            line1 = (int)line_Matriz1.Value;
+            col1 = (int)col_Matriz1.Value;
+            try
             {
-                e.Handled = true;
+                float[,] matrizIdentidade = Matriz.MatrizIdentidade(line1, col1);
+                Matriz.DesenhaMatrixText(panel1, matrizIdentidade);
             }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            catch(QuadradaException ex)
             {
-                e.Handled = true;
+                MessageBox.Show("Para gerar uma matriz identidade é necessário que ela tenha o mesmo número de linhas e colunas");
+            }
+        }
+        private void btnGerarIdentidade2_Click(object sender, EventArgs e)
+        {
+            line2 = (int)line_Matriz2.Value;
+            col2 = (int)col_Matriz2.Value;
+            try
+            {
+                float[,] matrizIdentidade = Matriz.MatrizIdentidade(line2, col2);
+                Matriz.DesenhaMatrixText(panel2, matrizIdentidade);
+            }
+            catch(QuadradaException ex)
+            {
+                MessageBox.Show("Para gerar uma matriz identidade é necessário que ela tenha o mesmo número de linhas e colunas");
             }
         }
 
-       
-
-        
-
-       
-
-        
+        private void btnGerarInversa_Click(object sender, EventArgs e)
+        {
+            float[,] matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
+            try
+            {
+                float[,] resultado = Matriz.MatrizInversa(matriz1);
+                Matriz.DesenhaMatrixText(panel1, resultado);
+            }
+            catch(QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa");
+            }
+        }
     }
 }

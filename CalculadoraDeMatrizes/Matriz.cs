@@ -11,15 +11,8 @@ using System.Data;
 namespace CalculadoraDeMatrizes
 {
     static class Matriz 
-    {
-        
-      
-        /// <summary>
-        /// Gera a Matriz com as dimensões escolhidas pelo usuario.
-        /// </summary>
-        /// <param name="Número de linhas ">Numero de linhas da matriz</param>
-        /// <param name="Número de colunas">Numero de colunas da matriz</param>
-        /// <param name="Qual painel será desenhado">Painel em que a matriz sera desenhada</param>
+    { 
+        /*
         public static void GerarMatriz(int lines, int col, Panel panel)
         {
             int height = 38;
@@ -40,9 +33,14 @@ namespace CalculadoraDeMatrizes
                     panel.Controls.Add(nu[i, j]);
                 }
             }
-        }
-        
-             public static void GerarMatrizTextBox(int lines, int col, Panel panel)
+        }*/
+        /// <summary>
+        /// Gera a Matriz com as dimensões escolhidas pelo usuario.
+        /// </summary>
+        /// <param name="Número de linhas ">Numero de linhas da matriz</param>
+        /// <param name="Número de colunas">Numero de colunas da matriz</param>
+        /// <param name="Qual painel será desenhado">Painel em que a matriz sera desenhada</param>
+        public static void GerarMatrizTextBox(int lines, int col, Panel panel)
         {
             int height = 38;
             int width = 70;
@@ -55,14 +53,12 @@ namespace CalculadoraDeMatrizes
                     nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
                     nu[i, j].Size = new Size(width, height);
                     nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);
-                     nu[i,j].KeyPress += new System.Windows.Forms.KeyPressEventHandler(NumericTextbox);
-                     nu[i, j].Text = "0";
+                    nu[i,j].KeyPress += new System.Windows.Forms.KeyPressEventHandler(NumericTextbox);
+                    nu[i, j].Text = "0";
                     panel.Controls.Add(nu[i, j]);
                 }
             }
         }           
-
-
         /// <summary>
         /// Salva a Matriz contida em um painel num array float[,]
         /// </summary>
@@ -78,7 +74,7 @@ namespace CalculadoraDeMatrizes
             foreach (TextBox nu in panel.Controls)
             {      
                
-                matrix[i, j] = float.Parse( nu.Text);
+                matrix[i, j] = float.Parse(nu.Text);
                 
                 if (j == col-1)
                 {
@@ -175,12 +171,83 @@ namespace CalculadoraDeMatrizes
            }
            return matrixfinal;
        }
-        
-        /// <summary>
-        /// Desenha a matriz em um painel
-        /// </summary>
-        /// <param name="Painel a ser desenhado">Painel aonde a matriz será desenhada</param>
-        /// <param name="matrix">Matriz a ser desenhada no painel</param>
+       /// <summary>
+       /// Função para gerar a matriz oposta.
+       /// A matriz oposta de alguma matriz é ela multiplicada por -1.
+       /// </summary>
+       /// <param name="matrix1">Matriz que se deseja descobrir a matriz oposta</param>
+       /// <returns>Retorna a matriz oposta</returns>
+       public static float[,] MatrizOposta(float[,] matrix1)
+       {
+           float[,] matrixfinal = EscalarMatriz(matrix1, -1);
+           return matrixfinal;
+       }
+       /// <summary>
+       /// Função para gerar a matriz transposta.
+       /// A matriz transposta é trocar as linhas pelas colunas de determinada matriz.
+       /// </summary>
+       /// <param name="matrix1">Matriz que se deseja descobrir a matriz transposta</param>
+       /// <returns>Retorna a matriz transposta</returns>
+ 
+       public static float[,] MatrizTransposta(float[,] matrix1)
+       {
+           float[,] matrixfinal = new float[matrix1.GetLength(1), matrix1.GetLength(0)];
+           for (int i = 0; i < matrix1.GetLength(0); i++)
+           {
+               for(int j = 0; j < matrix1.GetLength(1); j++)
+               {
+                   matrixfinal[j, i] = matrix1[i, j];
+               }
+           }
+           return matrixfinal;
+       }
+       /// <summary>
+       /// Função para gerar a matriz identidade.
+       /// Uma matriz identidade é matriz que possui 1 em todos os elementos de sua diagonal principal e 0 em todos os outros elementos.
+       /// </summary>
+       /// <param name="line">Número de linhas da matriz identidade</param>
+       /// <param name="col">Numero de colunas da matriz identidade</param>
+       /// <returns>Retorna a matriz identidade</returns>
+       public static float[,] MatrizIdentidade(int line, int col)
+       {
+           if (line != col)
+           {
+               throw new QuadradaException();
+           }
+           float[,] matrixidentidade = new float[line, col];
+           for (int i = 0; i < line; i++)
+           {
+               for (int j = 0; j < col; j++)
+               {
+                   if (i == j)
+                   {
+                       matrixidentidade[i, j] = 1;
+                   }
+                   else
+                   {
+                       matrixidentidade[i, j] = 0;
+                   }
+               }
+           }
+           return matrixidentidade;
+       } 
+       /// <summary>
+       /// Função para descobrir a matriz inversa de determinada matriz.
+       /// A matriz inversa é a matriz que multiplicada por determinada matriz resulta na matriz identidade 
+       /// </summary>
+       /// <param name="matrix1">Matriz que se deseja descobrir a matriz inversa</param>
+       /// <returns>Retorna a matriz inversa</returns>
+       public static float[,] MatrizInversa(float[,] matrix1)
+       {
+           if (matrix1.GetLength(0) != matrix1.GetLength(1))
+           {
+               throw new QuadradaException();
+           }
+           float[,] matrixidentidade = MatrizIdentidade(matrix1.GetLength(0), matrix1.GetLength(1));
+           float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
+           return matrixfinal;
+       }
+       /*
        public static void DesenhaMatrix(Panel panel, float[,] matrix)
        {
            panel.Controls.Clear();
@@ -203,7 +270,12 @@ namespace CalculadoraDeMatrizes
                }
            }
        }
-
+        */
+       /// <summary>
+       /// Desenha a matriz em um painel
+       /// </summary>
+       /// <param name="Painel a ser desenhado">Painel aonde a matriz será desenhada</param>
+       /// <param name="matrix">Matriz a ser desenhada no painel</param>
        public static void DesenhaMatrixText(Panel panel, float[,] matrix)
        {
            panel.Controls.Clear();
@@ -218,16 +290,20 @@ namespace CalculadoraDeMatrizes
                    nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
                    nu[i, j].Size = new Size(width, height);
                    nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);                  
-                   nu[i, j].Text =( (decimal)matrix[i, j]).ToString();                
+                   nu[i, j].Text =((float)matrix[i, j]).ToString();                
                    panel.Controls.Add(nu[i, j]);
                }
            }
        }
-
+        /// <summary>
+        /// Funcão para a TextBox não mostrar letras
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
        public static void NumericTextbox(object sender, KeyPressEventArgs e)
        {
            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != ','))
+                (e.KeyChar != ',' && e.KeyChar != '-'))
            {
                e.Handled = true;
            }
@@ -238,11 +314,6 @@ namespace CalculadoraDeMatrizes
                e.Handled = true;
            }
        }
-
-
-
-
-
     }
 }
     
