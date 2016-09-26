@@ -12,30 +12,8 @@ namespace CalculadoraDeMatrizes
 {
     static class Matriz 
     { 
-        /*
-        public static void GerarMatriz(int lines, int col, Panel panel)
-        {
-            int height = 38;
-            int width = 70;
-            NumericUpDown[,] nu = new NumericUpDown[lines, col];
-            for (int i = 0; i < lines; i++)
-            {
-                for (int j = 0; j < col; j++)
-                {
-                    nu[i, j] = new NumericUpDown();
-                    nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
-                    nu[i, j].Size = new Size(width, height);
-                    nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);
-                    nu[i, j].Minimum = -9999999999999;
-                    nu[i, j].Maximum = 9999999999999;
-                    nu[i, j].Value = 0;
-                    nu[i, j].DecimalPlaces = 3;
-                    panel.Controls.Add(nu[i, j]);
-                }
-            }
-        }*/
         /// <summary>
-        /// Gera a Matriz com as dimensões escolhidas pelo usuario.
+        /// Gera a Matriz com as dimensoes escolhidas pelo usuario.
         /// </summary>
         /// <param name="Número de linhas ">Numero de linhas da matriz</param>
         /// <param name="Número de colunas">Numero de colunas da matriz</param>
@@ -94,14 +72,13 @@ namespace CalculadoraDeMatrizes
        public static float[,] SomarMatrizes(float[,] matrix1,float[,] matrix2)
         {
             float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
-            int lin = matrix1.GetLength(0) ;
-            int col = matrix1.GetLength(1) ;
+            int lin = matrix1.GetLength(0);
+            int col = matrix1.GetLength(1);
             for (int i = 0; i < lin; i++)
             {
                 for (int j = 0; j<col; j++)
                 {
-                    matrixfinal[i, j] = matrix1[i, j] + matrix2[i, j];
-                       
+                    matrixfinal[i, j] = matrix1[i, j] + matrix2[i, j];    
                 }
             }
             return matrixfinal;
@@ -171,6 +148,19 @@ namespace CalculadoraDeMatrizes
            }
            return matrixfinal;
        }
+       public static float[,] ElevarMatriz(float[,] matriz, int exp)
+       {
+           if(matriz.GetLength(0) != matriz.GetLength(1))
+           {
+               throw new QuadradaException();
+           }
+           float[,] result = matriz;
+           for(int i = 1; i < exp; i++)
+           {
+               result = MultiplicarMatrizes(result, matriz);
+           }
+           return result;
+       }
        /// <summary>
        /// Função para gerar a matriz oposta.
        /// A matriz oposta de alguma matriz é ela multiplicada por -1.
@@ -188,7 +178,6 @@ namespace CalculadoraDeMatrizes
        /// </summary>
        /// <param name="matrix1">Matriz que se deseja descobrir a matriz transposta</param>
        /// <returns>Retorna a matriz transposta</returns>
- 
        public static float[,] MatrizTransposta(float[,] matrix1)
        {
            float[,] matrixfinal = new float[matrix1.GetLength(1), matrix1.GetLength(0)];
@@ -247,30 +236,6 @@ namespace CalculadoraDeMatrizes
            float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
            return matrixfinal;
        }
-       /*
-       public static void DesenhaMatrix(Panel panel, float[,] matrix)
-       {
-           panel.Controls.Clear();
-           int height = 38;
-           int width = 70;
-           NumericUpDown[,] nu = new NumericUpDown[matrix.GetLength(0), matrix.GetLength(1)];
-           for (int i = 0; i < matrix.GetLength(0); i++)
-           {
-               for (int j = 0; j < matrix.GetLength(1); j++)
-               {
-                   nu[i, j] = new NumericUpDown();
-                   nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
-                   nu[i, j].Size = new Size(width, height);
-                   nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);
-                   nu[i, j].Minimum = -9999999999999;
-                   nu[i, j].Maximum = 9999999999999;
-                   nu[i, j].Value = (decimal)matrix[i,j];
-                   nu[i, j].DecimalPlaces = 3;
-                   panel.Controls.Add(nu[i, j]);
-               }
-           }
-       }
-        */
        /// <summary>
        /// Desenha a matriz em um painel
        /// </summary>

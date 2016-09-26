@@ -70,3 +70,12 @@ C:\Users\ronald.junior\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrize
 C:\Users\ronald.junior\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Form1.resources
 C:\Users\ronald.junior\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Properties.Resources.resources
 C:\Users\ronald.junior\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe.config
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.exe
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csprojResolveAssemblyReference.cache
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Form1.resources
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Properties.Resources.resources
+C:\Users\juliana.potengy\Desktop\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache

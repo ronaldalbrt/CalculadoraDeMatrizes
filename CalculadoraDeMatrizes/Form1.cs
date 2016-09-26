@@ -48,16 +48,19 @@ namespace CalculadoraDeMatrizes
             float[,] resultado = new float[line2, col2];
             matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
             matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
-
-            try
+            if (matriz1.GetLength(0) == matriz2.GetLength(0) && matriz1.GetLength(1) == matriz2.GetLength(1))
             {
-                resultado = Matriz.SomarMatrizes(matriz1, matriz2);
-                Matriz.DesenhaMatrixText(resultPanel, resultado);
+                try
+                {
+                    resultado = Matriz.SomarMatrizes(matriz1, matriz2);
+                    Matriz.DesenhaMatrixText(resultPanel, resultado);
+                }
+                catch
+                {
+                    MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch
-            {
-                MessageBox.Show("O número de linhas e colunas das matrizes não são iguais");
-            }
+            else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnSubtrair_Click(object sender, EventArgs e)
@@ -67,6 +70,7 @@ namespace CalculadoraDeMatrizes
             float[,] resultado = new float[line2, col2];
             matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
             matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
+            if (matriz1.GetLength(0) == matriz2.GetLength(0) && matriz1.GetLength(1) == matriz2.GetLength(1)) { 
             try
             {
                 resultado = Matriz.SubtrairMatrizes(matriz1, matriz2);
@@ -75,8 +79,10 @@ namespace CalculadoraDeMatrizes
             }
             catch
             {
-                MessageBox.Show("O número de linhas e colunas das matrizes não são iguais");
+                MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+            else MessageBox.Show("O número de linhas e colunas das matrizes não são iguais", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnMultiplicarEscalar_Click(object sender, EventArgs e)
@@ -111,7 +117,7 @@ namespace CalculadoraDeMatrizes
             }
             catch (MultiplyException ex)
             {
-                MessageBox.Show("O numero de colunas da matriz 1 é diferente do numero de linhas da matriz 2");
+                MessageBox.Show("O numero de colunas da matriz 1 é diferente do numero de linhas da matriz 2", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -162,7 +168,7 @@ namespace CalculadoraDeMatrizes
             }
             catch(QuadradaException ex)
             {
-                MessageBox.Show("Para gerar uma matriz identidade é necessário que ela tenha o mesmo número de linhas e colunas");
+                MessageBox.Show("Para gerar uma matriz identidade é necessário que ela tenha o mesmo número de linhas e colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnGerarIdentidade2_Click(object sender, EventArgs e)
@@ -176,7 +182,7 @@ namespace CalculadoraDeMatrizes
             }
             catch(QuadradaException ex)
             {
-                MessageBox.Show("Para gerar uma matriz identidade é necessário que ela tenha o mesmo número de linhas e colunas");
+                MessageBox.Show("Para gerar uma matriz identidade é necessário que ela tenha o mesmo número de linhas e colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -190,7 +196,21 @@ namespace CalculadoraDeMatrizes
             }
             catch(QuadradaException ex)
             {
-                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa");
+                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnElevarPanel_Click(object sender, EventArgs e)
+        {
+            float[,] matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
+            try
+            {
+                float[,] resultado = Matriz.ElevarMatriz(matriz1, (int) NuEscalar1.Value);
+                Matriz.DesenhaMatrixText(panel1, resultado);
+            }
+            catch(QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

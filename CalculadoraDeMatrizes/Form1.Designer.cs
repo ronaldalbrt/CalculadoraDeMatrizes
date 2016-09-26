@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnGerarInversa = new System.Windows.Forms.Button();
+            this.btnGerarIdentidade2 = new System.Windows.Forms.Button();
+            this.btnIdentidade = new System.Windows.Forms.Button();
+            this.btnGerarTransposta2 = new System.Windows.Forms.Button();
+            this.btnGerarOposta2 = new System.Windows.Forms.Button();
+            this.btnGerarTransposta = new System.Windows.Forms.Button();
+            this.btnGerarOposta = new System.Windows.Forms.Button();
             this.NuEscalar2 = new System.Windows.Forms.NumericUpDown();
             this.multiplicarPanel2 = new System.Windows.Forms.Button();
             this.NuEscalar1 = new System.Windows.Forms.NumericUpDown();
@@ -54,13 +61,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.line_Matriz1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnGerarOposta = new System.Windows.Forms.Button();
-            this.btnGerarTransposta = new System.Windows.Forms.Button();
-            this.btnGerarOposta2 = new System.Windows.Forms.Button();
-            this.btnGerarTransposta2 = new System.Windows.Forms.Button();
-            this.btnIdentidade = new System.Windows.Forms.Button();
-            this.btnGerarIdentidade2 = new System.Windows.Forms.Button();
-            this.btnGerarInversa = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.formulaGerarMatriz1 = new System.Windows.Forms.TextBox();
+            this.btnFormulaGerarMatriz1 = new System.Windows.Forms.Button();
+            this.btnGerarInversa2 = new System.Windows.Forms.Button();
+            this.NuEscalar3 = new System.Windows.Forms.NumericUpDown();
+            this.multiplicarPanel3 = new System.Windows.Forms.Button();
+            this.btnGerarOposta3 = new System.Windows.Forms.Button();
+            this.btnGerarIdentidade3 = new System.Windows.Forms.Button();
+            this.btnGerarTransposta3 = new System.Windows.Forms.Button();
+            this.btnGerarInversa3 = new System.Windows.Forms.Button();
+            this.btnFormulaGerarMatriz2 = new System.Windows.Forms.Button();
+            this.formulaGerarMatriz2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnDeterminante = new System.Windows.Forms.Button();
+            this.btnDeterminante2 = new System.Windows.Forms.Button();
+            this.btnDeterminante3 = new System.Windows.Forms.Button();
+            this.btnElevarPanel = new System.Windows.Forms.Button();
+            this.btnElevarPanel2 = new System.Windows.Forms.Button();
+            this.btnElevarPanel3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NuEscalar2)).BeginInit();
@@ -74,6 +93,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NuEscalar3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,14 +108,33 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnElevarPanel3);
+            this.tabPage1.Controls.Add(this.btnElevarPanel2);
+            this.tabPage1.Controls.Add(this.btnElevarPanel);
+            this.tabPage1.Controls.Add(this.btnDeterminante3);
+            this.tabPage1.Controls.Add(this.btnDeterminante2);
+            this.tabPage1.Controls.Add(this.btnDeterminante);
+            this.tabPage1.Controls.Add(this.btnFormulaGerarMatriz2);
+            this.tabPage1.Controls.Add(this.formulaGerarMatriz2);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.btnGerarInversa3);
+            this.tabPage1.Controls.Add(this.btnGerarTransposta3);
+            this.tabPage1.Controls.Add(this.btnGerarIdentidade3);
+            this.tabPage1.Controls.Add(this.btnGerarOposta3);
+            this.tabPage1.Controls.Add(this.multiplicarPanel3);
+            this.tabPage1.Controls.Add(this.NuEscalar3);
+            this.tabPage1.Controls.Add(this.btnGerarInversa2);
+            this.tabPage1.Controls.Add(this.btnFormulaGerarMatriz1);
+            this.tabPage1.Controls.Add(this.formulaGerarMatriz1);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.btnGerarInversa);
+            this.tabPage1.Controls.Add(this.NuEscalar2);
             this.tabPage1.Controls.Add(this.btnGerarIdentidade2);
             this.tabPage1.Controls.Add(this.btnIdentidade);
             this.tabPage1.Controls.Add(this.btnGerarTransposta2);
             this.tabPage1.Controls.Add(this.btnGerarOposta2);
             this.tabPage1.Controls.Add(this.btnGerarTransposta);
             this.tabPage1.Controls.Add(this.btnGerarOposta);
-            this.tabPage1.Controls.Add(this.NuEscalar2);
             this.tabPage1.Controls.Add(this.multiplicarPanel2);
             this.tabPage1.Controls.Add(this.NuEscalar1);
             this.tabPage1.Controls.Add(this.multiplicarPanel1);
@@ -118,12 +157,82 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1352, 603);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Matriz 1";
+            this.tabPage1.Text = "Operações";
+            // 
+            // btnGerarInversa
+            // 
+            this.btnGerarInversa.Location = new System.Drawing.Point(198, 508);
+            this.btnGerarInversa.Name = "btnGerarInversa";
+            this.btnGerarInversa.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarInversa.TabIndex = 25;
+            this.btnGerarInversa.Text = "Gerar Inversa";
+            this.btnGerarInversa.UseVisualStyleBackColor = true;
+            this.btnGerarInversa.Click += new System.EventHandler(this.btnGerarInversa_Click);
+            // 
+            // btnGerarIdentidade2
+            // 
+            this.btnGerarIdentidade2.Location = new System.Drawing.Point(650, 482);
+            this.btnGerarIdentidade2.Name = "btnGerarIdentidade2";
+            this.btnGerarIdentidade2.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarIdentidade2.TabIndex = 24;
+            this.btnGerarIdentidade2.Text = "Gerar Identidade";
+            this.btnGerarIdentidade2.UseVisualStyleBackColor = true;
+            this.btnGerarIdentidade2.Click += new System.EventHandler(this.btnGerarIdentidade2_Click);
+            // 
+            // btnIdentidade
+            // 
+            this.btnIdentidade.Location = new System.Drawing.Point(198, 482);
+            this.btnIdentidade.Name = "btnIdentidade";
+            this.btnIdentidade.Size = new System.Drawing.Size(170, 20);
+            this.btnIdentidade.TabIndex = 23;
+            this.btnIdentidade.Text = "Gerar Identidade";
+            this.btnIdentidade.UseVisualStyleBackColor = true;
+            this.btnIdentidade.Click += new System.EventHandler(this.btnIdentidade_Click);
+            // 
+            // btnGerarTransposta2
+            // 
+            this.btnGerarTransposta2.Location = new System.Drawing.Point(464, 508);
+            this.btnGerarTransposta2.Name = "btnGerarTransposta2";
+            this.btnGerarTransposta2.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarTransposta2.TabIndex = 22;
+            this.btnGerarTransposta2.Text = "Gerar Transposta";
+            this.btnGerarTransposta2.UseVisualStyleBackColor = true;
+            this.btnGerarTransposta2.Click += new System.EventHandler(this.btnGerarTransposta2_Click);
+            // 
+            // btnGerarOposta2
+            // 
+            this.btnGerarOposta2.Location = new System.Drawing.Point(464, 482);
+            this.btnGerarOposta2.Name = "btnGerarOposta2";
+            this.btnGerarOposta2.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarOposta2.TabIndex = 21;
+            this.btnGerarOposta2.Text = "Gerar Oposta";
+            this.btnGerarOposta2.UseVisualStyleBackColor = true;
+            this.btnGerarOposta2.Click += new System.EventHandler(this.btnGerarOposta2_Click);
+            // 
+            // btnGerarTransposta
+            // 
+            this.btnGerarTransposta.Location = new System.Drawing.Point(12, 508);
+            this.btnGerarTransposta.Name = "btnGerarTransposta";
+            this.btnGerarTransposta.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarTransposta.TabIndex = 20;
+            this.btnGerarTransposta.Text = "Gerar Transposta";
+            this.btnGerarTransposta.UseVisualStyleBackColor = true;
+            this.btnGerarTransposta.Click += new System.EventHandler(this.btnGerarTransposta_Click);
+            // 
+            // btnGerarOposta
+            // 
+            this.btnGerarOposta.Location = new System.Drawing.Point(12, 482);
+            this.btnGerarOposta.Name = "btnGerarOposta";
+            this.btnGerarOposta.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarOposta.TabIndex = 19;
+            this.btnGerarOposta.Text = "Gerar Oposta";
+            this.btnGerarOposta.UseVisualStyleBackColor = true;
+            this.btnGerarOposta.Click += new System.EventHandler(this.btnGerarOposta_Click);
             // 
             // NuEscalar2
             // 
             this.NuEscalar2.DecimalPlaces = 10;
-            this.NuEscalar2.Location = new System.Drawing.Point(464, 461);
+            this.NuEscalar2.Location = new System.Drawing.Point(464, 456);
             this.NuEscalar2.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -135,15 +244,15 @@
             0,
             -2147483648});
             this.NuEscalar2.Name = "NuEscalar2";
-            this.NuEscalar2.Size = new System.Drawing.Size(75, 20);
+            this.NuEscalar2.Size = new System.Drawing.Size(170, 20);
             this.NuEscalar2.TabIndex = 18;
             this.NuEscalar2.ThousandsSeparator = true;
             // 
             // multiplicarPanel2
             // 
-            this.multiplicarPanel2.Location = new System.Drawing.Point(464, 487);
+            this.multiplicarPanel2.Location = new System.Drawing.Point(650, 456);
             this.multiplicarPanel2.Name = "multiplicarPanel2";
-            this.multiplicarPanel2.Size = new System.Drawing.Size(75, 23);
+            this.multiplicarPanel2.Size = new System.Drawing.Size(80, 20);
             this.multiplicarPanel2.TabIndex = 17;
             this.multiplicarPanel2.Text = "Multiplicar";
             this.multiplicarPanel2.UseVisualStyleBackColor = true;
@@ -152,7 +261,7 @@
             // NuEscalar1
             // 
             this.NuEscalar1.DecimalPlaces = 10;
-            this.NuEscalar1.Location = new System.Drawing.Point(29, 461);
+            this.NuEscalar1.Location = new System.Drawing.Point(12, 456);
             this.NuEscalar1.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -164,15 +273,15 @@
             0,
             -2147483648});
             this.NuEscalar1.Name = "NuEscalar1";
-            this.NuEscalar1.Size = new System.Drawing.Size(75, 20);
+            this.NuEscalar1.Size = new System.Drawing.Size(170, 20);
             this.NuEscalar1.TabIndex = 16;
             this.NuEscalar1.ThousandsSeparator = true;
             // 
             // multiplicarPanel1
             // 
-            this.multiplicarPanel1.Location = new System.Drawing.Point(29, 487);
+            this.multiplicarPanel1.Location = new System.Drawing.Point(198, 456);
             this.multiplicarPanel1.Name = "multiplicarPanel1";
-            this.multiplicarPanel1.Size = new System.Drawing.Size(75, 23);
+            this.multiplicarPanel1.Size = new System.Drawing.Size(80, 20);
             this.multiplicarPanel1.TabIndex = 15;
             this.multiplicarPanel1.Text = "Multiplicar";
             this.multiplicarPanel1.UseVisualStyleBackColor = true;
@@ -180,7 +289,7 @@
             // 
             // MultiplicarButton
             // 
-            this.MultiplicarButton.Location = new System.Drawing.Point(379, 195);
+            this.MultiplicarButton.Location = new System.Drawing.Point(379, 284);
             this.MultiplicarButton.Name = "MultiplicarButton";
             this.MultiplicarButton.Size = new System.Drawing.Size(75, 23);
             this.MultiplicarButton.TabIndex = 14;
@@ -190,7 +299,7 @@
             // 
             // SubtrairButton
             // 
-            this.SubtrairButton.Location = new System.Drawing.Point(379, 156);
+            this.SubtrairButton.Location = new System.Drawing.Point(379, 255);
             this.SubtrairButton.Name = "SubtrairButton";
             this.SubtrairButton.Size = new System.Drawing.Size(75, 23);
             this.SubtrairButton.TabIndex = 13;
@@ -218,7 +327,7 @@
             // 
             // btnSomar
             // 
-            this.btnSomar.Location = new System.Drawing.Point(379, 114);
+            this.btnSomar.Location = new System.Drawing.Point(379, 226);
             this.btnSomar.Name = "btnSomar";
             this.btnSomar.Size = new System.Drawing.Size(75, 23);
             this.btnSomar.TabIndex = 9;
@@ -255,7 +364,7 @@
             // 
             // btn_GerarMatriz2
             // 
-            this.btn_GerarMatriz2.Location = new System.Drawing.Point(555, 50);
+            this.btn_GerarMatriz2.Location = new System.Drawing.Point(588, 50);
             this.btn_GerarMatriz2.Name = "btn_GerarMatriz2";
             this.btn_GerarMatriz2.Size = new System.Drawing.Size(97, 28);
             this.btn_GerarMatriz2.TabIndex = 8;
@@ -267,7 +376,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(639, 14);
+            this.label2.Location = new System.Drawing.Point(631, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 25);
             this.label2.TabIndex = 7;
@@ -276,7 +385,7 @@
             // col_Matriz2
             // 
             this.col_Matriz2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.col_Matriz2.Location = new System.Drawing.Point(668, 6);
+            this.col_Matriz2.Location = new System.Drawing.Point(660, 6);
             this.col_Matriz2.Maximum = new decimal(new int[] {
             20,
             0,
@@ -299,7 +408,7 @@
             // line_Matriz2
             // 
             this.line_Matriz2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.line_Matriz2.Location = new System.Drawing.Point(577, 6);
+            this.line_Matriz2.Location = new System.Drawing.Point(569, 6);
             this.line_Matriz2.Maximum = new decimal(new int[] {
             20,
             0,
@@ -341,7 +450,7 @@
             // 
             // btn_GerarMatriz1
             // 
-            this.btn_GerarMatriz1.Location = new System.Drawing.Point(61, 48);
+            this.btn_GerarMatriz1.Location = new System.Drawing.Point(120, 50);
             this.btn_GerarMatriz1.Name = "btn_GerarMatriz1";
             this.btn_GerarMatriz1.Size = new System.Drawing.Size(97, 28);
             this.btn_GerarMatriz1.TabIndex = 3;
@@ -352,7 +461,7 @@
             // col_Matriz1
             // 
             this.col_Matriz1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.col_Matriz1.Location = new System.Drawing.Point(175, 3);
+            this.col_Matriz1.Location = new System.Drawing.Point(188, 6);
             this.col_Matriz1.Maximum = new decimal(new int[] {
             20,
             0,
@@ -376,7 +485,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 14);
+            this.label1.Location = new System.Drawing.Point(159, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 25);
             this.label1.TabIndex = 1;
@@ -386,7 +495,7 @@
             // 
             this.line_Matriz1.AutoSize = true;
             this.line_Matriz1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.line_Matriz1.Location = new System.Drawing.Point(85, 4);
+            this.line_Matriz1.Location = new System.Drawing.Point(93, 6);
             this.line_Matriz1.Maximum = new decimal(new int[] {
             20,
             0,
@@ -413,78 +522,186 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1352, 603);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Gráfico";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnGerarOposta
+            // label3
             // 
-            this.btnGerarOposta.Location = new System.Drawing.Point(113, 487);
-            this.btnGerarOposta.Name = "btnGerarOposta";
-            this.btnGerarOposta.Size = new System.Drawing.Size(97, 23);
-            this.btnGerarOposta.TabIndex = 19;
-            this.btnGerarOposta.Text = "Gerar Oposta";
-            this.btnGerarOposta.UseVisualStyleBackColor = true;
-            this.btnGerarOposta.Click += new System.EventHandler(this.btnGerarOposta_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 547);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "aij =";
             // 
-            // btnGerarTransposta
+            // formulaGerarMatriz1
             // 
-            this.btnGerarTransposta.Location = new System.Drawing.Point(29, 516);
-            this.btnGerarTransposta.Name = "btnGerarTransposta";
-            this.btnGerarTransposta.Size = new System.Drawing.Size(97, 23);
-            this.btnGerarTransposta.TabIndex = 20;
-            this.btnGerarTransposta.Text = "Gerar Transposta";
-            this.btnGerarTransposta.UseVisualStyleBackColor = true;
-            this.btnGerarTransposta.Click += new System.EventHandler(this.btnGerarTransposta_Click);
+            this.formulaGerarMatriz1.Location = new System.Drawing.Point(34, 547);
+            this.formulaGerarMatriz1.Name = "formulaGerarMatriz1";
+            this.formulaGerarMatriz1.Size = new System.Drawing.Size(334, 20);
+            this.formulaGerarMatriz1.TabIndex = 27;
             // 
-            // btnGerarOposta2
+            // btnFormulaGerarMatriz1
             // 
-            this.btnGerarOposta2.Location = new System.Drawing.Point(555, 487);
-            this.btnGerarOposta2.Name = "btnGerarOposta2";
-            this.btnGerarOposta2.Size = new System.Drawing.Size(97, 23);
-            this.btnGerarOposta2.TabIndex = 21;
-            this.btnGerarOposta2.Text = "Gerar Oposta";
-            this.btnGerarOposta2.UseVisualStyleBackColor = true;
-            this.btnGerarOposta2.Click += new System.EventHandler(this.btnGerarOposta2_Click);
+            this.btnFormulaGerarMatriz1.Location = new System.Drawing.Point(12, 571);
+            this.btnFormulaGerarMatriz1.Name = "btnFormulaGerarMatriz1";
+            this.btnFormulaGerarMatriz1.Size = new System.Drawing.Size(356, 20);
+            this.btnFormulaGerarMatriz1.TabIndex = 28;
+            this.btnFormulaGerarMatriz1.Text = "Gerar Matriz 1 por formula";
+            this.btnFormulaGerarMatriz1.UseVisualStyleBackColor = true;
             // 
-            // btnGerarTransposta2
+            // btnGerarInversa2
             // 
-            this.btnGerarTransposta2.Location = new System.Drawing.Point(464, 516);
-            this.btnGerarTransposta2.Name = "btnGerarTransposta2";
-            this.btnGerarTransposta2.Size = new System.Drawing.Size(97, 23);
-            this.btnGerarTransposta2.TabIndex = 22;
-            this.btnGerarTransposta2.Text = "Gerar Transposta";
-            this.btnGerarTransposta2.UseVisualStyleBackColor = true;
-            this.btnGerarTransposta2.Click += new System.EventHandler(this.btnGerarTransposta2_Click);
+            this.btnGerarInversa2.Location = new System.Drawing.Point(650, 508);
+            this.btnGerarInversa2.Name = "btnGerarInversa2";
+            this.btnGerarInversa2.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarInversa2.TabIndex = 29;
+            this.btnGerarInversa2.Text = "Gerar Inversa";
+            this.btnGerarInversa2.UseVisualStyleBackColor = true;
             // 
-            // btnIdentidade
+            // NuEscalar3
             // 
-            this.btnIdentidade.Location = new System.Drawing.Point(164, 48);
-            this.btnIdentidade.Name = "btnIdentidade";
-            this.btnIdentidade.Size = new System.Drawing.Size(97, 28);
-            this.btnIdentidade.TabIndex = 23;
-            this.btnIdentidade.Text = "Gerar Identidade";
-            this.btnIdentidade.UseVisualStyleBackColor = true;
-            this.btnIdentidade.Click += new System.EventHandler(this.btnIdentidade_Click);
+            this.NuEscalar3.DecimalPlaces = 10;
+            this.NuEscalar3.Location = new System.Drawing.Point(924, 456);
+            this.NuEscalar3.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.NuEscalar3.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.NuEscalar3.Name = "NuEscalar3";
+            this.NuEscalar3.Size = new System.Drawing.Size(170, 20);
+            this.NuEscalar3.TabIndex = 30;
+            this.NuEscalar3.ThousandsSeparator = true;
             // 
-            // btnGerarIdentidade2
+            // multiplicarPanel3
             // 
-            this.btnGerarIdentidade2.Location = new System.Drawing.Point(658, 50);
-            this.btnGerarIdentidade2.Name = "btnGerarIdentidade2";
-            this.btnGerarIdentidade2.Size = new System.Drawing.Size(97, 28);
-            this.btnGerarIdentidade2.TabIndex = 24;
-            this.btnGerarIdentidade2.Text = "Gerar Identidade";
-            this.btnGerarIdentidade2.UseVisualStyleBackColor = true;
-            this.btnGerarIdentidade2.Click += new System.EventHandler(this.btnGerarIdentidade2_Click);
+            this.multiplicarPanel3.Location = new System.Drawing.Point(1110, 456);
+            this.multiplicarPanel3.Name = "multiplicarPanel3";
+            this.multiplicarPanel3.Size = new System.Drawing.Size(80, 20);
+            this.multiplicarPanel3.TabIndex = 31;
+            this.multiplicarPanel3.Text = "Multiplicar";
+            this.multiplicarPanel3.UseVisualStyleBackColor = true;
             // 
-            // btnGerarInversa
+            // btnGerarOposta3
             // 
-            this.btnGerarInversa.Location = new System.Drawing.Point(132, 516);
-            this.btnGerarInversa.Name = "btnGerarInversa";
-            this.btnGerarInversa.Size = new System.Drawing.Size(97, 23);
-            this.btnGerarInversa.TabIndex = 25;
-            this.btnGerarInversa.Text = "Gerar Inversa";
-            this.btnGerarInversa.UseVisualStyleBackColor = true;
-            this.btnGerarInversa.Click += new System.EventHandler(this.btnGerarInversa_Click);
+            this.btnGerarOposta3.Location = new System.Drawing.Point(924, 482);
+            this.btnGerarOposta3.Name = "btnGerarOposta3";
+            this.btnGerarOposta3.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarOposta3.TabIndex = 32;
+            this.btnGerarOposta3.Text = "Gerar Oposta";
+            this.btnGerarOposta3.UseVisualStyleBackColor = true;
+            // 
+            // btnGerarIdentidade3
+            // 
+            this.btnGerarIdentidade3.Location = new System.Drawing.Point(1110, 482);
+            this.btnGerarIdentidade3.Name = "btnGerarIdentidade3";
+            this.btnGerarIdentidade3.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarIdentidade3.TabIndex = 33;
+            this.btnGerarIdentidade3.Text = "Gerar Identidade";
+            this.btnGerarIdentidade3.UseVisualStyleBackColor = true;
+            // 
+            // btnGerarTransposta3
+            // 
+            this.btnGerarTransposta3.Location = new System.Drawing.Point(924, 508);
+            this.btnGerarTransposta3.Name = "btnGerarTransposta3";
+            this.btnGerarTransposta3.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarTransposta3.TabIndex = 34;
+            this.btnGerarTransposta3.Text = "Gerar Transposta";
+            this.btnGerarTransposta3.UseVisualStyleBackColor = true;
+            // 
+            // btnGerarInversa3
+            // 
+            this.btnGerarInversa3.Location = new System.Drawing.Point(1110, 508);
+            this.btnGerarInversa3.Name = "btnGerarInversa3";
+            this.btnGerarInversa3.Size = new System.Drawing.Size(170, 20);
+            this.btnGerarInversa3.TabIndex = 35;
+            this.btnGerarInversa3.Text = "Gerar Inversa";
+            this.btnGerarInversa3.UseVisualStyleBackColor = true;
+            // 
+            // btnFormulaGerarMatriz2
+            // 
+            this.btnFormulaGerarMatriz2.Location = new System.Drawing.Point(464, 568);
+            this.btnFormulaGerarMatriz2.Name = "btnFormulaGerarMatriz2";
+            this.btnFormulaGerarMatriz2.Size = new System.Drawing.Size(356, 20);
+            this.btnFormulaGerarMatriz2.TabIndex = 38;
+            this.btnFormulaGerarMatriz2.Text = "Gerar Matriz 2 por formula";
+            this.btnFormulaGerarMatriz2.UseVisualStyleBackColor = true;
+            // 
+            // formulaGerarMatriz2
+            // 
+            this.formulaGerarMatriz2.Location = new System.Drawing.Point(486, 544);
+            this.formulaGerarMatriz2.Name = "formulaGerarMatriz2";
+            this.formulaGerarMatriz2.Size = new System.Drawing.Size(334, 20);
+            this.formulaGerarMatriz2.TabIndex = 37;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(461, 544);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "bij =";
+            // 
+            // btnDeterminante
+            // 
+            this.btnDeterminante.Location = new System.Drawing.Point(293, 74);
+            this.btnDeterminante.Name = "btnDeterminante";
+            this.btnDeterminante.Size = new System.Drawing.Size(78, 20);
+            this.btnDeterminante.TabIndex = 39;
+            this.btnDeterminante.Text = "Determinante";
+            this.btnDeterminante.UseVisualStyleBackColor = true;
+            // 
+            // btnDeterminante2
+            // 
+            this.btnDeterminante2.Location = new System.Drawing.Point(745, 74);
+            this.btnDeterminante2.Name = "btnDeterminante2";
+            this.btnDeterminante2.Size = new System.Drawing.Size(78, 20);
+            this.btnDeterminante2.TabIndex = 40;
+            this.btnDeterminante2.Text = "Determinante";
+            this.btnDeterminante2.UseVisualStyleBackColor = true;
+            // 
+            // btnDeterminante3
+            // 
+            this.btnDeterminante3.Location = new System.Drawing.Point(1205, 74);
+            this.btnDeterminante3.Name = "btnDeterminante3";
+            this.btnDeterminante3.Size = new System.Drawing.Size(78, 20);
+            this.btnDeterminante3.TabIndex = 41;
+            this.btnDeterminante3.Text = "Determinante";
+            this.btnDeterminante3.UseVisualStyleBackColor = true;
+            // 
+            // btnElevarPanel
+            // 
+            this.btnElevarPanel.Location = new System.Drawing.Point(288, 456);
+            this.btnElevarPanel.Name = "btnElevarPanel";
+            this.btnElevarPanel.Size = new System.Drawing.Size(80, 20);
+            this.btnElevarPanel.TabIndex = 42;
+            this.btnElevarPanel.Text = "Elevar";
+            this.btnElevarPanel.UseVisualStyleBackColor = true;
+            this.btnElevarPanel.Click += new System.EventHandler(this.btnElevarPanel_Click);
+            // 
+            // btnElevarPanel2
+            // 
+            this.btnElevarPanel2.Location = new System.Drawing.Point(740, 456);
+            this.btnElevarPanel2.Name = "btnElevarPanel2";
+            this.btnElevarPanel2.Size = new System.Drawing.Size(80, 20);
+            this.btnElevarPanel2.TabIndex = 43;
+            this.btnElevarPanel2.Text = "Elevar";
+            this.btnElevarPanel2.UseVisualStyleBackColor = true;
+            // 
+            // btnElevarPanel3
+            // 
+            this.btnElevarPanel3.Location = new System.Drawing.Point(1200, 456);
+            this.btnElevarPanel3.Name = "btnElevarPanel3";
+            this.btnElevarPanel3.Size = new System.Drawing.Size(80, 20);
+            this.btnElevarPanel3.TabIndex = 44;
+            this.btnElevarPanel3.Text = "Elevar";
+            this.btnElevarPanel3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -493,8 +710,9 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1344, 627);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Calculadora de Matrizes";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -512,6 +730,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NuEscalar3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -550,6 +769,25 @@
         private System.Windows.Forms.Button btnGerarIdentidade2;
         private System.Windows.Forms.Button btnIdentidade;
         private System.Windows.Forms.Button btnGerarInversa;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox formulaGerarMatriz1;
+        private System.Windows.Forms.Button btnFormulaGerarMatriz1;
+        private System.Windows.Forms.Button btnGerarInversa2;
+        private System.Windows.Forms.Button btnGerarInversa3;
+        private System.Windows.Forms.Button btnGerarTransposta3;
+        private System.Windows.Forms.Button btnGerarIdentidade3;
+        private System.Windows.Forms.Button btnGerarOposta3;
+        private System.Windows.Forms.Button multiplicarPanel3;
+        private System.Windows.Forms.NumericUpDown NuEscalar3;
+        private System.Windows.Forms.Button btnFormulaGerarMatriz2;
+        private System.Windows.Forms.TextBox formulaGerarMatriz2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnDeterminante;
+        private System.Windows.Forms.Button btnDeterminante2;
+        private System.Windows.Forms.Button btnDeterminante3;
+        private System.Windows.Forms.Button btnElevarPanel3;
+        private System.Windows.Forms.Button btnElevarPanel2;
+        private System.Windows.Forms.Button btnElevarPanel;
     }
 }
 
