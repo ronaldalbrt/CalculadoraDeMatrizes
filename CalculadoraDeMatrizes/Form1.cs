@@ -213,5 +213,20 @@ namespace CalculadoraDeMatrizes
                 MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnDeterminante_Click(object sender, EventArgs e)
+        {
+            float[,] matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
+            try
+            {
+               float resultado = Matriz.LaPlace(matriz1);
+                MessageBox.Show("A determinante é "+resultado,"Determinante",MessageBoxButtons.OK);
+            }
+            catch(QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para gerar o determinante", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
     }
 }

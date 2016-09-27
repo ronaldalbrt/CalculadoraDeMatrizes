@@ -50,8 +50,7 @@ namespace CalculadoraDeMatrizes
             int i = 0;
             int j = 0; 
             foreach (TextBox nu in panel.Controls)
-            {      
-               
+            {
                 matrix[i, j] = float.Parse(nu.Text);
                 
                 if (j == col-1)
@@ -148,6 +147,12 @@ namespace CalculadoraDeMatrizes
            }
            return matrixfinal;
        }
+        /// <summary>
+        /// Elevar Matrizes a determinada potencia
+        /// </summary>
+        /// <param name="matriz">matriz a ser elevada</param>
+        /// <param name="exp">potencia que elevará a matriz</param>
+        /// <returns>Retorna a matriz elevada</returns>
        public static float[,] ElevarMatriz(float[,] matriz, int exp)
        {
            if(matriz.GetLength(0) != matriz.GetLength(1))
@@ -279,6 +284,70 @@ namespace CalculadoraDeMatrizes
                e.Handled = true;
            }
        }
+        public static float Determinante(float[,] matriz)
+        {
+            if (matriz.GetLength(0) != matriz.GetLength(1))
+            {
+                throw new QuadradaException();
+            }
+            if (matriz.GetLength(0) == 1 && matriz.GetLength(1) == 1)
+            {
+                return matriz[0, 0];
+            }
+            if (matriz.GetLength(0) == 2 && matriz.GetLength(0) == 2)
+            {
+                return (matriz[0, 0] * matriz[1, 1]) - (matriz[1, 0] * matriz[0, 1]);
+            }
+            if (matriz.GetLength(0) == 3 && matriz.GetLength(0) == 3)
+            {
+                return ((matriz[0, 0] * matriz[1, 1] * matriz[2, 2]) + (matriz[0, 1] * matriz[1, 2] * matriz[2, 0]) + (matriz[0, 2] * matriz[1, 0] * matriz[2, 1])) -
+                   ((matriz[0, 2] * matriz[1, 1] * matriz[2, 0]) + (matriz[0, 0] * matriz[1, 2] * matriz[2, 1]) + (matriz[0, 1] * matriz[1, 0] * matriz[2, 2]));
+            }
+            else return 0;
+        }
+        public static float LaPlace(float[,] matriz)
+        {
+            float[,] originalMatriz = matriz;
+            float result = 0;
+            if(matriz.GetLength(0) == 1)
+            {
+                return matriz[0, 0];
+            }
+            for(int j = 0; j < originalMatriz.GetLength(1); j++)
+            {
+                matriz = TrimArray(0, j, originalMatriz);
+
+                result += originalMatriz[0, j] * Cofator(matriz, 0, j);
+            }
+            return result;
+        }
+        public static float Cofator(float[,] matriz, int i, int j)
+        {
+            return (float) Math.Pow(-1, i + j) * LaPlace(matriz);
+        }
+
+        public static float[,] TrimArray(int rowToRemove, int columnToRemove, float[,] originalArray)
+        {
+            float[,] result = new float[originalArray.GetLength(0) - 1, originalArray.GetLength(1) - 1];
+
+            for (int i = 0, j = 0; i < originalArray.GetLength(0); i++)
+            {
+                if (i == rowToRemove)
+                    continue;
+
+                for (int k = 0, u = 0; k < originalArray.GetLength(1); k++)
+                {
+                    if (k == columnToRemove)
+                        continue;
+
+                    result[j, u] = originalArray[i, k];
+                    u++;
+                }
+                j++;
+            }
+
+            return result;
+        }
     }
 }
     
