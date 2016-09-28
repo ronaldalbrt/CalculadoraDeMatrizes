@@ -237,15 +237,57 @@ namespace CalculadoraDeMatrizes
            {
                throw new QuadradaException();
            }
-           float[,] matrixidentidade = MatrizIdentidade(matrix1.GetLength(0), matrix1.GetLength(1));
-           float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
-           return matrixfinal;
+           float[,] originalMatrix = matrix1;
+           float[,] cofator = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
+           float[,] adjunta = new float[matrix1.GetLength(1), matrix1.GetLength(0)];
+           for(int i = 0; i <= matrix1.GetLength(0); i++)
+           {
+               for(int j = 0; j <= matrix1.GetLength(1); j++)
+               {
+                    matrix1 = TrimArray(i, j, originalMatrix);
+                    cofator[i, j] = Cofator(matrix1, i, j);
+               }
+           }
+           adjunta = MatrizTransposta(cofator);
+           return EscalarMatriz(adjunta, 1/LaPlace(matrix1));
        }
        /// <summary>
-       /// Desenha a matriz em um painel
+       /// Método por recursividade indireta para se descobrir a determinante de uma matriz
        /// </summary>
-       /// <param name="Painel a ser desenhado">Painel aonde a matriz será desenhada</param>
-       /// <param name="matrix">Matriz a ser desenhada no painel</param>
+       /// <param name="matriz">Matriz para se descobrir a determinante</param>
+       /// <returns>Determinante da matriz</returns>
+       public static float LaPlace(float[,] matriz)
+       {
+           float[,] originalMatriz = matriz;
+           float result = 0;
+           if (matriz.GetLength(0) == 1)
+           {
+               return matriz[0, 0];
+           }
+           for (int j = 0; j < originalMatriz.GetLength(1); j++)
+           {
+               matriz = TrimArray(0, j, originalMatriz);
+            
+               result += originalMatriz[0, j] * Cofator(matriz, 0, j);
+           }
+           return result;
+       }
+       /// <summary>
+       /// Método para descobrir o cofator de um elemento da matriz
+       /// </summary>
+       /// <param name="matriz">Matriz que possui o elemento</param>
+       /// <param name="i">Linha do elemento na matriz</param>
+       /// <param name="j">Coluna do elemento na matriz</param>
+       /// <returns>Retorna o cofator do elemento</returns>
+       public static float Cofator(float[,] matriz, int i, int j)
+       {
+           return (float)Math.Pow(-1, i + j) * LaPlace(matriz);
+       } 
+        /// <summary>
+        /// Desenha a matriz em um painel
+        /// </summary>
+        /// <param name="Painel a ser desenhado">Painel aonde a matriz será desenhada</param>
+        /// <param name="matrix">Matriz a ser desenhada no painel</param>
        public static void DesenhaMatrixText(Panel panel, float[,] matrix)
        {
            panel.Controls.Clear();
@@ -270,7 +312,7 @@ namespace CalculadoraDeMatrizes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-       public static void NumericTextbox(object sender, KeyPressEventArgs e)
+        public static void NumericTextbox(object sender, KeyPressEventArgs e)
        {
            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
                 (e.KeyChar != ',' && e.KeyChar != '-'))
@@ -284,48 +326,6 @@ namespace CalculadoraDeMatrizes
                e.Handled = true;
            }
        }
-        public static float Determinante(float[,] matriz)
-        {
-            if (matriz.GetLength(0) != matriz.GetLength(1))
-            {
-                throw new QuadradaException();
-            }
-            if (matriz.GetLength(0) == 1 && matriz.GetLength(1) == 1)
-            {
-                return matriz[0, 0];
-            }
-            if (matriz.GetLength(0) == 2 && matriz.GetLength(0) == 2)
-            {
-                return (matriz[0, 0] * matriz[1, 1]) - (matriz[1, 0] * matriz[0, 1]);
-            }
-            if (matriz.GetLength(0) == 3 && matriz.GetLength(0) == 3)
-            {
-                return ((matriz[0, 0] * matriz[1, 1] * matriz[2, 2]) + (matriz[0, 1] * matriz[1, 2] * matriz[2, 0]) + (matriz[0, 2] * matriz[1, 0] * matriz[2, 1])) -
-                   ((matriz[0, 2] * matriz[1, 1] * matriz[2, 0]) + (matriz[0, 0] * matriz[1, 2] * matriz[2, 1]) + (matriz[0, 1] * matriz[1, 0] * matriz[2, 2]));
-            }
-            else return 0;
-        }
-        public static float LaPlace(float[,] matriz)
-        {
-            float[,] originalMatriz = matriz;
-            float result = 0;
-            if(matriz.GetLength(0) == 1)
-            {
-                return matriz[0, 0];
-            }
-            for(int j = 0; j < originalMatriz.GetLength(1); j++)
-            {
-                matriz = TrimArray(0, j, originalMatriz);
-
-                result += originalMatriz[0, j] * Cofator(matriz, 0, j);
-            }
-            return result;
-        }
-        public static float Cofator(float[,] matriz, int i, int j)
-        {
-            return (float) Math.Pow(-1, i + j) * LaPlace(matriz);
-        }
-
         public static float[,] TrimArray(int rowToRemove, int columnToRemove, float[,] originalArray)
         {
             float[,] result = new float[originalArray.GetLength(0) - 1, originalArray.GetLength(1) - 1];

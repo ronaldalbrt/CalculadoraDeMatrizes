@@ -200,6 +200,20 @@ namespace CalculadoraDeMatrizes
             }
         }
 
+        private void btnGerarInversa2_Click(object sender, EventArgs e)
+        {
+            float[,] matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
+            try
+            {
+                float[,] resultado = Matriz.MatrizInversa(matriz2);
+                Matriz.DesenhaMatrixText(panel2, resultado);
+            }
+            catch (QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnElevarPanel_Click(object sender, EventArgs e)
         {
             float[,] matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
@@ -220,13 +234,27 @@ namespace CalculadoraDeMatrizes
             try
             {
                float resultado = Matriz.LaPlace(matriz1);
-                MessageBox.Show("A determinante é "+resultado,"Determinante",MessageBoxButtons.OK);
+               MessageBox.Show("A determinante é "+resultado,"Determinante",MessageBoxButtons.OK);
             }
             catch(QuadradaException ex)
             {
                 MessageBox.Show("A matriz precisa ser quadrada para gerar o determinante", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
+        private void btnDeterminante2_Click(object sender, EventArgs e)
+        {
+            float[,] matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
+            try
+            {
+                float resultado = Matriz.LaPlace(matriz2);
+                MessageBox.Show("A determinante é " + resultado, "Determinante", MessageBoxButtons.OK);
+            }
+            catch(QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para gerar o determinante", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

@@ -204,6 +204,7 @@
             this.btnDeterminante2.TabIndex = 40;
             this.btnDeterminante2.Text = "Determinante";
             this.btnDeterminante2.UseVisualStyleBackColor = true;
+            this.btnDeterminante2.Click += new System.EventHandler(this.btnDeterminante2_Click);
             // 
             // btnDeterminante
             // 
@@ -312,6 +313,7 @@
             this.btnGerarInversa2.TabIndex = 29;
             this.btnGerarInversa2.Text = "Gerar Inversa";
             this.btnGerarInversa2.UseVisualStyleBackColor = true;
+            this.btnGerarInversa2.Click += new System.EventHandler(this.btnGerarInversa2_Click);
             // 
             // btnFormulaGerarMatriz1
             // 
