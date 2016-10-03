@@ -9,4 +9,8 @@ namespace CalculadoraDeMatrizes
     class QuadradaException:Exception
     {
     }
+    class determinanteException:Exception
+    {
+
+    }
 }

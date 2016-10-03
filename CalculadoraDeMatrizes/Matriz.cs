@@ -123,6 +123,13 @@ namespace CalculadoraDeMatrizes
                     {
                         matrixfinal[i, j] += matrix1[i, c] * matrix2[c, j];
                     }
+                    if (Math.Round(matrixfinal[i, j]) == 1)
+                        matrixfinal[i, j] = 1;
+                    else if (Math.Round(matrixfinal[i, j]) == 0)
+                    {
+                        matrixfinal[i, j] = 0;
+                    }
+                    else matrixfinal[i, j] = matrixfinal[i, j];
                 }
             }
             return matrixfinal;
@@ -237,20 +244,29 @@ namespace CalculadoraDeMatrizes
            {
                throw new QuadradaException();
            }
+           if (LaPlace(matrix1)==0)
+           {
+               throw new determinanteException();
+           }
+
            float[,] originalMatrix = matrix1;
            float[,] cofator = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
            float[,] adjunta = new float[matrix1.GetLength(1), matrix1.GetLength(0)];
+           float[,] resultado = new float[matrix1.GetLength(1), matrix1.GetLength(0)];
+
            for(int i = 0; i <= matrix1.GetLength(0); i++)
            {
                for(int j = 0; j <= matrix1.GetLength(1); j++)
                {
                     matrix1 = TrimArray(i, j, originalMatrix);
-                    cofator[i, j] = Cofator(matrix1, i, j);
+                    cofator[i, j] =(float)Math.Round( (decimal)Cofator(matrix1, i, j),2);
                }
            }
            adjunta = MatrizTransposta(cofator);
-           return EscalarMatriz(adjunta, 1/LaPlace(matrix1));
+           resultado = EscalarMatriz(adjunta, 1 / LaPlace(originalMatrix));
+           return resultado;
        }
+       
        /// <summary>
        /// Método por recursividade indireta para se descobrir a determinante de uma matriz
        /// </summary>
@@ -301,11 +317,22 @@ namespace CalculadoraDeMatrizes
                    nu[i, j] = new TextBox();
                    nu[i, j].Font = new Font("Microsoft Sans Serif", 20f);
                    nu[i, j].Size = new Size(width, height);
-                   nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);                  
-                   nu[i, j].Text =((float)matrix[i, j]).ToString();                
+                   nu[i, j].Location = new Point((width + 5) * j, (height + 5) * i);
+                   nu[i, j].Text = Math.Round((float)matrix[i, j], 2).ToString();                   
                    panel.Controls.Add(nu[i, j]);
                }
            }
+       }
+
+
+       public static void Lei(String lei)
+       {
+           char space = ' ';
+           String[] leiStrings = lei.Split(space);
+           ///f/or (int i = 0)
+           
+           Console.WriteLine(result);
+
        }
         /// <summary>
         /// Funcão para a TextBox não mostrar letras
@@ -326,6 +353,12 @@ namespace CalculadoraDeMatrizes
                e.Handled = true;
            }
        }
+       public static void LeiDeFormacao(string lei )
+        {
+            EvalCSCode.Eval(lei);
+
+
+        }
         public static float[,] TrimArray(int rowToRemove, int columnToRemove, float[,] originalArray)
         {
             float[,] result = new float[originalArray.GetLength(0) - 1, originalArray.GetLength(1) - 1];
@@ -349,5 +382,6 @@ namespace CalculadoraDeMatrizes
             return result;
         }
     }
+
 }
     

@@ -167,6 +167,7 @@
             this.btnElevarPanel3.TabIndex = 44;
             this.btnElevarPanel3.Text = "Elevar";
             this.btnElevarPanel3.UseVisualStyleBackColor = true;
+            this.btnElevarPanel3.Click += new System.EventHandler(this.btnElevarPanel3_Click);
             // 
             // btnElevarPanel2
             // 
@@ -250,6 +251,7 @@
             this.btnGerarInversa3.TabIndex = 35;
             this.btnGerarInversa3.Text = "Gerar Inversa";
             this.btnGerarInversa3.UseVisualStyleBackColor = true;
+            this.btnGerarInversa3.Click += new System.EventHandler(this.btnGerarInversa3_Click);
             // 
             // btnGerarTransposta3
             // 
@@ -328,6 +330,7 @@
             this.btnFormulaGerarMatriz1.TabIndex = 28;
             this.btnFormulaGerarMatriz1.Text = "Gerar Matriz 1 por formula";
             this.btnFormulaGerarMatriz1.UseVisualStyleBackColor = true;
+            this.btnFormulaGerarMatriz1.Click += new System.EventHandler(this.btnFormulaGerarMatriz1_Click);
             // 
             // formulaGerarMatriz1
             // 

@@ -240,6 +240,10 @@ namespace CalculadoraDeMatrizes
             {
                 MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch(determinanteException ex)
+            {
+                MessageBox.Show("O determinante dessa matriz é 0 sendo assim não há matriz inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnGerarInversa2_Click(object sender, EventArgs e)
@@ -254,6 +258,10 @@ namespace CalculadoraDeMatrizes
             {
                 MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (determinanteException ex)
+            {
+                MessageBox.Show("O determinante dessa matriz é 0 sendo assim não há matriz inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnElevarPanel_Click(object sender, EventArgs e)
@@ -266,7 +274,7 @@ namespace CalculadoraDeMatrizes
             }
             catch(QuadradaException ex)
             {
-                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A matriz precisa ser quadrada para ser elevada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -308,8 +316,48 @@ namespace CalculadoraDeMatrizes
             }
             catch (QuadradaException ex)
             {
-                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A matriz precisa ser quadrada para ser elevada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnGerarInversa3_Click(object sender, EventArgs e)
+        {
+            float[,] matriz3 = Matriz.SalvarMatriz(resultPanel, line3, col3);
+            try
+            {
+                float[,] resultado = Matriz.MatrizInversa(matriz3);
+                Matriz.DesenhaMatrixText(resultPanel, resultado);
+            }
+            catch (QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+             catch(determinanteException ex)
+            {
+                MessageBox.Show("O determinante dessa matriz é 0 sendo assim não há matriz inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnElevarPanel3_Click(object sender, EventArgs e)
+        {
+            float[,] matriz3 = Matriz.SalvarMatriz(resultPanel, line3, col3);
+            try
+            {
+                float[,] resultado = Matriz.ElevarMatriz(matriz3, (int)NuEscalar3.Value);
+                Matriz.DesenhaMatrixText(resultPanel, resultado);
+            }
+            catch (QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para ser elevada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFormulaGerarMatriz1_Click(object sender, EventArgs e)
+        {
+            string leiDeFormação = formulaGerarMatriz1.Text;
+            Matriz.Lei(leiDeFormação);
+        }
+
+        
     }
 }
