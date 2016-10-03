@@ -107,6 +107,14 @@ namespace CalculadoraDeMatrizes
             resultado = Matriz.EscalarMatriz(matriz2, (float)NuEscalar2.Value);
             Matriz.DesenhaMatrixText(panel2, resultado);
         }
+        private void multiplicarPanel3_Click(object sender, EventArgs e)
+        {
+            float[,] matriz3 = new float[line3, col3];
+            float[,] resultado = new float[line3, col3];
+            matriz3 = Matriz.SalvarMatriz(resultPanel, line3, col3);
+            resultado = Matriz.EscalarMatriz(matriz3, (float)NuEscalar3.Value);
+            Matriz.DesenhaMatrixText(resultPanel, resultado);
+        }
         private void MultiplicarButton_Click(object sender, EventArgs e)
         {
             float[,] matriz1 = new float[line1, col1];
@@ -302,10 +310,6 @@ namespace CalculadoraDeMatrizes
             {
                 MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void multiplicarPanel3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
