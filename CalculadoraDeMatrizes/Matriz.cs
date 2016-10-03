@@ -44,7 +44,7 @@ namespace CalculadoraDeMatrizes
         /// <param name="Número de linhas">Numero de linhas da matriz</param>
         /// <param name="Número de colunas">Numero de colunas da matriz</param>
         /// <returns>Retorna um float[,] com os numeros preenchidos nos numericUpDowns da matriz</returns>
-        public static float[,] SalvarMatriz(Panel panel,int lines, int col)
+        public static float[,] SalvarMatriz(Panel panel, int lines, int col)
         {
             float[,] matrix = new float[lines, col];
             int i = 0;

@@ -176,6 +176,7 @@
             this.btnElevarPanel2.TabIndex = 43;
             this.btnElevarPanel2.Text = "Elevar";
             this.btnElevarPanel2.UseVisualStyleBackColor = true;
+            this.btnElevarPanel2.Click += new System.EventHandler(this.btnElevarPanel2_Click);
             // 
             // btnElevarPanel
             // 
@@ -258,6 +259,7 @@
             this.btnGerarTransposta3.TabIndex = 34;
             this.btnGerarTransposta3.Text = "Gerar Transposta";
             this.btnGerarTransposta3.UseVisualStyleBackColor = true;
+            this.btnGerarTransposta3.Click += new System.EventHandler(this.btnGerarTransposta3_Click);
             // 
             // btnGerarIdentidade3
             // 
@@ -267,6 +269,7 @@
             this.btnGerarIdentidade3.TabIndex = 33;
             this.btnGerarIdentidade3.Text = "Gerar Identidade";
             this.btnGerarIdentidade3.UseVisualStyleBackColor = true;
+            this.btnGerarIdentidade3.Click += new System.EventHandler(this.btnGerarIdentidade3_Click);
             // 
             // btnGerarOposta3
             // 
@@ -276,6 +279,7 @@
             this.btnGerarOposta3.TabIndex = 32;
             this.btnGerarOposta3.Text = "Gerar Oposta";
             this.btnGerarOposta3.UseVisualStyleBackColor = true;
+            this.btnGerarOposta3.Click += new System.EventHandler(this.btnGerarOposta3_Click);
             // 
             // multiplicarPanel3
             // 
@@ -285,6 +289,7 @@
             this.multiplicarPanel3.TabIndex = 31;
             this.multiplicarPanel3.Text = "Multiplicar";
             this.multiplicarPanel3.UseVisualStyleBackColor = true;
+            this.multiplicarPanel3.Click += new System.EventHandler(this.multiplicarPanel3_Click);
             // 
             // NuEscalar3
             // 

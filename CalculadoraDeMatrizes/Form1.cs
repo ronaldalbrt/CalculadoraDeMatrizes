@@ -12,7 +12,7 @@ namespace CalculadoraDeMatrizes
 {
     public partial class Form1 : Form
     {
-        static int line1, col1, line2, col2;
+        static int line1, col1, line2, col2, line3, col3;
         public Form1()
         {
             InitializeComponent();
@@ -37,15 +37,20 @@ namespace CalculadoraDeMatrizes
             line2 = (int)line_Matriz2.Value;
             col2 = (int)col_Matriz2.Value;
             panel2.Controls.Clear();
-           Matriz.GerarMatrizTextBox(line2, col2, panel2);
-            
+            Matriz.GerarMatrizTextBox(line2, col2, panel2);
+        }
+
+        private void GerarMatriz3(float[,] result)
+        {
+            line3 = result.GetLength(0);
+            col3 = result.GetLength(1);
         }
         private void btnSomar_Click(object sender, EventArgs e)
         {
-
             float[,] matriz1 = new float[line1, col1];
             float[,] matriz2 = new float[line2, col2];
             float[,] resultado = new float[line2, col2];
+            GerarMatriz3(resultado);
             matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
             matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
             if (matriz1.GetLength(0) == matriz2.GetLength(0) && matriz1.GetLength(1) == matriz2.GetLength(1))
@@ -68,6 +73,7 @@ namespace CalculadoraDeMatrizes
             float[,] matriz1 = new float[line1, col1];
             float[,] matriz2 = new float[line2, col2];
             float[,] resultado = new float[line2, col2];
+            GerarMatriz3(resultado);
             matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
             matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
             if (matriz1.GetLength(0) == matriz2.GetLength(0) && matriz1.GetLength(1) == matriz2.GetLength(1)) { 
@@ -93,7 +99,6 @@ namespace CalculadoraDeMatrizes
             resultado = Matriz.EscalarMatriz(matriz1, (float)NuEscalar1.Value);
             Matriz.DesenhaMatrixText(panel1, resultado);
         }
-
         private void btnMultiplicarEscalar2_Click(object sender, EventArgs e)
         {
             float[,] matriz2 = new float[line2, col2];
@@ -102,7 +107,6 @@ namespace CalculadoraDeMatrizes
             resultado = Matriz.EscalarMatriz(matriz2, (float)NuEscalar2.Value);
             Matriz.DesenhaMatrixText(panel2, resultado);
         }
-
         private void MultiplicarButton_Click(object sender, EventArgs e)
         {
             float[,] matriz1 = new float[line1, col1];
@@ -112,7 +116,8 @@ namespace CalculadoraDeMatrizes
             matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
             try
             {
-                resultado = Matriz.MultiplicarMatrizes(matriz1, matriz2);           
+                resultado = Matriz.MultiplicarMatrizes(matriz1, matriz2);
+                GerarMatriz3(resultado);
                 Matriz.DesenhaMatrixText(resultPanel, resultado);
             }
             catch (MultiplyException ex)
@@ -137,6 +142,14 @@ namespace CalculadoraDeMatrizes
             resultado = Matriz.MatrizOposta(matriz2);
             Matriz.DesenhaMatrixText(panel2, resultado);
         }
+        private void btnGerarOposta3_Click(object sender, EventArgs e)
+        {
+            float[,] matriz3 = new float[line3, col3];
+            float[,] resultado = new float[line3, col3];
+            matriz3 = Matriz.SalvarMatriz(resultPanel, line3, col3);
+            resultado = Matriz.MatrizOposta(matriz3);
+            Matriz.DesenhaMatrixText(resultPanel, resultado);
+        }
         private void btnGerarTransposta_Click(object sender, EventArgs e)
         {
             float[,] matriz1 = new float[line1, col1];
@@ -156,6 +169,16 @@ namespace CalculadoraDeMatrizes
             Matriz.DesenhaMatrixText(panel2, resultado);
             line2 = resultado.GetLength(0);
             col2 = resultado.GetLength(1);
+        }
+        private void btnGerarTransposta3_Click(object sender, EventArgs e)
+        {
+            float[,] matriz3 = new float[line3, col3];
+            float[,] resultado = new float[col3, line3];
+            matriz3 = Matriz.SalvarMatriz(resultPanel, line3, col3);
+            resultado = Matriz.MatrizTransposta(matriz3);
+            Matriz.DesenhaMatrixText(resultPanel, resultado);
+            line3 = resultado.GetLength(0);
+            col3 = resultado.GetLength(1);
         }
         private void btnIdentidade_Click(object sender, EventArgs e)
         {
@@ -185,7 +208,18 @@ namespace CalculadoraDeMatrizes
                 MessageBox.Show("Para gerar uma matriz identidade é necessário que ela tenha o mesmo número de linhas e colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private void btnGerarIdentidade3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                float[,] matrizIdentidade = Matriz.MatrizIdentidade(line3, col3);
+                Matriz.DesenhaMatrixText(resultPanel, matrizIdentidade);
+            }
+            catch (QuadradaException ex)
+            {
+                MessageBox.Show("Para gerar uma matriz identidade é necessário que ela tenha o mesmo número de linhas e colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnGerarInversa_Click(object sender, EventArgs e)
         {
             float[,] matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
@@ -256,5 +290,22 @@ namespace CalculadoraDeMatrizes
             }
         }
 
+        private void btnElevarPanel2_Click(object sender, EventArgs e)
+        {
+            float[,] matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
+            try
+            {
+                float[,] resultado = Matriz.ElevarMatriz(matriz2, (int)NuEscalar2.Value);
+                Matriz.DesenhaMatrixText(panel2, resultado);
+            }
+            catch (QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para gerar sua inversa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void multiplicarPanel3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
