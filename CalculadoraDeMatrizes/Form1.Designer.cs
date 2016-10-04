@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, -30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(-30D, 0D);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -80,6 +88,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.line_Matriz1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Geometrypanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.CollGeo = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.LinesGeo = new System.Windows.Forms.NumericUpDown();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NuEscalar3)).BeginInit();
@@ -94,6 +109,11 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CollGeo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LinesGeo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -706,13 +726,131 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.chart1);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.CollGeo);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.LinesGeo);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1352, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gráfico";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Geometrypanel);
+            this.groupBox4.Location = new System.Drawing.Point(37, 109);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(362, 118);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Forma";
+            // 
+            // Geometrypanel
+            // 
+            this.Geometrypanel.AutoScroll = true;
+            this.Geometrypanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Geometrypanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Geometrypanel.Location = new System.Drawing.Point(3, 16);
+            this.Geometrypanel.Name = "Geometrypanel";
+            this.Geometrypanel.Size = new System.Drawing.Size(356, 99);
+            this.Geometrypanel.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(148, 75);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 28);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Gerar Forma";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CollGeo
+            // 
+            this.CollGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CollGeo.Location = new System.Drawing.Point(216, 31);
+            this.CollGeo.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.CollGeo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CollGeo.Name = "CollGeo";
+            this.CollGeo.Size = new System.Drawing.Size(57, 38);
+            this.CollGeo.TabIndex = 7;
+            this.CollGeo.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(187, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 25);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "x";
+            // 
+            // LinesGeo
+            // 
+            this.LinesGeo.AutoSize = true;
+            this.LinesGeo.Enabled = false;
+            this.LinesGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinesGeo.Location = new System.Drawing.Point(121, 31);
+            this.LinesGeo.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.LinesGeo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.LinesGeo.Name = "LinesGeo";
+            this.LinesGeo.Size = new System.Drawing.Size(60, 38);
+            this.LinesGeo.TabIndex = 5;
+            this.LinesGeo.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(487, 31);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = " ";
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.Points.Add(dataPoint4);
+            series1.Points.Add(dataPoint5);
+            series1.ShadowColor = System.Drawing.Color.Black;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(829, 531);
+            this.chart1.TabIndex = 1;
+            this.chart1.Text = "chart1";
             // 
             // Form1
             // 
@@ -742,6 +880,12 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CollGeo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LinesGeo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -799,6 +943,13 @@
         private System.Windows.Forms.Button btnElevarPanel3;
         private System.Windows.Forms.Button btnElevarPanel2;
         private System.Windows.Forms.Button btnElevarPanel;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Panel Geometrypanel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown CollGeo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown LinesGeo;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

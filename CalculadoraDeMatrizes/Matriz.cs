@@ -7,11 +7,14 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.CodeDom;
+using System.CodeDom.Compiler;
+using Microsoft.CSharp;
 
 namespace CalculadoraDeMatrizes
 {
-    static class Matriz 
-    { 
+    static class Matriz
+    {
         /// <summary>
         /// Gera a Matriz com as dimensoes escolhidas pelo usuario.
         /// </summary>
@@ -325,7 +328,7 @@ namespace CalculadoraDeMatrizes
        }
 
 
-       public static void Lei(String lei)
+      /* public static void Lei(String lei)
        {
            char space = ' ';
            String[] leiStrings = lei.Split(space);
@@ -333,7 +336,7 @@ namespace CalculadoraDeMatrizes
            
            Console.WriteLine(result);
 
-       }
+       }*/
         /// <summary>
         /// Funcão para a TextBox não mostrar letras
         /// </summary>
@@ -355,9 +358,7 @@ namespace CalculadoraDeMatrizes
        }
        public static void LeiDeFormacao(string lei )
         {
-            EvalCSCode.Eval(lei);
-
-
+           
         }
         public static float[,] TrimArray(int rowToRemove, int columnToRemove, float[,] originalArray)
         {
@@ -381,7 +382,12 @@ namespace CalculadoraDeMatrizes
 
             return result;
         }
+      
+
     }
 
+    
+    
+   
 }
     

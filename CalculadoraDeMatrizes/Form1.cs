@@ -354,10 +354,17 @@ namespace CalculadoraDeMatrizes
 
         private void btnFormulaGerarMatriz1_Click(object sender, EventArgs e)
         {
-            string leiDeFormação = formulaGerarMatriz1.Text;
-            Matriz.Lei(leiDeFormação);
+            Matriz.LeiDeFormacao(formulaGerarMatriz1.Text);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Matriz.GerarMatrizTextBox((int)LinesGeo.Value, (int)CollGeo.Value, Geometrypanel);
+        }
+
+        
+
+        
         
     }
 }
