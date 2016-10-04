@@ -12,7 +12,7 @@ namespace CalculadoraDeMatrizes
 {
     public partial class Form1 : Form
     {
-        static int line1, col1, line2, col2, line3, col3;
+        static int line1, col1, line2, col2, line3, col3, geometryCol, geometryLine;
         public Form1()
         {
             InitializeComponent();
@@ -359,12 +359,16 @@ namespace CalculadoraDeMatrizes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Geometrypanel.Controls.Clear();
             Matriz.GerarMatrizTextBox((int)LinesGeo.Value, (int)CollGeo.Value, Geometrypanel);
+            geometryCol = (int) CollGeo.Value;
+            geometryLine = (int)LinesGeo.Value;
         }
 
-        
-
-        
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            Geometria.DrawInChart(chart1, matriz, "Matriz");
+        }        
     }
 }
