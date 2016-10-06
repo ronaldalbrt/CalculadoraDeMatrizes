@@ -354,7 +354,17 @@ namespace CalculadoraDeMatrizes
 
         private void btnFormulaGerarMatriz1_Click(object sender, EventArgs e)
         {
-            Matriz.LeiDeFormacao(formulaGerarMatriz1.Text);
+            line1 = (int)line_Matriz1.Value;
+            col1 = (int)col_Matriz1.Value;
+            try
+            {
+                float[,] matrix =  Matriz.LeiDeFormacao(formulaGerarMatriz1.Text, line1, col1);
+                Matriz.DesenhaMatrixText(panel1, matrix);
+            }
+            catch
+            {
+                MessageBox.Show("erro", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

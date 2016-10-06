@@ -326,17 +326,114 @@ namespace CalculadoraDeMatrizes
                }
            }
        }
-
-
-      /* public static void Lei(String lei)
+       public static float[,] LeiDeFormacao(string lei, int lines, int col)
        {
-           char space = ' ';
-           String[] leiStrings = lei.Split(space);
-           ///f/or (int i = 0)
-           
-           Console.WriteLine(result);
-
-       }*/
+           char[] expression = lei.ToCharArray();
+           float[,] matriz = new float[lines, col];
+           char conta = ' ';
+           int result = 0;
+            for (int i = 0; i < lines; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    foreach (char s in expression)
+                    {
+                        switch (s)
+                        {
+                            case ' ':
+                                continue;
+                            case '+':
+                                conta = s;
+                                break;
+                            case '-':
+                                conta = s;
+                                break;
+                            case '*':
+                                conta = s;
+                                break;
+                            case '/':
+                                conta = s;
+                                break;
+                            case 'i':
+                                if (result == 0)
+                                {
+                                    result = i + 1;
+                                }
+                                else
+                                {
+                                    switch(conta)
+                                    {
+                                        case '+':
+                                            result += i + 1;
+                                            break;
+                                        case '-':
+                                            result -= i + 1;
+                                            break;
+                                        case '*':
+                                            result *= i + 1;
+                                            break;
+                                        case '/':
+                                            result /= i + 1;
+                                            break;
+                                    }
+                                }
+                                break;
+                            case 'j':
+                                if (result == 0)
+                                {
+                                    result = j + 1;
+                                }
+                                else
+                                {
+                                    switch (conta)
+                                    {
+                                        case '+':
+                                            result += j + 1;
+                                            break;
+                                        case '-':
+                                            result -= j + 1;
+                                            break;
+                                        case '*':
+                                            result *= j + 1;
+                                            break;
+                                        case '/':
+                                            result /= j + 1;
+                                            break;
+                                    }
+                                }
+                                break;
+                            default:
+                                if (result == 0)
+                                {
+                                    result = int.Parse(s.ToString());
+                                }
+                                else
+                                {
+                                    switch (conta)
+                                    {
+                                        case '+':
+                                            result += int.Parse(s.ToString());
+                                            break;
+                                        case '-':
+                                            result -= int.Parse(s.ToString());
+                                            break;
+                                        case '*':
+                                            result *= int.Parse(s.ToString());
+                                            break;
+                                        case '/':
+                                            result /= int.Parse(s.ToString());
+                                            break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                    matriz[i, j] = result;
+                    result = 0;
+                }
+            }
+            return matriz;
+       }
         /// <summary>
         /// Funcão para a TextBox não mostrar letras
         /// </summary>
