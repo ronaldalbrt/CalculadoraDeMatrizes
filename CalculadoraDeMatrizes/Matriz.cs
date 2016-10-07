@@ -326,35 +326,41 @@ namespace CalculadoraDeMatrizes
                }
            }
        }
+        /// <summary>
+        /// Função para fazer a lei de formação
+        /// </summary>
+        /// <param name="lei"></param>
+        /// <param name="lines"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
        public static float[,] LeiDeFormacao(string lei, int lines, int col)
        {
-           char[] expression = lei.ToCharArray();
+           char param = ' ';
+           string[] expression = lei.Split(param);
            float[,] matriz = new float[lines, col];
-           char conta = ' ';
+           string conta = "";
            int result = 0;
             for (int i = 0; i < lines; i++)
             {
                 for (int j = 0; j < col; j++)
                 {
-                    foreach (char s in expression)
+                    foreach (string s in expression)
                     {
                         switch (s)
                         {
-                            case ' ':
-                                continue;
-                            case '+':
+                            case "+":
                                 conta = s;
                                 break;
-                            case '-':
+                            case "-":
                                 conta = s;
                                 break;
-                            case '*':
+                            case "*":
                                 conta = s;
                                 break;
-                            case '/':
+                            case "/":
                                 conta = s;
                                 break;
-                            case 'i':
+                            case "i":
                                 if (result == 0)
                                 {
                                     result = i + 1;
@@ -363,22 +369,22 @@ namespace CalculadoraDeMatrizes
                                 {
                                     switch(conta)
                                     {
-                                        case '+':
+                                        case "+":
                                             result += i + 1;
                                             break;
-                                        case '-':
+                                        case "-":
                                             result -= i + 1;
                                             break;
-                                        case '*':
+                                        case "*":
                                             result *= i + 1;
                                             break;
-                                        case '/':
+                                        case "/":
                                             result /= i + 1;
                                             break;
                                     }
                                 }
                                 break;
-                            case 'j':
+                            case "j":
                                 if (result == 0)
                                 {
                                     result = j + 1;
@@ -387,16 +393,16 @@ namespace CalculadoraDeMatrizes
                                 {
                                     switch (conta)
                                     {
-                                        case '+':
+                                        case "+":
                                             result += j + 1;
                                             break;
-                                        case '-':
+                                        case "-":
                                             result -= j + 1;
                                             break;
-                                        case '*':
+                                        case "*":
                                             result *= j + 1;
                                             break;
-                                        case '/':
+                                        case "/":
                                             result /= j + 1;
                                             break;
                                     }
@@ -411,16 +417,16 @@ namespace CalculadoraDeMatrizes
                                 {
                                     switch (conta)
                                     {
-                                        case '+':
+                                        case "+":
                                             result += int.Parse(s.ToString());
                                             break;
-                                        case '-':
+                                        case "-":
                                             result -= int.Parse(s.ToString());
                                             break;
-                                        case '*':
+                                        case "*":
                                             result *= int.Parse(s.ToString());
                                             break;
-                                        case '/':
+                                        case "/":
                                             result /= int.Parse(s.ToString());
                                             break;
                                     }
