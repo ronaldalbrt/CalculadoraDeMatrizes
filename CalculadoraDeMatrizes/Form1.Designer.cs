@@ -93,14 +93,17 @@
             this.rotatebt = new System.Windows.Forms.Button();
             this.simetriay = new System.Windows.Forms.Button();
             this.simetriax = new System.Windows.Forms.Button();
-            this.gerateForm = new System.Windows.Forms.Button();
+            this.gerateFormBt = new System.Windows.Forms.Button();
             this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Geometrypanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.gerarMatrizGeoBt = new System.Windows.Forms.Button();
             this.CollGeo = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.LinesGeo = new System.Windows.Forms.NumericUpDown();
+            this.btnChecarSimetria1 = new System.Windows.Forms.Button();
+            this.btnChecarSimetria2 = new System.Windows.Forms.Button();
+            this.btnChecarSimetria3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NuEscalar3)).BeginInit();
@@ -134,6 +137,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnChecarSimetria3);
+            this.tabPage1.Controls.Add(this.btnChecarSimetria2);
+            this.tabPage1.Controls.Add(this.btnChecarSimetria1);
             this.tabPage1.Controls.Add(this.btnElevarPanel3);
             this.tabPage1.Controls.Add(this.btnElevarPanel2);
             this.tabPage1.Controls.Add(this.btnElevarPanel);
@@ -223,6 +229,7 @@
             this.btnDeterminante3.TabIndex = 41;
             this.btnDeterminante3.Text = "Determinante";
             this.btnDeterminante3.UseVisualStyleBackColor = true;
+            this.btnDeterminante3.Click += new System.EventHandler(this.btnDeterminante3_Click);
             // 
             // btnDeterminante2
             // 
@@ -259,7 +266,7 @@
             this.formulaGerarMatriz2.Name = "formulaGerarMatriz2";
             this.formulaGerarMatriz2.Size = new System.Drawing.Size(334, 20);
             this.formulaGerarMatriz2.TabIndex = 37;
-            this.formulaGerarMatriz2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leydeformaçaotextbox);
+            this.formulaGerarMatriz2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leideformaçaotextbox);
             // 
             // label4
             // 
@@ -365,7 +372,7 @@
             this.formulaGerarMatriz1.Name = "formulaGerarMatriz1";
             this.formulaGerarMatriz1.Size = new System.Drawing.Size(334, 20);
             this.formulaGerarMatriz1.TabIndex = 27;
-            this.formulaGerarMatriz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leydeformaçaotextbox);
+            this.formulaGerarMatriz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leideformaçaotextbox);
             // 
             // label3
             // 
@@ -745,10 +752,10 @@
             this.tabPage2.Controls.Add(this.rotatebt);
             this.tabPage2.Controls.Add(this.simetriay);
             this.tabPage2.Controls.Add(this.simetriax);
-            this.tabPage2.Controls.Add(this.gerateForm);
+            this.tabPage2.Controls.Add(this.gerateFormBt);
             this.tabPage2.Controls.Add(this.grafico);
             this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.gerarMatrizGeoBt);
             this.tabPage2.Controls.Add(this.CollGeo);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.LinesGeo);
@@ -810,7 +817,6 @@
             this.transalaçaoxbox.TabIndex = 16;
             this.transalaçaoxbox.Text = "0";
             this.transalaçaoxbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-          
             this.transalaçaoxbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
             // 
             // translacaox
@@ -864,15 +870,15 @@
             this.simetriax.UseVisualStyleBackColor = true;
             this.simetriax.Click += new System.EventHandler(this.simetriax_Click);
             // 
-            // gerateForm
+            // gerateFormBt
             // 
-            this.gerateForm.Location = new System.Drawing.Point(187, 90);
-            this.gerateForm.Name = "gerateForm";
-            this.gerateForm.Size = new System.Drawing.Size(97, 28);
-            this.gerateForm.TabIndex = 10;
-            this.gerateForm.Text = "Gerar Forma";
-            this.gerateForm.UseVisualStyleBackColor = true;
-            this.gerateForm.Click += new System.EventHandler(this.button2_Click);
+            this.gerateFormBt.Location = new System.Drawing.Point(187, 90);
+            this.gerateFormBt.Name = "gerateFormBt";
+            this.gerateFormBt.Size = new System.Drawing.Size(97, 28);
+            this.gerateFormBt.TabIndex = 10;
+            this.gerateFormBt.Text = "Gerar Forma";
+            this.gerateFormBt.UseVisualStyleBackColor = true;
+            this.gerateFormBt.Click += new System.EventHandler(this.button2_Click);
             // 
             // grafico
             // 
@@ -913,15 +919,15 @@
             this.Geometrypanel.Size = new System.Drawing.Size(356, 99);
             this.Geometrypanel.TabIndex = 0;
             // 
-            // button1
+            // gerarMatrizGeoBt
             // 
-            this.button1.Location = new System.Drawing.Point(84, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 28);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Gerar Matriz";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.gerarMatrizGeoBt.Location = new System.Drawing.Point(84, 90);
+            this.gerarMatrizGeoBt.Name = "gerarMatrizGeoBt";
+            this.gerarMatrizGeoBt.Size = new System.Drawing.Size(97, 28);
+            this.gerarMatrizGeoBt.TabIndex = 8;
+            this.gerarMatrizGeoBt.Text = "Gerar Matriz";
+            this.gerarMatrizGeoBt.UseVisualStyleBackColor = true;
+            this.gerarMatrizGeoBt.Click += new System.EventHandler(this.button1_Click);
             // 
             // CollGeo
             // 
@@ -980,6 +986,36 @@
             0,
             0,
             0});
+            // 
+            // btnChecarSimetria1
+            // 
+            this.btnChecarSimetria1.Location = new System.Drawing.Point(270, 54);
+            this.btnChecarSimetria1.Name = "btnChecarSimetria1";
+            this.btnChecarSimetria1.Size = new System.Drawing.Size(101, 20);
+            this.btnChecarSimetria1.TabIndex = 45;
+            this.btnChecarSimetria1.Text = "Checar Simetria";
+            this.btnChecarSimetria1.UseVisualStyleBackColor = true;
+            this.btnChecarSimetria1.Click += new System.EventHandler(this.btnChecarSimetria1_Click);
+            // 
+            // btnChecarSimetria2
+            // 
+            this.btnChecarSimetria2.Location = new System.Drawing.Point(722, 54);
+            this.btnChecarSimetria2.Name = "btnChecarSimetria2";
+            this.btnChecarSimetria2.Size = new System.Drawing.Size(101, 20);
+            this.btnChecarSimetria2.TabIndex = 46;
+            this.btnChecarSimetria2.Text = "Checar Simetria";
+            this.btnChecarSimetria2.UseVisualStyleBackColor = true;
+            this.btnChecarSimetria2.Click += new System.EventHandler(this.btnChecarSimetria2_Click);
+            // 
+            // btnChecarSimetria3
+            // 
+            this.btnChecarSimetria3.Location = new System.Drawing.Point(1182, 54);
+            this.btnChecarSimetria3.Name = "btnChecarSimetria3";
+            this.btnChecarSimetria3.Size = new System.Drawing.Size(101, 20);
+            this.btnChecarSimetria3.TabIndex = 47;
+            this.btnChecarSimetria3.Text = "Checar Simetria";
+            this.btnChecarSimetria3.UseVisualStyleBackColor = true;
+            this.btnChecarSimetria3.Click += new System.EventHandler(this.btnChecarSimetria3_Click);
             // 
             // Form1
             // 
@@ -1074,12 +1110,12 @@
         private System.Windows.Forms.Button btnElevarPanel;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel Geometrypanel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button gerarMatrizGeoBt;
         private System.Windows.Forms.NumericUpDown CollGeo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown LinesGeo;
         private System.Windows.Forms.DataVisualization.Charting.Chart grafico;
-        private System.Windows.Forms.Button gerateForm;
+        private System.Windows.Forms.Button gerateFormBt;
         private System.Windows.Forms.Button simetriay;
         private System.Windows.Forms.Button simetriax;
         private System.Windows.Forms.TextBox rotacionarbox;
@@ -1090,6 +1126,9 @@
         private System.Windows.Forms.Button translacaoy;
         private System.Windows.Forms.TextBox transalaçaoxbox;
         private System.Windows.Forms.Button translacaox;
+        private System.Windows.Forms.Button btnChecarSimetria2;
+        private System.Windows.Forms.Button btnChecarSimetria1;
+        private System.Windows.Forms.Button btnChecarSimetria3;
     }
 }
 

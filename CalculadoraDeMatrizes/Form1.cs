@@ -284,7 +284,7 @@ namespace CalculadoraDeMatrizes
             try
             {
                float resultado = Matriz.LaPlace(matriz1);
-               MessageBox.Show("A determinante é "+resultado,"Determinante",MessageBoxButtons.OK);
+               MessageBox.Show("A determinante é "+resultado,"Determinante",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(QuadradaException ex)
             {
@@ -298,7 +298,7 @@ namespace CalculadoraDeMatrizes
             try
             {
                 float resultado = Matriz.LaPlace(matriz2);
-                MessageBox.Show("A determinante é " + resultado, "Determinante", MessageBoxButtons.OK);
+                MessageBox.Show("A determinante é " + resultado, "Determinante", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(QuadradaException ex)
             {
@@ -363,7 +363,7 @@ namespace CalculadoraDeMatrizes
             }
             catch
             {
-                MessageBox.Show("erro", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Entre uma lei de formação valida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -381,10 +381,10 @@ namespace CalculadoraDeMatrizes
             Geometria.DrawInChart(grafico, matriz, "Matriz");
            
         }
-        public void leydeformaçaotextbox(object sender, KeyPressEventArgs e)
+        public void leideformaçaotextbox(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                 (e.KeyChar != ',' && e.KeyChar != '-' && e.KeyChar != '+' && e.KeyChar != '*' && e.KeyChar != '/' && e.KeyChar != 'i' && e.KeyChar != 'j' ))
+                 (e.KeyChar != ',' && e.KeyChar != '-' && e.KeyChar != '+' && e.KeyChar != '*' && e.KeyChar != '/' && e.KeyChar != 'i' && e.KeyChar != 'j' && e.KeyChar != '^' && e.KeyChar != ' '))
             {
                 e.Handled = true;
             }
@@ -459,8 +459,57 @@ namespace CalculadoraDeMatrizes
             Matriz.DesenhaMatrixText(Geometrypanel,matriz);
         }
 
-    
+        private void btnChecarSimetria1_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(panel1, line1, col1);
+            if(Matriz.ChecarSimetria(matriz))
+            {
+                MessageBox.Show("Essa matriz é simetrica", "Simetria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else 
+            {
+                MessageBox.Show("Essa matriz não é simetrica", "Simetria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-       
+        private void btnChecarSimetria2_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(panel2, line2, col2);
+            if (Matriz.ChecarSimetria(matriz))
+            {
+                MessageBox.Show("Essa matriz é simetrica", "Simetria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Essa matriz não é simetrica", "Simetria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }   
+        private void btnDeterminante3_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(resultPanel, line3, col3);
+            try
+            {
+                float resultado = Matriz.LaPlace(matriz);
+                MessageBox.Show("A determinante é " + resultado, "Determinante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (QuadradaException ex)
+            {
+                MessageBox.Show("A matriz precisa ser quadrada para gerar o determinante", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnChecarSimetria3_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(resultPanel, line3, col3);
+            if (Matriz.ChecarSimetria(matriz))
+            {
+                MessageBox.Show("Essa matriz é simetrica", "Simetria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Essa matriz não é simetrica", "Simetria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+ 
     }
 }
