@@ -83,14 +83,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.line_Matriz1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.escalarbox = new System.Windows.Forms.TextBox();
+            this.escalar = new System.Windows.Forms.Button();
+            this.translaçaoybox = new System.Windows.Forms.TextBox();
+            this.translacaoy = new System.Windows.Forms.Button();
+            this.transalaçaoxbox = new System.Windows.Forms.TextBox();
+            this.translacaox = new System.Windows.Forms.Button();
+            this.rotacionarbox = new System.Windows.Forms.TextBox();
+            this.rotatebt = new System.Windows.Forms.Button();
+            this.simetriay = new System.Windows.Forms.Button();
+            this.simetriax = new System.Windows.Forms.Button();
+            this.gerateForm = new System.Windows.Forms.Button();
+            this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Geometrypanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.CollGeo = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.LinesGeo = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NuEscalar3)).BeginInit();
@@ -106,7 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.col_Matriz1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grafico)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CollGeo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LinesGeo)).BeginInit();
@@ -249,6 +259,7 @@
             this.formulaGerarMatriz2.Name = "formulaGerarMatriz2";
             this.formulaGerarMatriz2.Size = new System.Drawing.Size(334, 20);
             this.formulaGerarMatriz2.TabIndex = 37;
+            this.formulaGerarMatriz2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leydeformaçaotextbox);
             // 
             // label4
             // 
@@ -354,6 +365,7 @@
             this.formulaGerarMatriz1.Name = "formulaGerarMatriz1";
             this.formulaGerarMatriz1.Size = new System.Drawing.Size(334, 20);
             this.formulaGerarMatriz1.TabIndex = 27;
+            this.formulaGerarMatriz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leydeformaçaotextbox);
             // 
             // label3
             // 
@@ -723,8 +735,18 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.chart1);
+            this.tabPage2.Controls.Add(this.escalarbox);
+            this.tabPage2.Controls.Add(this.escalar);
+            this.tabPage2.Controls.Add(this.translaçaoybox);
+            this.tabPage2.Controls.Add(this.translacaoy);
+            this.tabPage2.Controls.Add(this.transalaçaoxbox);
+            this.tabPage2.Controls.Add(this.translacaox);
+            this.tabPage2.Controls.Add(this.rotacionarbox);
+            this.tabPage2.Controls.Add(this.rotatebt);
+            this.tabPage2.Controls.Add(this.simetriay);
+            this.tabPage2.Controls.Add(this.simetriax);
+            this.tabPage2.Controls.Add(this.gerateForm);
+            this.tabPage2.Controls.Add(this.grafico);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.CollGeo);
@@ -737,29 +759,144 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gráfico";
             // 
-            // chart1
+            // escalarbox
+            // 
+            this.escalarbox.Location = new System.Drawing.Point(232, 398);
+            this.escalarbox.Multiline = true;
+            this.escalarbox.Name = "escalarbox";
+            this.escalarbox.Size = new System.Drawing.Size(40, 23);
+            this.escalarbox.TabIndex = 20;
+            this.escalarbox.Text = "0";
+            this.escalarbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.escalarbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
+            // 
+            // escalar
+            // 
+            this.escalar.Location = new System.Drawing.Point(116, 396);
+            this.escalar.Name = "escalar";
+            this.escalar.Size = new System.Drawing.Size(110, 23);
+            this.escalar.TabIndex = 19;
+            this.escalar.Text = "Escalar";
+            this.escalar.UseVisualStyleBackColor = true;
+            this.escalar.Click += new System.EventHandler(this.escalar_Click);
+            // 
+            // translaçaoybox
+            // 
+            this.translaçaoybox.Location = new System.Drawing.Point(232, 367);
+            this.translaçaoybox.Multiline = true;
+            this.translaçaoybox.Name = "translaçaoybox";
+            this.translaçaoybox.Size = new System.Drawing.Size(40, 23);
+            this.translaçaoybox.TabIndex = 18;
+            this.translaçaoybox.Text = "0";
+            this.translaçaoybox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.translaçaoybox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
+            // 
+            // translacaoy
+            // 
+            this.translacaoy.Location = new System.Drawing.Point(116, 367);
+            this.translacaoy.Name = "translacaoy";
+            this.translacaoy.Size = new System.Drawing.Size(110, 23);
+            this.translacaoy.TabIndex = 17;
+            this.translacaoy.Text = "TranslaçãoY";
+            this.translacaoy.UseVisualStyleBackColor = true;
+            this.translacaoy.Click += new System.EventHandler(this.translacaoy_Click);
+            // 
+            // transalaçaoxbox
+            // 
+            this.transalaçaoxbox.Location = new System.Drawing.Point(232, 338);
+            this.transalaçaoxbox.Multiline = true;
+            this.transalaçaoxbox.Name = "transalaçaoxbox";
+            this.transalaçaoxbox.Size = new System.Drawing.Size(40, 23);
+            this.transalaçaoxbox.TabIndex = 16;
+            this.transalaçaoxbox.Text = "0";
+            this.transalaçaoxbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+          
+            this.transalaçaoxbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
+            // 
+            // translacaox
+            // 
+            this.translacaox.Location = new System.Drawing.Point(116, 338);
+            this.translacaox.Name = "translacaox";
+            this.translacaox.Size = new System.Drawing.Size(110, 23);
+            this.translacaox.TabIndex = 15;
+            this.translacaox.Text = "TranslaçãoX";
+            this.translacaox.UseVisualStyleBackColor = true;
+            this.translacaox.Click += new System.EventHandler(this.translacaox_Click);
+            // 
+            // rotacionarbox
+            // 
+            this.rotacionarbox.Location = new System.Drawing.Point(232, 309);
+            this.rotacionarbox.Multiline = true;
+            this.rotacionarbox.Name = "rotacionarbox";
+            this.rotacionarbox.Size = new System.Drawing.Size(40, 23);
+            this.rotacionarbox.TabIndex = 14;
+            this.rotacionarbox.Text = "0";
+            this.rotacionarbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.rotacionarbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
+            // 
+            // rotatebt
+            // 
+            this.rotatebt.Location = new System.Drawing.Point(116, 309);
+            this.rotatebt.Name = "rotatebt";
+            this.rotatebt.Size = new System.Drawing.Size(110, 23);
+            this.rotatebt.TabIndex = 13;
+            this.rotatebt.Text = "Rotacionar em º";
+            this.rotatebt.UseVisualStyleBackColor = true;
+            this.rotatebt.Click += new System.EventHandler(this.rotatebt_Click);
+            // 
+            // simetriay
+            // 
+            this.simetriay.Location = new System.Drawing.Point(197, 280);
+            this.simetriay.Name = "simetriay";
+            this.simetriay.Size = new System.Drawing.Size(75, 23);
+            this.simetriay.TabIndex = 12;
+            this.simetriay.Text = "SimetriaY";
+            this.simetriay.UseVisualStyleBackColor = true;
+            this.simetriay.Click += new System.EventHandler(this.simetriay_Click);
+            // 
+            // simetriax
+            // 
+            this.simetriax.Location = new System.Drawing.Point(116, 280);
+            this.simetriax.Name = "simetriax";
+            this.simetriax.Size = new System.Drawing.Size(75, 23);
+            this.simetriax.TabIndex = 11;
+            this.simetriax.Text = "SimetriaX";
+            this.simetriax.UseVisualStyleBackColor = true;
+            this.simetriax.Click += new System.EventHandler(this.simetriax_Click);
+            // 
+            // gerateForm
+            // 
+            this.gerateForm.Location = new System.Drawing.Point(187, 90);
+            this.gerateForm.Name = "gerateForm";
+            this.gerateForm.Size = new System.Drawing.Size(97, 28);
+            this.gerateForm.TabIndex = 10;
+            this.gerateForm.Text = "Gerar Forma";
+            this.gerateForm.UseVisualStyleBackColor = true;
+            this.gerateForm.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // grafico
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.grafico.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(487, 31);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.grafico.Legends.Add(legend1);
+            this.grafico.Location = new System.Drawing.Point(425, 19);
+            this.grafico.Name = "grafico";
+            this.grafico.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "Matriz";
             series1.ShadowColor = System.Drawing.Color.Black;
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(829, 531);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "chart1";
+            this.grafico.Series.Add(series1);
+            this.grafico.Size = new System.Drawing.Size(904, 575);
+            this.grafico.TabIndex = 1;
+            this.grafico.Text = "chart1";
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.Geometrypanel);
-            this.groupBox4.Location = new System.Drawing.Point(37, 109);
+            this.groupBox4.Location = new System.Drawing.Point(22, 124);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(362, 118);
             this.groupBox4.TabIndex = 9;
@@ -778,7 +915,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(148, 75);
+            this.button1.Location = new System.Drawing.Point(84, 90);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 28);
             this.button1.TabIndex = 8;
@@ -789,7 +926,7 @@
             // CollGeo
             // 
             this.CollGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CollGeo.Location = new System.Drawing.Point(216, 31);
+            this.CollGeo.Location = new System.Drawing.Point(201, 46);
             this.CollGeo.Maximum = new decimal(new int[] {
             20,
             0,
@@ -813,7 +950,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(187, 39);
+            this.label5.Location = new System.Drawing.Point(172, 54);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 25);
             this.label5.TabIndex = 6;
@@ -824,7 +961,7 @@
             this.LinesGeo.AutoSize = true;
             this.LinesGeo.Enabled = false;
             this.LinesGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinesGeo.Location = new System.Drawing.Point(121, 31);
+            this.LinesGeo.Location = new System.Drawing.Point(106, 46);
             this.LinesGeo.Maximum = new decimal(new int[] {
             20,
             0,
@@ -843,16 +980,6 @@
             0,
             0,
             0});
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(148, 243);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 28);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Gerar Forma";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -884,7 +1011,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.line_Matriz1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grafico)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CollGeo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LinesGeo)).EndInit();
@@ -951,8 +1078,18 @@
         private System.Windows.Forms.NumericUpDown CollGeo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown LinesGeo;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grafico;
+        private System.Windows.Forms.Button gerateForm;
+        private System.Windows.Forms.Button simetriay;
+        private System.Windows.Forms.Button simetriax;
+        private System.Windows.Forms.TextBox rotacionarbox;
+        private System.Windows.Forms.Button rotatebt;
+        private System.Windows.Forms.TextBox escalarbox;
+        private System.Windows.Forms.Button escalar;
+        private System.Windows.Forms.TextBox translaçaoybox;
+        private System.Windows.Forms.Button translacaoy;
+        private System.Windows.Forms.TextBox transalaçaoxbox;
+        private System.Windows.Forms.Button translacaox;
     }
 }
 

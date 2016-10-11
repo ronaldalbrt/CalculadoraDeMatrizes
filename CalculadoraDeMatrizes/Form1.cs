@@ -378,7 +378,89 @@ namespace CalculadoraDeMatrizes
         private void button2_Click(object sender, EventArgs e)
         {
             float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
-            Geometria.DrawInChart(chart1, matriz, "Matriz");
-        }        
+            Geometria.DrawInChart(grafico, matriz, "Matriz");
+           
+        }
+        public void leydeformaçaotextbox(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                 (e.KeyChar != ',' && e.KeyChar != '-' && e.KeyChar != '+' && e.KeyChar != '*' && e.KeyChar != '/' && e.KeyChar != 'i' && e.KeyChar != 'j' ))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        public  void NumericTextbox(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                 (e.KeyChar != ',' && e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void simetriax_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            matriz = Matriz.MultiplicarMatrizes(Geometria.SimetriaX, matriz);
+            Geometria.DrawInChart(grafico, matriz, "Matriz");
+            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+
+        }
+
+        private void simetriay_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            matriz = Matriz.MultiplicarMatrizes(Geometria.SimetriaY, matriz);
+            Geometria.DrawInChart(grafico, matriz, "Matriz");
+            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+        }
+
+        private void rotatebt_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            matriz = Matriz.MultiplicarMatrizes(Geometria.Rotaçao(float.Parse(rotacionarbox.Text)), matriz);
+            Geometria.DrawInChart(grafico, matriz, "Matriz");
+            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+        }
+
+        private void translacaox_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            matriz = Matriz.SomarMatriz(matriz, float.Parse(transalaçaoxbox.Text), 0);
+            Geometria.DrawInChart(grafico, matriz, "Matriz");
+            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+        }
+
+        private void translacaoy_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            matriz = Matriz.SomarMatriz(matriz, 0, float.Parse(translaçaoybox.Text));
+            Geometria.DrawInChart(grafico, matriz, "Matriz");
+            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+        }
+
+        private void escalar_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            matriz = Matriz.MultiplicarMatrizes(Geometria.Escalar(float.Parse(escalarbox.Text)),matriz);
+            Geometria.DrawInChart(grafico, matriz, "Matriz");
+            Matriz.DesenhaMatrixText(Geometrypanel,matriz);
+        }
+
+    
+
+       
     }
 }

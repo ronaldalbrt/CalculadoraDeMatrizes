@@ -158,6 +158,25 @@ namespace CalculadoraDeMatrizes
            return matrixfinal;
        }
         /// <summary>
+        /// Soma um número a toda a matriz 
+        /// </summary>
+        /// <param name="matriz">Matriz a ser somada</param>
+        /// <param name="valorx">Valor em x para somar a matriz</param>
+       /// <param name="valory">Valor em y para somar a matriz</param>
+        /// <returns></returns>
+       public static float[,] SomarMatriz(float[,] matriz, float valorx, float valory)
+       {
+           float[,] matrixfinal = matriz;
+           int lin = matriz.GetLength(0);
+           int col = matriz.GetLength(1);
+           for (int j = 0; j < col; j++)
+           {
+               matrixfinal[0, j] += valorx;
+               matrixfinal[1, j] += valory;
+           }
+           return matrixfinal;
+       }
+        /// <summary>
         /// Elevar Matrizes a determinada potencia
         /// </summary>
         /// <param name="matriz">matriz a ser elevada</param>
