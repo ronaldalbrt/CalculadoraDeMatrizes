@@ -35,6 +35,18 @@ namespace CalculadoraDeMatrizes
             chart.Series[series].Points.AddXY(matriz[0, 0], matriz[1, 0]);
            
         }
+        public static void DrawInPanel (Panel panel,float[,]matriz)
+        {
+            Graphics grap = panel.CreateGraphics();
+            grap.Clear(Color.White);
+             SolidBrush brush = new SolidBrush(Color.Red);
+            Point[] points = new Point[matriz.GetLength(1)];
+            for (int j =0; j<matriz.GetLength(1);j++)
+            {
+                points[j] = new Point((int)matriz[0, j],(int) matriz[1, j]); 
+            }
+            grap.FillPolygon(brush, points);
+        }
         /// <summary>
         /// Função para rotacionar uma forma a um angulo
         /// </summary>
@@ -42,7 +54,7 @@ namespace CalculadoraDeMatrizes
         /// <returns>A matriz com as posições da forma rotacionada</returns>
         public static float [,] Rotaçao (float angulo)
         {
-            float[,] result = new float[2, 2] { { (float)Math.Cos((double)angulo), (float)-Math.Sin((double)angulo) }, { (float)Math.Sin((double)angulo), (float)Math.Cos((double)angulo) } };
+            float[,] result = new float[2, 2] { { (float)Math.Cos((double)angulo), (float)Math.Sin((double)angulo) }, { (float)-Math.Sin((double)angulo), (float)Math.Cos((double)angulo) } };
             
             return result; 
         }

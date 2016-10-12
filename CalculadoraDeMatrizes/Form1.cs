@@ -378,6 +378,7 @@ namespace CalculadoraDeMatrizes
         private void button2_Click(object sender, EventArgs e)
         {
             float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            Geometria.DrawInPanel(DrawPanel, matriz);
             Geometria.DrawInChart(grafico, matriz, "Matriz");
            
         }
@@ -416,6 +417,7 @@ namespace CalculadoraDeMatrizes
             matriz = Matriz.MultiplicarMatrizes(Geometria.SimetriaX, matriz);
             Geometria.DrawInChart(grafico, matriz, "Matriz");
             Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            Geometria.DrawInPanel(DrawPanel, matriz);
 
         }
 
@@ -425,6 +427,7 @@ namespace CalculadoraDeMatrizes
             matriz = Matriz.MultiplicarMatrizes(Geometria.SimetriaY, matriz);
             Geometria.DrawInChart(grafico, matriz, "Matriz");
             Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            Geometria.DrawInPanel(DrawPanel, matriz);
         }
 
         private void rotatebt_Click(object sender, EventArgs e)
@@ -433,6 +436,7 @@ namespace CalculadoraDeMatrizes
             matriz = Matriz.MultiplicarMatrizes(Geometria.Rotaçao(float.Parse(rotacionarbox.Text)), matriz);
             Geometria.DrawInChart(grafico, matriz, "Matriz");
             Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            Geometria.DrawInPanel(DrawPanel, matriz);
         }
 
         private void translacaox_Click(object sender, EventArgs e)
@@ -441,6 +445,7 @@ namespace CalculadoraDeMatrizes
             matriz = Matriz.SomarMatriz(matriz, float.Parse(transalaçaoxbox.Text), 0);
             Geometria.DrawInChart(grafico, matriz, "Matriz");
             Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            Geometria.DrawInPanel(DrawPanel, matriz);
         }
 
         private void translacaoy_Click(object sender, EventArgs e)
@@ -449,6 +454,7 @@ namespace CalculadoraDeMatrizes
             matriz = Matriz.SomarMatriz(matriz, 0, float.Parse(translaçaoybox.Text));
             Geometria.DrawInChart(grafico, matriz, "Matriz");
             Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            Geometria.DrawInPanel(DrawPanel, matriz);
         }
 
         private void escalar_Click(object sender, EventArgs e)
@@ -457,6 +463,7 @@ namespace CalculadoraDeMatrizes
             matriz = Matriz.MultiplicarMatrizes(Geometria.Escalar(float.Parse(escalarbox.Text)),matriz);
             Geometria.DrawInChart(grafico, matriz, "Matriz");
             Matriz.DesenhaMatrixText(Geometrypanel,matriz);
+            Geometria.DrawInPanel(DrawPanel, matriz);
         }
 
         private void btnChecarSimetria1_Click(object sender, EventArgs e)
@@ -510,6 +517,8 @@ namespace CalculadoraDeMatrizes
                 MessageBox.Show("Essa matriz não é simetrica", "Simetria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
  
     }
 }

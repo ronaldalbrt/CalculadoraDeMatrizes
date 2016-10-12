@@ -34,6 +34,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnChecarSimetria3 = new System.Windows.Forms.Button();
+            this.btnChecarSimetria2 = new System.Windows.Forms.Button();
+            this.btnChecarSimetria1 = new System.Windows.Forms.Button();
             this.btnElevarPanel3 = new System.Windows.Forms.Button();
             this.btnElevarPanel2 = new System.Windows.Forms.Button();
             this.btnElevarPanel = new System.Windows.Forms.Button();
@@ -83,6 +86,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.line_Matriz1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.DrawPanel = new System.Windows.Forms.Panel();
             this.escalarbox = new System.Windows.Forms.TextBox();
             this.escalar = new System.Windows.Forms.Button();
             this.translaçaoybox = new System.Windows.Forms.TextBox();
@@ -101,9 +105,6 @@
             this.CollGeo = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.LinesGeo = new System.Windows.Forms.NumericUpDown();
-            this.btnChecarSimetria1 = new System.Windows.Forms.Button();
-            this.btnChecarSimetria2 = new System.Windows.Forms.Button();
-            this.btnChecarSimetria3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NuEscalar3)).BeginInit();
@@ -190,6 +191,36 @@
             this.tabPage1.Size = new System.Drawing.Size(1352, 603);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Operações";
+            // 
+            // btnChecarSimetria3
+            // 
+            this.btnChecarSimetria3.Location = new System.Drawing.Point(1182, 54);
+            this.btnChecarSimetria3.Name = "btnChecarSimetria3";
+            this.btnChecarSimetria3.Size = new System.Drawing.Size(101, 20);
+            this.btnChecarSimetria3.TabIndex = 47;
+            this.btnChecarSimetria3.Text = "Checar Simetria";
+            this.btnChecarSimetria3.UseVisualStyleBackColor = true;
+            this.btnChecarSimetria3.Click += new System.EventHandler(this.btnChecarSimetria3_Click);
+            // 
+            // btnChecarSimetria2
+            // 
+            this.btnChecarSimetria2.Location = new System.Drawing.Point(722, 54);
+            this.btnChecarSimetria2.Name = "btnChecarSimetria2";
+            this.btnChecarSimetria2.Size = new System.Drawing.Size(101, 20);
+            this.btnChecarSimetria2.TabIndex = 46;
+            this.btnChecarSimetria2.Text = "Checar Simetria";
+            this.btnChecarSimetria2.UseVisualStyleBackColor = true;
+            this.btnChecarSimetria2.Click += new System.EventHandler(this.btnChecarSimetria2_Click);
+            // 
+            // btnChecarSimetria1
+            // 
+            this.btnChecarSimetria1.Location = new System.Drawing.Point(270, 54);
+            this.btnChecarSimetria1.Name = "btnChecarSimetria1";
+            this.btnChecarSimetria1.Size = new System.Drawing.Size(101, 20);
+            this.btnChecarSimetria1.TabIndex = 45;
+            this.btnChecarSimetria1.Text = "Checar Simetria";
+            this.btnChecarSimetria1.UseVisualStyleBackColor = true;
+            this.btnChecarSimetria1.Click += new System.EventHandler(this.btnChecarSimetria1_Click);
             // 
             // btnElevarPanel3
             // 
@@ -742,6 +773,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.DrawPanel);
             this.tabPage2.Controls.Add(this.escalarbox);
             this.tabPage2.Controls.Add(this.escalar);
             this.tabPage2.Controls.Add(this.translaçaoybox);
@@ -765,6 +797,14 @@
             this.tabPage2.Size = new System.Drawing.Size(1352, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gráfico";
+            // 
+            // DrawPanel
+            // 
+            this.DrawPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.DrawPanel.Location = new System.Drawing.Point(441, 46);
+            this.DrawPanel.Name = "DrawPanel";
+            this.DrawPanel.Size = new System.Drawing.Size(888, 548);
+            this.DrawPanel.TabIndex = 21;
             // 
             // escalarbox
             // 
@@ -895,7 +935,7 @@
             series1.Name = "Matriz";
             series1.ShadowColor = System.Drawing.Color.Black;
             this.grafico.Series.Add(series1);
-            this.grafico.Size = new System.Drawing.Size(904, 575);
+            this.grafico.Size = new System.Drawing.Size(0, 0);
             this.grafico.TabIndex = 1;
             this.grafico.Text = "chart1";
             // 
@@ -986,36 +1026,6 @@
             0,
             0,
             0});
-            // 
-            // btnChecarSimetria1
-            // 
-            this.btnChecarSimetria1.Location = new System.Drawing.Point(270, 54);
-            this.btnChecarSimetria1.Name = "btnChecarSimetria1";
-            this.btnChecarSimetria1.Size = new System.Drawing.Size(101, 20);
-            this.btnChecarSimetria1.TabIndex = 45;
-            this.btnChecarSimetria1.Text = "Checar Simetria";
-            this.btnChecarSimetria1.UseVisualStyleBackColor = true;
-            this.btnChecarSimetria1.Click += new System.EventHandler(this.btnChecarSimetria1_Click);
-            // 
-            // btnChecarSimetria2
-            // 
-            this.btnChecarSimetria2.Location = new System.Drawing.Point(722, 54);
-            this.btnChecarSimetria2.Name = "btnChecarSimetria2";
-            this.btnChecarSimetria2.Size = new System.Drawing.Size(101, 20);
-            this.btnChecarSimetria2.TabIndex = 46;
-            this.btnChecarSimetria2.Text = "Checar Simetria";
-            this.btnChecarSimetria2.UseVisualStyleBackColor = true;
-            this.btnChecarSimetria2.Click += new System.EventHandler(this.btnChecarSimetria2_Click);
-            // 
-            // btnChecarSimetria3
-            // 
-            this.btnChecarSimetria3.Location = new System.Drawing.Point(1182, 54);
-            this.btnChecarSimetria3.Name = "btnChecarSimetria3";
-            this.btnChecarSimetria3.Size = new System.Drawing.Size(101, 20);
-            this.btnChecarSimetria3.TabIndex = 47;
-            this.btnChecarSimetria3.Text = "Checar Simetria";
-            this.btnChecarSimetria3.UseVisualStyleBackColor = true;
-            this.btnChecarSimetria3.Click += new System.EventHandler(this.btnChecarSimetria3_Click);
             // 
             // Form1
             // 
@@ -1129,6 +1139,7 @@
         private System.Windows.Forms.Button btnChecarSimetria2;
         private System.Windows.Forms.Button btnChecarSimetria1;
         private System.Windows.Forms.Button btnChecarSimetria3;
+        private System.Windows.Forms.Panel DrawPanel;
     }
 }
 
