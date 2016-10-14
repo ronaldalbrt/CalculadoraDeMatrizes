@@ -352,7 +352,7 @@ namespace CalculadoraDeMatrizes
         /// <param name="lines">Numero de linhas da matriz gerada</param>
         /// <param name="col">Numero de colunas da matriz gerada</param>
         /// <returns>A matriz gerada</returns>
-        public static float[,] LeiDeFormacao(string lei, int lines, int col)
+         public static float[,] LeiDeFormacao(string lei, int lines, int col)
         {
             char param = ' ';
             string[] expression = lei.Split(param);
