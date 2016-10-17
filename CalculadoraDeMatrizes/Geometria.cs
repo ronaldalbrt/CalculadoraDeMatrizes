@@ -27,6 +27,10 @@ namespace CalculadoraDeMatrizes
         /// <param name="series">Series do chart que se desenha</param>
         public static void DrawInChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, float[,] matriz, string series)
         {
+            if(matriz.Length < 6)
+            {
+                throw new NoMatrixException();
+            }
             chart.Series[series].Points.Clear();
             for (int j = 0; j < matriz.GetLength(1); j++)
             {
@@ -35,26 +39,15 @@ namespace CalculadoraDeMatrizes
             chart.Series[series].Points.AddXY(matriz[0, 0], matriz[1, 0]);
            
         }
-        public static void DrawInPanel (Panel panel,float[,]matriz)
-        {
-            Graphics grap = panel.CreateGraphics();
-            grap.Clear(Color.White);
-             SolidBrush brush = new SolidBrush(Color.Red);
-            Point[] points = new Point[matriz.GetLength(1)];
-            for (int j =0; j<matriz.GetLength(1);j++)
-            {
-                points[j] = new Point((int)matriz[0, j],(int) matriz[1, j]); 
-            }
-            grap.FillPolygon(brush, points);
-        }
         /// <summary>
         /// Função para rotacionar uma forma a um angulo
         /// </summary>
         /// <param name="angulo">Angulo para se rotacionar a formula</param>
         /// <returns>A matriz com as posições da forma rotacionada</returns>
-        public static float [,] Rotaçao (float angulo)
+        public static float[,] Rotaçao (float angulo)
         {
-            float[,] result = new float[2, 2] { { (float)Math.Cos((double)angulo), (float)Math.Sin((double)angulo) }, { (float)-Math.Sin((double)angulo), (float)Math.Cos((double)angulo) } };
+            double angle = DegreeToRadian(angulo);
+            float[,] result = new float[2, 2] { {(float) Math.Cos(angle), (float)Math.Sin(angle) }, {(float)-Math.Sin(angle), (float)Math.Cos(angle) }};
             
             return result; 
         }
@@ -63,10 +56,15 @@ namespace CalculadoraDeMatrizes
         /// </summary>
         /// <param name="value">Número pelo qual a forma aumentará</param>
         /// <returns>Retorna uma matriz com as posições da forma aumentada</returns>
-        public static float [,] Escalar (float value)
+        public static float[,] Escalar (float value)
         {
             float[,] result = new float[2, 2] { { value, 0 }, { 0, value } };
             return result;
+        }
+
+        static double DegreeToRadian(float angle)
+        {
+            return (Math.PI * angle) / 180;
         }
     }
 }

@@ -28,9 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(-100D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(100D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 100D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, -100D);
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -86,7 +93,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.line_Matriz1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.DrawPanel = new System.Windows.Forms.Panel();
             this.escalarbox = new System.Windows.Forms.TextBox();
             this.escalar = new System.Windows.Forms.Button();
             this.translaçaoybox = new System.Windows.Forms.TextBox();
@@ -105,6 +111,9 @@
             this.CollGeo = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.LinesGeo = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NuEscalar3)).BeginInit();
@@ -138,6 +147,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.btnChecarSimetria3);
             this.tabPage1.Controls.Add(this.btnChecarSimetria2);
             this.tabPage1.Controls.Add(this.btnChecarSimetria1);
@@ -199,6 +210,7 @@
             this.btnChecarSimetria3.Size = new System.Drawing.Size(101, 20);
             this.btnChecarSimetria3.TabIndex = 47;
             this.btnChecarSimetria3.Text = "Checar Simetria";
+            this.toolTip1.SetToolTip(this.btnChecarSimetria3, "Checar simetria do resultado");
             this.btnChecarSimetria3.UseVisualStyleBackColor = true;
             this.btnChecarSimetria3.Click += new System.EventHandler(this.btnChecarSimetria3_Click);
             // 
@@ -209,6 +221,7 @@
             this.btnChecarSimetria2.Size = new System.Drawing.Size(101, 20);
             this.btnChecarSimetria2.TabIndex = 46;
             this.btnChecarSimetria2.Text = "Checar Simetria";
+            this.toolTip1.SetToolTip(this.btnChecarSimetria2, "Checar simetria da segunda matriz");
             this.btnChecarSimetria2.UseVisualStyleBackColor = true;
             this.btnChecarSimetria2.Click += new System.EventHandler(this.btnChecarSimetria2_Click);
             // 
@@ -219,6 +232,7 @@
             this.btnChecarSimetria1.Size = new System.Drawing.Size(101, 20);
             this.btnChecarSimetria1.TabIndex = 45;
             this.btnChecarSimetria1.Text = "Checar Simetria";
+            this.toolTip1.SetToolTip(this.btnChecarSimetria1, "Checar simetria da primeira matriz");
             this.btnChecarSimetria1.UseVisualStyleBackColor = true;
             this.btnChecarSimetria1.Click += new System.EventHandler(this.btnChecarSimetria1_Click);
             // 
@@ -229,6 +243,7 @@
             this.btnElevarPanel3.Size = new System.Drawing.Size(80, 20);
             this.btnElevarPanel3.TabIndex = 44;
             this.btnElevarPanel3.Text = "Elevar";
+            this.toolTip1.SetToolTip(this.btnElevarPanel3, "Elevar a matriz resultado pelo número entrado");
             this.btnElevarPanel3.UseVisualStyleBackColor = true;
             this.btnElevarPanel3.Click += new System.EventHandler(this.btnElevarPanel3_Click);
             // 
@@ -239,6 +254,7 @@
             this.btnElevarPanel2.Size = new System.Drawing.Size(80, 20);
             this.btnElevarPanel2.TabIndex = 43;
             this.btnElevarPanel2.Text = "Elevar";
+            this.toolTip1.SetToolTip(this.btnElevarPanel2, "Elevar a segunda matriz ao número entrado");
             this.btnElevarPanel2.UseVisualStyleBackColor = true;
             this.btnElevarPanel2.Click += new System.EventHandler(this.btnElevarPanel2_Click);
             // 
@@ -249,6 +265,7 @@
             this.btnElevarPanel.Size = new System.Drawing.Size(80, 20);
             this.btnElevarPanel.TabIndex = 42;
             this.btnElevarPanel.Text = "Elevar";
+            this.toolTip1.SetToolTip(this.btnElevarPanel, "Elevar a primeira matriz ao número entrado");
             this.btnElevarPanel.UseVisualStyleBackColor = true;
             this.btnElevarPanel.Click += new System.EventHandler(this.btnElevarPanel_Click);
             // 
@@ -259,6 +276,7 @@
             this.btnDeterminante3.Size = new System.Drawing.Size(78, 20);
             this.btnDeterminante3.TabIndex = 41;
             this.btnDeterminante3.Text = "Determinante";
+            this.toolTip1.SetToolTip(this.btnDeterminante3, "Checar determinante do resultado");
             this.btnDeterminante3.UseVisualStyleBackColor = true;
             this.btnDeterminante3.Click += new System.EventHandler(this.btnDeterminante3_Click);
             // 
@@ -269,6 +287,7 @@
             this.btnDeterminante2.Size = new System.Drawing.Size(78, 20);
             this.btnDeterminante2.TabIndex = 40;
             this.btnDeterminante2.Text = "Determinante";
+            this.toolTip1.SetToolTip(this.btnDeterminante2, "Checar determinante da segunda matriz");
             this.btnDeterminante2.UseVisualStyleBackColor = true;
             this.btnDeterminante2.Click += new System.EventHandler(this.btnDeterminante2_Click);
             // 
@@ -279,30 +298,33 @@
             this.btnDeterminante.Size = new System.Drawing.Size(78, 20);
             this.btnDeterminante.TabIndex = 39;
             this.btnDeterminante.Text = "Determinante";
+            this.toolTip1.SetToolTip(this.btnDeterminante, "Checar determinante da primeira matriz");
             this.btnDeterminante.UseVisualStyleBackColor = true;
             this.btnDeterminante.Click += new System.EventHandler(this.btnDeterminante_Click);
             // 
             // btnFormulaGerarMatriz2
             // 
-            this.btnFormulaGerarMatriz2.Location = new System.Drawing.Point(464, 568);
+            this.btnFormulaGerarMatriz2.Location = new System.Drawing.Point(464, 575);
             this.btnFormulaGerarMatriz2.Name = "btnFormulaGerarMatriz2";
             this.btnFormulaGerarMatriz2.Size = new System.Drawing.Size(356, 20);
             this.btnFormulaGerarMatriz2.TabIndex = 38;
             this.btnFormulaGerarMatriz2.Text = "Gerar Matriz 2 por formula";
+            this.toolTip1.SetToolTip(this.btnFormulaGerarMatriz2, "Gerar a segunda matriz pela lei de formaçãp");
             this.btnFormulaGerarMatriz2.UseVisualStyleBackColor = true;
             // 
             // formulaGerarMatriz2
             // 
-            this.formulaGerarMatriz2.Location = new System.Drawing.Point(486, 544);
+            this.formulaGerarMatriz2.Location = new System.Drawing.Point(486, 551);
             this.formulaGerarMatriz2.Name = "formulaGerarMatriz2";
             this.formulaGerarMatriz2.Size = new System.Drawing.Size(334, 20);
             this.formulaGerarMatriz2.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.formulaGerarMatriz2, "Lei de formação a ser entrada pelo usuario para gerar a matriz");
             this.formulaGerarMatriz2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leideformaçaotextbox);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(461, 544);
+            this.label4.Location = new System.Drawing.Point(461, 551);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 36;
@@ -315,6 +337,7 @@
             this.btnGerarInversa3.Size = new System.Drawing.Size(170, 20);
             this.btnGerarInversa3.TabIndex = 35;
             this.btnGerarInversa3.Text = "Gerar Inversa";
+            this.toolTip1.SetToolTip(this.btnGerarInversa3, "Gerar inversa da matriz resultado");
             this.btnGerarInversa3.UseVisualStyleBackColor = true;
             this.btnGerarInversa3.Click += new System.EventHandler(this.btnGerarInversa3_Click);
             // 
@@ -325,6 +348,7 @@
             this.btnGerarTransposta3.Size = new System.Drawing.Size(170, 20);
             this.btnGerarTransposta3.TabIndex = 34;
             this.btnGerarTransposta3.Text = "Gerar Transposta";
+            this.toolTip1.SetToolTip(this.btnGerarTransposta3, "Gerar transposta da matriz resultado");
             this.btnGerarTransposta3.UseVisualStyleBackColor = true;
             this.btnGerarTransposta3.Click += new System.EventHandler(this.btnGerarTransposta3_Click);
             // 
@@ -335,6 +359,7 @@
             this.btnGerarIdentidade3.Size = new System.Drawing.Size(170, 20);
             this.btnGerarIdentidade3.TabIndex = 33;
             this.btnGerarIdentidade3.Text = "Gerar Identidade";
+            this.toolTip1.SetToolTip(this.btnGerarIdentidade3, "Gerar identidade da matriz resultado");
             this.btnGerarIdentidade3.UseVisualStyleBackColor = true;
             this.btnGerarIdentidade3.Click += new System.EventHandler(this.btnGerarIdentidade3_Click);
             // 
@@ -345,6 +370,7 @@
             this.btnGerarOposta3.Size = new System.Drawing.Size(170, 20);
             this.btnGerarOposta3.TabIndex = 32;
             this.btnGerarOposta3.Text = "Gerar Oposta";
+            this.toolTip1.SetToolTip(this.btnGerarOposta3, "Gerar oposta da matriz resultado");
             this.btnGerarOposta3.UseVisualStyleBackColor = true;
             this.btnGerarOposta3.Click += new System.EventHandler(this.btnGerarOposta3_Click);
             // 
@@ -355,6 +381,7 @@
             this.multiplicarPanel3.Size = new System.Drawing.Size(80, 20);
             this.multiplicarPanel3.TabIndex = 31;
             this.multiplicarPanel3.Text = "Multiplicar";
+            this.toolTip1.SetToolTip(this.multiplicarPanel3, "Multiplicar a matriz resultado pelo número entrado");
             this.multiplicarPanel3.UseVisualStyleBackColor = true;
             this.multiplicarPanel3.Click += new System.EventHandler(this.multiplicarPanel3_Click);
             // 
@@ -376,6 +403,7 @@
             this.NuEscalar3.Size = new System.Drawing.Size(170, 20);
             this.NuEscalar3.TabIndex = 30;
             this.NuEscalar3.ThousandsSeparator = true;
+            this.toolTip1.SetToolTip(this.NuEscalar3, "Número para multiplicar ou elevar uma matriz");
             // 
             // btnGerarInversa2
             // 
@@ -384,31 +412,34 @@
             this.btnGerarInversa2.Size = new System.Drawing.Size(170, 20);
             this.btnGerarInversa2.TabIndex = 29;
             this.btnGerarInversa2.Text = "Gerar Inversa";
+            this.toolTip1.SetToolTip(this.btnGerarInversa2, "erar matriz inversa da segunda matriz");
             this.btnGerarInversa2.UseVisualStyleBackColor = true;
             this.btnGerarInversa2.Click += new System.EventHandler(this.btnGerarInversa2_Click);
             // 
             // btnFormulaGerarMatriz1
             // 
-            this.btnFormulaGerarMatriz1.Location = new System.Drawing.Point(12, 571);
+            this.btnFormulaGerarMatriz1.Location = new System.Drawing.Point(12, 577);
             this.btnFormulaGerarMatriz1.Name = "btnFormulaGerarMatriz1";
             this.btnFormulaGerarMatriz1.Size = new System.Drawing.Size(356, 20);
             this.btnFormulaGerarMatriz1.TabIndex = 28;
             this.btnFormulaGerarMatriz1.Text = "Gerar Matriz 1 por formula";
+            this.toolTip1.SetToolTip(this.btnFormulaGerarMatriz1, "Gerar a primeira matriz pela lei de formação");
             this.btnFormulaGerarMatriz1.UseVisualStyleBackColor = true;
             this.btnFormulaGerarMatriz1.Click += new System.EventHandler(this.btnFormulaGerarMatriz1_Click);
             // 
             // formulaGerarMatriz1
             // 
-            this.formulaGerarMatriz1.Location = new System.Drawing.Point(34, 547);
+            this.formulaGerarMatriz1.Location = new System.Drawing.Point(34, 551);
             this.formulaGerarMatriz1.Name = "formulaGerarMatriz1";
             this.formulaGerarMatriz1.Size = new System.Drawing.Size(334, 20);
             this.formulaGerarMatriz1.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.formulaGerarMatriz1, "Lei de formação a ser entrada pelo usuario para gerar a matriz");
             this.formulaGerarMatriz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leideformaçaotextbox);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 547);
+            this.label3.Location = new System.Drawing.Point(9, 554);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 26;
@@ -421,6 +452,7 @@
             this.btnGerarInversa.Size = new System.Drawing.Size(170, 20);
             this.btnGerarInversa.TabIndex = 25;
             this.btnGerarInversa.Text = "Gerar Inversa";
+            this.toolTip1.SetToolTip(this.btnGerarInversa, "c");
             this.btnGerarInversa.UseVisualStyleBackColor = true;
             this.btnGerarInversa.Click += new System.EventHandler(this.btnGerarInversa_Click);
             // 
@@ -442,6 +474,7 @@
             this.NuEscalar2.Size = new System.Drawing.Size(170, 20);
             this.NuEscalar2.TabIndex = 18;
             this.NuEscalar2.ThousandsSeparator = true;
+            this.toolTip1.SetToolTip(this.NuEscalar2, "Número para multiplicar ou elevar uma matriz");
             // 
             // btnGerarIdentidade2
             // 
@@ -450,6 +483,7 @@
             this.btnGerarIdentidade2.Size = new System.Drawing.Size(170, 20);
             this.btnGerarIdentidade2.TabIndex = 24;
             this.btnGerarIdentidade2.Text = "Gerar Identidade";
+            this.toolTip1.SetToolTip(this.btnGerarIdentidade2, "Gerar identidade da segunda matriz");
             this.btnGerarIdentidade2.UseVisualStyleBackColor = true;
             this.btnGerarIdentidade2.Click += new System.EventHandler(this.btnGerarIdentidade2_Click);
             // 
@@ -460,6 +494,7 @@
             this.btnIdentidade.Size = new System.Drawing.Size(170, 20);
             this.btnIdentidade.TabIndex = 23;
             this.btnIdentidade.Text = "Gerar Identidade";
+            this.toolTip1.SetToolTip(this.btnIdentidade, "Gerar matriz identidade da primeira matriz");
             this.btnIdentidade.UseVisualStyleBackColor = true;
             this.btnIdentidade.Click += new System.EventHandler(this.btnIdentidade_Click);
             // 
@@ -470,6 +505,7 @@
             this.btnGerarTransposta2.Size = new System.Drawing.Size(170, 20);
             this.btnGerarTransposta2.TabIndex = 22;
             this.btnGerarTransposta2.Text = "Gerar Transposta";
+            this.toolTip1.SetToolTip(this.btnGerarTransposta2, "Gerar matriz transposta da primeira matriz");
             this.btnGerarTransposta2.UseVisualStyleBackColor = true;
             this.btnGerarTransposta2.Click += new System.EventHandler(this.btnGerarTransposta2_Click);
             // 
@@ -480,6 +516,7 @@
             this.btnGerarOposta2.Size = new System.Drawing.Size(170, 20);
             this.btnGerarOposta2.TabIndex = 21;
             this.btnGerarOposta2.Text = "Gerar Oposta";
+            this.toolTip1.SetToolTip(this.btnGerarOposta2, "Gerar a matriz oposta da segunda matriz");
             this.btnGerarOposta2.UseVisualStyleBackColor = true;
             this.btnGerarOposta2.Click += new System.EventHandler(this.btnGerarOposta2_Click);
             // 
@@ -490,6 +527,7 @@
             this.btnGerarTransposta.Size = new System.Drawing.Size(170, 20);
             this.btnGerarTransposta.TabIndex = 20;
             this.btnGerarTransposta.Text = "Gerar Transposta";
+            this.toolTip1.SetToolTip(this.btnGerarTransposta, "Gerar matriz transposta da primeira matriz");
             this.btnGerarTransposta.UseVisualStyleBackColor = true;
             this.btnGerarTransposta.Click += new System.EventHandler(this.btnGerarTransposta_Click);
             // 
@@ -500,6 +538,7 @@
             this.btnGerarOposta.Size = new System.Drawing.Size(170, 20);
             this.btnGerarOposta.TabIndex = 19;
             this.btnGerarOposta.Text = "Gerar Oposta";
+            this.toolTip1.SetToolTip(this.btnGerarOposta, "Gerar a matriz oposta da primeira matriz");
             this.btnGerarOposta.UseVisualStyleBackColor = true;
             this.btnGerarOposta.Click += new System.EventHandler(this.btnGerarOposta_Click);
             // 
@@ -510,6 +549,7 @@
             this.multiplicarPanel2.Size = new System.Drawing.Size(80, 20);
             this.multiplicarPanel2.TabIndex = 17;
             this.multiplicarPanel2.Text = "Multiplicar";
+            this.toolTip1.SetToolTip(this.multiplicarPanel2, "Multiplicar a segunda matriz pelo número entrado");
             this.multiplicarPanel2.UseVisualStyleBackColor = true;
             this.multiplicarPanel2.Click += new System.EventHandler(this.btnMultiplicarEscalar2_Click);
             // 
@@ -531,6 +571,7 @@
             this.NuEscalar1.Size = new System.Drawing.Size(170, 20);
             this.NuEscalar1.TabIndex = 16;
             this.NuEscalar1.ThousandsSeparator = true;
+            this.toolTip1.SetToolTip(this.NuEscalar1, "Número para multiplicar ou elevar uma matriz");
             // 
             // multiplicarPanel1
             // 
@@ -539,6 +580,7 @@
             this.multiplicarPanel1.Size = new System.Drawing.Size(80, 20);
             this.multiplicarPanel1.TabIndex = 15;
             this.multiplicarPanel1.Text = "Multiplicar";
+            this.toolTip1.SetToolTip(this.multiplicarPanel1, "Multiplicar a primeira matriz pelo número entrado");
             this.multiplicarPanel1.UseVisualStyleBackColor = true;
             this.multiplicarPanel1.Click += new System.EventHandler(this.btnMultiplicarEscalar_Click);
             // 
@@ -549,6 +591,7 @@
             this.MultiplicarButton.Size = new System.Drawing.Size(75, 23);
             this.MultiplicarButton.TabIndex = 14;
             this.MultiplicarButton.Text = "Multiplicar";
+            this.toolTip1.SetToolTip(this.MultiplicarButton, "Multiplicar primeira matriz com a segunda matriz");
             this.MultiplicarButton.UseVisualStyleBackColor = true;
             this.MultiplicarButton.Click += new System.EventHandler(this.MultiplicarButton_Click);
             // 
@@ -559,6 +602,7 @@
             this.SubtrairButton.Size = new System.Drawing.Size(75, 23);
             this.SubtrairButton.TabIndex = 13;
             this.SubtrairButton.Text = "Subtrair";
+            this.toolTip1.SetToolTip(this.SubtrairButton, "Subtrair primeira matriz com a segunda matriz");
             this.SubtrairButton.UseVisualStyleBackColor = true;
             this.SubtrairButton.Click += new System.EventHandler(this.btnSubtrair_Click);
             // 
@@ -587,6 +631,7 @@
             this.btnSomar.Size = new System.Drawing.Size(75, 23);
             this.btnSomar.TabIndex = 9;
             this.btnSomar.Text = "Somar";
+            this.toolTip1.SetToolTip(this.btnSomar, "Somar primeira matriz com a segunda matriz");
             this.btnSomar.UseVisualStyleBackColor = true;
             this.btnSomar.Click += new System.EventHandler(this.btnSomar_Click);
             // 
@@ -624,6 +669,7 @@
             this.btn_GerarMatriz2.Size = new System.Drawing.Size(97, 28);
             this.btn_GerarMatriz2.TabIndex = 8;
             this.btn_GerarMatriz2.Text = "Gerar Matriz 2";
+            this.toolTip1.SetToolTip(this.btn_GerarMatriz2, "Gerar segunda matriz");
             this.btn_GerarMatriz2.UseVisualStyleBackColor = true;
             this.btn_GerarMatriz2.Click += new System.EventHandler(this.btn_GerarMatriz2_Click);
             // 
@@ -652,8 +698,9 @@
             0,
             0});
             this.col_Matriz2.Name = "col_Matriz2";
-            this.col_Matriz2.Size = new System.Drawing.Size(59, 38);
+            this.col_Matriz2.Size = new System.Drawing.Size(51, 38);
             this.col_Matriz2.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.col_Matriz2, "Número de linhas da segunda matriz");
             this.col_Matriz2.Value = new decimal(new int[] {
             1,
             0,
@@ -677,6 +724,7 @@
             this.line_Matriz2.Name = "line_Matriz2";
             this.line_Matriz2.Size = new System.Drawing.Size(56, 38);
             this.line_Matriz2.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.line_Matriz2, "Número de linhas da segunda matriz");
             this.line_Matriz2.Value = new decimal(new int[] {
             1,
             0,
@@ -710,6 +758,7 @@
             this.btn_GerarMatriz1.Size = new System.Drawing.Size(97, 28);
             this.btn_GerarMatriz1.TabIndex = 3;
             this.btn_GerarMatriz1.Text = "Gerar Matriz 1";
+            this.toolTip1.SetToolTip(this.btn_GerarMatriz1, "Gerar primeira matriz");
             this.btn_GerarMatriz1.UseVisualStyleBackColor = true;
             this.btn_GerarMatriz1.Click += new System.EventHandler(this.btn_GerarMatriz1_Click);
             // 
@@ -730,6 +779,7 @@
             this.col_Matriz1.Name = "col_Matriz1";
             this.col_Matriz1.Size = new System.Drawing.Size(57, 38);
             this.col_Matriz1.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.col_Matriz1, "Número de colunas da primeira matriz");
             this.col_Matriz1.Value = new decimal(new int[] {
             1,
             0,
@@ -764,6 +814,7 @@
             this.line_Matriz1.Name = "line_Matriz1";
             this.line_Matriz1.Size = new System.Drawing.Size(60, 38);
             this.line_Matriz1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.line_Matriz1, "Numero de linhas da primeira matriz");
             this.line_Matriz1.Value = new decimal(new int[] {
             1,
             0,
@@ -773,7 +824,6 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.DrawPanel);
             this.tabPage2.Controls.Add(this.escalarbox);
             this.tabPage2.Controls.Add(this.escalar);
             this.tabPage2.Controls.Add(this.translaçaoybox);
@@ -798,14 +848,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gráfico";
             // 
-            // DrawPanel
-            // 
-            this.DrawPanel.BackColor = System.Drawing.SystemColors.Window;
-            this.DrawPanel.Location = new System.Drawing.Point(441, 46);
-            this.DrawPanel.Name = "DrawPanel";
-            this.DrawPanel.Size = new System.Drawing.Size(888, 548);
-            this.DrawPanel.TabIndex = 21;
-            // 
             // escalarbox
             // 
             this.escalarbox.Location = new System.Drawing.Point(232, 398);
@@ -815,6 +857,7 @@
             this.escalarbox.TabIndex = 20;
             this.escalarbox.Text = "0";
             this.escalarbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.escalarbox, "Número entrado pelo usuario");
             this.escalarbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
             // 
             // escalar
@@ -824,6 +867,7 @@
             this.escalar.Size = new System.Drawing.Size(110, 23);
             this.escalar.TabIndex = 19;
             this.escalar.Text = "Escalar";
+            this.toolTip1.SetToolTip(this.escalar, "Escalar forma de acordo com o numero entrado pelo usuario");
             this.escalar.UseVisualStyleBackColor = true;
             this.escalar.Click += new System.EventHandler(this.escalar_Click);
             // 
@@ -836,6 +880,7 @@
             this.translaçaoybox.TabIndex = 18;
             this.translaçaoybox.Text = "0";
             this.translaçaoybox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.translaçaoybox, "Numero entrado pelo usuario");
             this.translaçaoybox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
             // 
             // translacaoy
@@ -845,6 +890,7 @@
             this.translacaoy.Size = new System.Drawing.Size(110, 23);
             this.translacaoy.TabIndex = 17;
             this.translacaoy.Text = "TranslaçãoY";
+            this.toolTip1.SetToolTip(this.translacaoy, "Transladar forma em Y de acordo com o numero entrado pelo usuario");
             this.translacaoy.UseVisualStyleBackColor = true;
             this.translacaoy.Click += new System.EventHandler(this.translacaoy_Click);
             // 
@@ -857,6 +903,7 @@
             this.transalaçaoxbox.TabIndex = 16;
             this.transalaçaoxbox.Text = "0";
             this.transalaçaoxbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.transalaçaoxbox, "Número entrado pelo usuario");
             this.transalaçaoxbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
             // 
             // translacaox
@@ -866,6 +913,7 @@
             this.translacaox.Size = new System.Drawing.Size(110, 23);
             this.translacaox.TabIndex = 15;
             this.translacaox.Text = "TranslaçãoX";
+            this.toolTip1.SetToolTip(this.translacaox, "Transladar forma em X de acordo com o numero entrado pelo usuario");
             this.translacaox.UseVisualStyleBackColor = true;
             this.translacaox.Click += new System.EventHandler(this.translacaox_Click);
             // 
@@ -878,6 +926,7 @@
             this.rotacionarbox.TabIndex = 14;
             this.rotacionarbox.Text = "0";
             this.rotacionarbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.rotacionarbox, "Angulo entrado pelo usuario");
             this.rotacionarbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextbox);
             // 
             // rotatebt
@@ -887,6 +936,7 @@
             this.rotatebt.Size = new System.Drawing.Size(110, 23);
             this.rotatebt.TabIndex = 13;
             this.rotatebt.Text = "Rotacionar em º";
+            this.toolTip1.SetToolTip(this.rotatebt, "Rotacionar forma em um angulo entrado pelo usuario");
             this.rotatebt.UseVisualStyleBackColor = true;
             this.rotatebt.Click += new System.EventHandler(this.rotatebt_Click);
             // 
@@ -897,6 +947,7 @@
             this.simetriay.Size = new System.Drawing.Size(75, 23);
             this.simetriay.TabIndex = 12;
             this.simetriay.Text = "SimetriaY";
+            this.toolTip1.SetToolTip(this.simetriay, "Gerar forma simétrica em Y");
             this.simetriay.UseVisualStyleBackColor = true;
             this.simetriay.Click += new System.EventHandler(this.simetriay_Click);
             // 
@@ -907,6 +958,7 @@
             this.simetriax.Size = new System.Drawing.Size(75, 23);
             this.simetriax.TabIndex = 11;
             this.simetriax.Text = "SimetriaX";
+            this.toolTip1.SetToolTip(this.simetriax, "Gerar forma simétrica em X");
             this.simetriax.UseVisualStyleBackColor = true;
             this.simetriax.Click += new System.EventHandler(this.simetriax_Click);
             // 
@@ -917,11 +969,16 @@
             this.gerateFormBt.Size = new System.Drawing.Size(97, 28);
             this.gerateFormBt.TabIndex = 10;
             this.gerateFormBt.Text = "Gerar Forma";
+            this.toolTip1.SetToolTip(this.gerateFormBt, "Gerar forma segundo a matriz da gerada");
             this.gerateFormBt.UseVisualStyleBackColor = true;
             this.gerateFormBt.Click += new System.EventHandler(this.button2_Click);
             // 
             // grafico
             // 
+            chartArea1.AxisX.Maximum = 100D;
+            chartArea1.AxisX.Minimum = -100D;
+            chartArea1.AxisY.Maximum = 100D;
+            chartArea1.AxisY.Minimum = -100D;
             chartArea1.Name = "ChartArea1";
             this.grafico.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -932,10 +989,20 @@
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
-            series1.Name = "Matriz";
-            series1.ShadowColor = System.Drawing.Color.Black;
+            series1.Name = "Cartesian";
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.Points.Add(dataPoint4);
+            series1.Points.Add(dataPoint5);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Matriz";
+            series2.ShadowColor = System.Drawing.Color.Black;
             this.grafico.Series.Add(series1);
-            this.grafico.Size = new System.Drawing.Size(0, 0);
+            this.grafico.Series.Add(series2);
+            this.grafico.Size = new System.Drawing.Size(865, 445);
             this.grafico.TabIndex = 1;
             this.grafico.Text = "chart1";
             // 
@@ -966,6 +1033,7 @@
             this.gerarMatrizGeoBt.Size = new System.Drawing.Size(97, 28);
             this.gerarMatrizGeoBt.TabIndex = 8;
             this.gerarMatrizGeoBt.Text = "Gerar Matriz";
+            this.toolTip1.SetToolTip(this.gerarMatrizGeoBt, "Gerar a matriz para geometria");
             this.gerarMatrizGeoBt.UseVisualStyleBackColor = true;
             this.gerarMatrizGeoBt.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -979,15 +1047,16 @@
             0,
             0});
             this.CollGeo.Minimum = new decimal(new int[] {
-            1,
+            3,
             0,
             0,
             0});
             this.CollGeo.Name = "CollGeo";
             this.CollGeo.Size = new System.Drawing.Size(57, 38);
             this.CollGeo.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.CollGeo, "Numero de colunas da matriz para gerar a forma");
             this.CollGeo.Value = new decimal(new int[] {
-            1,
+            3,
             0,
             0,
             0});
@@ -1021,11 +1090,32 @@
             this.LinesGeo.Name = "LinesGeo";
             this.LinesGeo.Size = new System.Drawing.Size(60, 38);
             this.LinesGeo.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.LinesGeo, "Numero de linhas da matriz para gerar a forma");
             this.LinesGeo.Value = new decimal(new int[] {
             2,
             0,
             0,
             0});
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Firebrick;
+            this.label6.Location = new System.Drawing.Point(40, 535);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(305, 13);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Insira espaços entre os caracteres da lei de formação desejada";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Firebrick;
+            this.label7.Location = new System.Drawing.Point(495, 535);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(305, 13);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Insira espaços entre os caracteres da lei de formação desejada";
             // 
             // Form1
             // 
@@ -1139,7 +1229,9 @@
         private System.Windows.Forms.Button btnChecarSimetria2;
         private System.Windows.Forms.Button btnChecarSimetria1;
         private System.Windows.Forms.Button btnChecarSimetria3;
-        private System.Windows.Forms.Panel DrawPanel;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
 
