@@ -281,7 +281,7 @@ namespace CalculadoraDeMatrizes
                 for (int j = 0; j <= matrix1.GetLength(1); j++)
                 {
                     matrix1 = TrimArray(i, j, originalMatrix);
-                    cofator[i, j] = (float)Math.Round((decimal)Cofator(matrix1, i, j), 2);
+                    cofator[i, j] = (float)Cofator(matrix1, i, j);
                 }
             }
             adjunta = MatrizTransposta(cofator);

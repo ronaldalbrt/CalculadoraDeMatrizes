@@ -137,7 +137,7 @@ namespace CalculadoraDeMatrizes
         /// <returns>A matriz com as posições da forma rotacionada</returns>
         public static float[,] Rotaçao (float angulo)
         {
-            double angle = DegreeToRadian(angulo);
+            double angle = DegreeToRadian(angulo)  * -1;
             float[,] result = new float[2, 2] { {(float) Math.Cos(angle), (float)Math.Sin(angle) }, {(float)-Math.Sin(angle), (float)Math.Cos(angle) }};
             
             return result; 

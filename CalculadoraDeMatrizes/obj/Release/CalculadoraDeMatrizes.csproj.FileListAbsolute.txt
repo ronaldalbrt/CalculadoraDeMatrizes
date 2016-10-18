@@ -9,3 +9,4 @@ C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\
 C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
 C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.exe
 C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.pdb
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.csprojResolveAssemblyReference.cache

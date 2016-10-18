@@ -168,6 +168,8 @@ namespace CalculadoraDeMatrizes
         {
             float[,] matriz1 = new float[line1, col1];
             float[,] resultado = new float[col1, line1];
+            line_Matriz1.Value = col1;
+            col_Matriz1.Value = line1;
             matriz1 = Matriz.SalvarMatriz(panel1, line1, col1);
             resultado = Matriz.MatrizTransposta(matriz1);
             Matriz.DesenhaMatrixText(panel1, resultado);
@@ -178,6 +180,8 @@ namespace CalculadoraDeMatrizes
         {
             float[,] matriz2 = new float[line2, col2];
             float[,] resultado = new float[col2, line2];
+            line_Matriz2.Value = col2;
+            col_Matriz2.Value = line2;
             matriz2 = Matriz.SalvarMatriz(panel2, line2, col2);
             resultado = Matriz.MatrizTransposta(matriz2);
             Matriz.DesenhaMatrixText(panel2, resultado);
@@ -681,12 +685,12 @@ namespace CalculadoraDeMatrizes
                 }
                 catch( NoMatrixException ex)
                 {
-                    MessageBox.Show("É necessario no mínimo tres pontos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("É necessario no mínimo tres colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("É necessario duas colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("É necessario duas linhas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         
          }
@@ -703,12 +707,12 @@ namespace CalculadoraDeMatrizes
                 }
                 catch (NoMatrixException ex)
                 {
-                    MessageBox.Show("É necessario no mínimo tres pontos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("É necessario no mínimo tres colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("É necessario duas colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("É necessario duas linhas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -724,14 +728,16 @@ namespace CalculadoraDeMatrizes
                 }
                 catch (NoMatrixException ex)
                 {
-                    MessageBox.Show("É necessario no mínimo tres pontos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("É necessario no mínimo tres colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("É necessario duas colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("É necessario duas linhas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+      
 
                 
         } 
