@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(-100D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(100D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(-150D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(150D, 0D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 100D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, -100D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 150D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, -150D);
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -995,14 +995,14 @@
             // 
             // grafico
             // 
-            chartArea1.AxisX.Maximum = 10D;
-            chartArea1.AxisX.Minimum = -10D;
-            chartArea1.AxisX2.Maximum = 10D;
-            chartArea1.AxisX2.Minimum = -10D;
-            chartArea1.AxisY.Maximum = 10D;
-            chartArea1.AxisY.Minimum = -10D;
-            chartArea1.AxisY2.Maximum = 10D;
-            chartArea1.AxisY2.Minimum = -10D;
+            chartArea1.AxisX.Maximum = 150D;
+            chartArea1.AxisX.Minimum = -150D;
+            chartArea1.AxisX2.Maximum = 150D;
+            chartArea1.AxisX2.Minimum = -150D;
+            chartArea1.AxisY.Maximum = 150D;
+            chartArea1.AxisY.Minimum = -150D;
+            chartArea1.AxisY2.Maximum = 150D;
+            chartArea1.AxisY2.Minimum = -150D;
             chartArea1.Name = "ChartArea1";
             this.grafico.ChartAreas.Add(chartArea1);
             this.grafico.Location = new System.Drawing.Point(425, 19);
@@ -1028,7 +1028,7 @@
             series2.YValuesPerPoint = 2;
             this.grafico.Series.Add(series1);
             this.grafico.Series.Add(series2);
-            this.grafico.Size = new System.Drawing.Size(865, 445);
+            this.grafico.Size = new System.Drawing.Size(865, 557);
             this.grafico.TabIndex = 1;
             this.grafico.Text = "chart1";
             // 
@@ -1133,7 +1133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1344, 627);
+            this.ClientSize = new System.Drawing.Size(1268, 627);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

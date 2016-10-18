@@ -99,3 +99,5 @@ C:\Users\nathan.magalhaes\Desktop\CalculadoraDeMatrizes\CalculadoraDeMatrizes\ob
 C:\Users\nathan.magalhaes\Desktop\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
 C:\Users\Nathan\Documents\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\Interop.MSScriptControl.dll
 C:\Users\Nathan\Documents\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.ResolveComReference.cache
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\Interop.MSScriptControl.dll
+C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.ResolveComReference.cache
