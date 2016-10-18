@@ -1,0 +1,11 @@
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Release\CalculadoraDeMatrizes.exe.config
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\Interop.MSScriptControl.dll
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.csproj.ResolveComReference.cache
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Release\CalculadoraDeMatrizes.exe
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Release\CalculadoraDeMatrizes.pdb
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.Form1.resources
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.GraficoMatriz.resources
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.Properties.Resources.resources
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.exe
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Release\CalculadoraDeMatrizes.pdb

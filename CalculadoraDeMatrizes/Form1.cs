@@ -652,9 +652,85 @@ namespace CalculadoraDeMatrizes
               
         }       
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
+       
 
+        private void btnFormulaGerarMatriz2_Click(object sender, EventArgs e)
+        {
+            line2 = (int)line_Matriz2.Value;
+            col2 = (int)col_Matriz2.Value;
+            try
+            {
+                float[,] matrix = Matriz.LeiDeFormacao(formulaGerarMatriz2.Text, line2, col2);
+                Matriz.DesenhaMatrixText(panel2, matrix);
+            }
+            catch
+            {
+                MessageBox.Show("Entre uma lei de formação valida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(panel1, line1, col1);
+            if (matriz.GetLength(0) == 2)
+            {
+                try
+                {
+                    GraficoMatriz chart = new GraficoMatriz(matriz," 1");
+                    chart.Visible = true;
+                }
+                catch( NoMatrixException ex)
+                {
+                    MessageBox.Show("É necessario no mínimo tres pontos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("É necessario duas colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(panel2, line2, col2);
+            if (matriz.GetLength(0) == 2)
+            {
+                try
+                {
+                    GraficoMatriz chart = new GraficoMatriz(matriz," 2");
+                    chart.Visible = true;
+                }
+                catch (NoMatrixException ex)
+                {
+                    MessageBox.Show("É necessario no mínimo tres pontos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("É necessario duas colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            float[,] matriz = Matriz.SalvarMatriz(resultPanel, line3, col3);
+            if (matriz.GetLength(0) == 2)
+            {
+                try
+                {
+                    GraficoMatriz chart = new GraficoMatriz(matriz," Resultante");
+                    chart.Visible = true;
+                }
+                catch (NoMatrixException ex)
+                {
+                    MessageBox.Show("É necessario no mínimo tres pontos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("É necessario duas colunas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
                 

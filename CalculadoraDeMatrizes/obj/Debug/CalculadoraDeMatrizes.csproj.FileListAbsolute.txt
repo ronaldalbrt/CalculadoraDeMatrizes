@@ -101,3 +101,15 @@ C:\Users\Nathan\Documents\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj
 C:\Users\Nathan\Documents\GitHub\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.ResolveComReference.cache
 C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\Interop.MSScriptControl.dll
 C:\Users\ronald.junior\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.ResolveComReference.cache
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe.config
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\Interop.MSScriptControl.dll
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.ResolveComReference.cache
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.exe
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.exe
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\bin\Debug\CalculadoraDeMatrizes.pdb
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csprojResolveAssemblyReference.cache
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Form1.resources
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.Properties.Resources.resources
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.csproj.GenerateResource.Cache
+C:\Users\nathan.magalhaes\Documents\CalculadoraDeMatrizes\CalculadoraDeMatrizes\obj\Debug\CalculadoraDeMatrizes.GraficoMatriz.resources
