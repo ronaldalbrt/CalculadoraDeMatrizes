@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(-100D, 0D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(100D, 0D);
@@ -41,6 +40,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnChecarSimetria3 = new System.Windows.Forms.Button();
             this.btnChecarSimetria2 = new System.Windows.Forms.Button();
             this.btnChecarSimetria1 = new System.Windows.Forms.Button();
@@ -112,8 +113,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.LinesGeo = new System.Windows.Forms.NumericUpDown();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NuEscalar3)).BeginInit();
@@ -202,6 +202,26 @@
             this.tabPage1.Size = new System.Drawing.Size(1352, 603);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Operações";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Firebrick;
+            this.label7.Location = new System.Drawing.Point(495, 535);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(305, 13);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Insira espaços entre os caracteres da lei de formação desejada";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Firebrick;
+            this.label6.Location = new System.Drawing.Point(40, 535);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(305, 13);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Insira espaços entre os caracteres da lei de formação desejada";
             // 
             // btnChecarSimetria3
             // 
@@ -892,7 +912,7 @@
             this.translacaoy.Text = "TranslaçãoY";
             this.toolTip1.SetToolTip(this.translacaoy, "Transladar forma em Y de acordo com o numero entrado pelo usuario");
             this.translacaoy.UseVisualStyleBackColor = true;
-            this.translacaoy.Click += new System.EventHandler(this.translacaoy_Click);
+            this.translacaoy.Click += new System.EventHandler(this.translacaoy2_Click);
             // 
             // transalaçaoxbox
             // 
@@ -915,7 +935,7 @@
             this.translacaox.Text = "TranslaçãoX";
             this.toolTip1.SetToolTip(this.translacaox, "Transladar forma em X de acordo com o numero entrado pelo usuario");
             this.translacaox.UseVisualStyleBackColor = true;
-            this.translacaox.Click += new System.EventHandler(this.translacaox_Click);
+            this.translacaox.Click += new System.EventHandler(this.translacaox2_Click);
             // 
             // rotacionarbox
             // 
@@ -975,31 +995,37 @@
             // 
             // grafico
             // 
-            chartArea1.AxisX.Maximum = 100D;
-            chartArea1.AxisX.Minimum = -100D;
-            chartArea1.AxisY.Maximum = 100D;
-            chartArea1.AxisY.Minimum = -100D;
+            chartArea1.AxisX.Maximum = 10D;
+            chartArea1.AxisX.Minimum = -10D;
+            chartArea1.AxisX2.Maximum = 10D;
+            chartArea1.AxisX2.Minimum = -10D;
+            chartArea1.AxisY.Maximum = 10D;
+            chartArea1.AxisY.Minimum = -10D;
+            chartArea1.AxisY2.Maximum = 10D;
+            chartArea1.AxisY2.Minimum = -10D;
             chartArea1.Name = "ChartArea1";
             this.grafico.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.grafico.Legends.Add(legend1);
             this.grafico.Location = new System.Drawing.Point(425, 19);
             this.grafico.Name = "grafico";
             this.grafico.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Cartesian";
+            series1.Color = System.Drawing.Color.Black;
+            series1.LabelForeColor = System.Drawing.Color.BlanchedAlmond;
+            series1.Name = "Eixos";
             series1.Points.Add(dataPoint1);
             series1.Points.Add(dataPoint2);
             series1.Points.Add(dataPoint3);
             series1.Points.Add(dataPoint4);
             series1.Points.Add(dataPoint5);
+            series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
+            series2.Color = System.Drawing.Color.Red;
             series2.Name = "Matriz";
             series2.ShadowColor = System.Drawing.Color.Black;
+            series2.YValuesPerPoint = 2;
             this.grafico.Series.Add(series1);
             this.grafico.Series.Add(series2);
             this.grafico.Size = new System.Drawing.Size(865, 445);
@@ -1097,25 +1123,10 @@
             0,
             0});
             // 
-            // label6
+            // Timer
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Firebrick;
-            this.label6.Location = new System.Drawing.Point(40, 535);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(305, 13);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Insira espaços entre os caracteres da lei de formação desejada";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Firebrick;
-            this.label7.Location = new System.Drawing.Point(495, 535);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(305, 13);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "Insira espaços entre os caracteres da lei de formação desejada";
+            this.Timer.Enabled = true;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Form1
             // 
@@ -1232,6 +1243,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer Timer;
     }
 }
 

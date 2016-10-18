@@ -12,7 +12,12 @@ namespace CalculadoraDeMatrizes
 {
     public partial class Form1 : Form
     {
+
         static int line1, col1, line2, col2, line3, col3, geometryCol, geometryLine;
+        float[,] matrizinitial = new float[2,2];
+        float [,] matrizfinal = new float[2,2];
+        static bool startanimation;
+        static float lerp;
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +25,7 @@ namespace CalculadoraDeMatrizes
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             MessageBox.Show("Você esta prestes a experienciar a melhor experiência que você pode ter em toda a sua vida, NÃO DESPERDICE ESSA CHANCE, essa calculadora pode gerar dependencia química, física e mental, além de causar deficiencias aos não dignos de usa-la, aproveite com moderação", "CALCULADORA DE MATRIZES SUPER MEGA ULTRA MASTER BLASTER CALCULATOR INCRÍVEL", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
@@ -419,51 +425,149 @@ namespace CalculadoraDeMatrizes
 
         private void simetriax_Click(object sender, EventArgs e)
         {
+            try{
             float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+            float[,] initialmatriz = matriz;
             matriz = Matriz.MultiplicarMatrizes(Geometria.SimetriaX, matriz);
-            Geometria.DrawInChart(grafico, matriz, "Matriz");
+            matrizinitial = initialmatriz;
+            matrizfinal = matriz;
+            startanimation = true;
+            //Geometria.DrawInChart(grafico, matriz, "Matriz");
             Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            }
+            catch (NoMatrixException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (MultiplyException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
         private void simetriay_Click(object sender, EventArgs e)
         {
-            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
-            matriz = Matriz.MultiplicarMatrizes(Geometria.SimetriaY, matriz);
-            Geometria.DrawInChart(grafico, matriz, "Matriz");
-            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            try
+            {
+                float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+                float[,] initialmatriz = matriz;
+                matriz = Matriz.MultiplicarMatrizes(Geometria.SimetriaY, matriz);
+                matrizinitial = initialmatriz;
+                matrizfinal = matriz;
+                startanimation = true;
+                // Geometria.DrawInChart(grafico, matriz, "Matriz");
+                Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            }
+            catch (NoMatrixException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (MultiplyException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void rotatebt_Click(object sender, EventArgs e)
         {
-            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
-            matriz = Matriz.MultiplicarMatrizes(Geometria.Rotaçao(float.Parse(rotacionarbox.Text)), matriz);
-            Geometria.DrawInChart(grafico, matriz, "Matriz");
-            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            try
+            {
+                float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+                float[,] initialmatriz = matriz;
+                matriz = Matriz.MultiplicarMatrizes(Geometria.Rotaçao(float.Parse(rotacionarbox.Text)), matriz);
+              
+                matrizinitial = initialmatriz;
+                matrizfinal = matriz;
+                startanimation = true;
+                // Geometria.DrawInChart(grafico, matriz, "Matriz");
+                Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            }
+            catch (NoMatrixException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (MultiplyException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        private void translacaox_Click(object sender, EventArgs e)
+        private void translacaox2_Click(object sender, EventArgs e)
         {
-            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
-            matriz = Matriz.SomarMatriz(matriz, float.Parse(transalaçaoxbox.Text), 0);
-            Geometria.DrawInChart(grafico, matriz, "Matriz");
-            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            try
+            {
+                float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+                float[,] initialmatriz = matriz;
+                if (matriz.GetLength(0)*matriz.GetLength(1)<6)
+                {
+                    throw new NoMatrixException();
+                }
+                matriz = Matriz.SomarMatriz(matriz, float.Parse(transalaçaoxbox.Text), 0);
+                matrizinitial = initialmatriz;
+                matrizfinal = matriz;
+                startanimation = true;
+                Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            }
+            catch (NoMatrixException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (MultiplyException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        private void translacaoy_Click(object sender, EventArgs e)
+        
+          private void translacaoy2_Click(object sender, EventArgs e)
         {
-            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
-            matriz = Matriz.SomarMatriz(matriz, 0, float.Parse(translaçaoybox.Text));
-            Geometria.DrawInChart(grafico, matriz, "Matriz");
-            Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            try
+            {
+                float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+                float[,] initialmatriz = matriz;
+                matriz = Matriz.SomarMatriz(matriz, 0, float.Parse(translaçaoybox.Text));
+                if (matriz.GetLength(0) * matriz.GetLength(1) < 6)
+                {
+                    throw new NoMatrixException();
+                }
+                //Geometria.DrawInChart(grafico, matriz, "Matriz");
+                matrizinitial = initialmatriz;
+                matrizfinal = matriz;
+                startanimation = true;
+                Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            }
+            catch (NoMatrixException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (MultiplyException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+       
 
         private void escalar_Click(object sender, EventArgs e)
         {
-            float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
-            matriz = Matriz.MultiplicarMatrizes(Geometria.Escalar(float.Parse(escalarbox.Text)),matriz);
-            Geometria.DrawInChart(grafico, matriz, "Matriz");
-            Matriz.DesenhaMatrixText(Geometrypanel,matriz);
+            try
+            {
+                float[,] matriz = Matriz.SalvarMatriz(Geometrypanel, geometryLine, geometryCol);
+                float[,] initialmatriz = matriz;
+                matriz = Matriz.MultiplicarMatrizes(Geometria.Escalar(float.Parse(escalarbox.Text)), matriz);
+                //Geometria.DrawInChart(grafico, matriz, "Matriz");
+                matrizinitial = initialmatriz;
+                matrizfinal = matriz;
+                startanimation = true;
+                Matriz.DesenhaMatrixText(Geometrypanel, matriz);
+            }
+            catch (NoMatrixException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (MultiplyException ex)
+            {
+                MessageBox.Show("Entre uma matriz para gerar a forma", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnChecarSimetria1_Click(object sender, EventArgs e)
@@ -516,6 +620,44 @@ namespace CalculadoraDeMatrizes
             {
                 MessageBox.Show("Essa matriz não é simetrica", "Simetria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+         private bool animation (float[,] matrizinitial,float [,]matrizfinal, float lerp)
+        {
+             
+                if (lerp>1.05f)
+                {                   
+                    return false;                    
+                }
+                else{
+                  Geometria.DrawInChart(grafico, Geometria.AnimarMatrizes(matrizinitial, matrizfinal, lerp), "Matriz");
+                return true; 
+                }
+         }
+
+        
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+           if (startanimation)
+           {
+               if (!animation(matrizinitial, matrizfinal, lerp))
+               {
+                   startanimation = false;
+                   lerp = 0;
+               }
+               else
+               { lerp+= 0.05f;
+                  
+               }
+           }
+              
+        }       
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+                
         } 
     }
-}
+

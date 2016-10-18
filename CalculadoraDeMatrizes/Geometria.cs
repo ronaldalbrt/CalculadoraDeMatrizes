@@ -7,10 +7,6 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.CodeDom;
-using System.CodeDom.Compiler;
-using Microsoft.CSharp;
-using System.Drawing.Drawing2D;
 namespace CalculadoraDeMatrizes
 {
    
@@ -27,9 +23,70 @@ namespace CalculadoraDeMatrizes
         /// <param name="series">Series do chart que se desenha</param>
         public static void DrawInChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, float[,] matriz, string series)
         {
+            float high = 0;          
             if(matriz.Length < 6)
             {
                 throw new NoMatrixException();
+            }
+            foreach (float i in matriz)
+            {
+                float comparer = Math.Abs(i);
+                if (comparer >high)
+                {
+                    high = comparer;
+                }             
+              
+            }
+            
+            if (high<10)
+            {
+              
+                chart.ChartAreas[0].AxisX.Minimum = -10;
+                chart.ChartAreas[0].AxisX.Maximum = 10;
+                chart.ChartAreas[0].AxisY.Minimum = -10;
+                chart.ChartAreas[0].AxisY.Maximum = 10;
+                chart.ChartAreas[0].AxisX2.Minimum = -10;
+                chart.ChartAreas[0].AxisX2.Maximum = 10;
+                chart.ChartAreas[0].AxisY2.Minimum = -10;
+                chart.ChartAreas[0].AxisY2.Maximum = 10;
+                chart.Series["Eixos"].Points[0].SetValueXY(-10, 0);
+                chart.Series["Eixos"].Points[1].SetValueXY(10, 0);
+                chart.Series["Eixos"].Points[2].SetValueXY(0, 0);
+                chart.Series["Eixos"].Points[3].SetValueXY(0, -10);
+                chart.Series["Eixos"].Points[4].SetValueXY(0, 10);  
+
+            }
+            else if (high > 50 )
+            {
+                chart.ChartAreas[0].AxisX.Minimum = -Math.Round( high * 1.1f);
+                chart.ChartAreas[0].AxisX.Maximum = Math.Round(high * 1.1f);
+                chart.ChartAreas[0].AxisY.Minimum = -Math.Round(high * 1.1f);
+                chart.ChartAreas[0].AxisY.Maximum = Math.Round(high * 1.1f);
+                chart.ChartAreas[0].AxisX2.Minimum = -Math.Round(high * 1.1f);
+                chart.ChartAreas[0].AxisX2.Maximum = Math.Round(high * 1.1f);
+                chart.ChartAreas[0].AxisY2.Minimum = -Math.Round(high * 1.1f);
+                chart.ChartAreas[0].AxisY2.Maximum = Math.Round(high * 1.1f);  
+                chart.Series["Eixos"].Points[0].SetValueXY( - Math.Round(high * 1.1f),0);
+                chart.Series["Eixos"].Points[1].SetValueXY(Math.Round(high * 1.1f), 0);
+                chart.Series["Eixos"].Points[2].SetValueXY(0, 0);
+                chart.Series["Eixos"].Points[3].SetValueXY(0,-Math.Round(high * 1.1f));
+                chart.Series["Eixos"].Points[4].SetValueXY(0, Math.Round(high * 1.1f));    
+                 }
+            else
+            {
+                chart.ChartAreas[0].AxisX.Minimum = -50;
+                chart.ChartAreas[0].AxisX.Maximum = 50;
+                chart.ChartAreas[0].AxisY.Minimum = -50;
+                chart.ChartAreas[0].AxisY.Maximum = 50;
+                chart.ChartAreas[0].AxisX2.Minimum = -50;
+                chart.ChartAreas[0].AxisX2.Maximum = 50;
+                chart.ChartAreas[0].AxisY2.Minimum = -50;
+                chart.ChartAreas[0].AxisY2.Maximum = 50;
+                chart.Series["Eixos"].Points[0].SetValueXY(-50, 0);
+                chart.Series["Eixos"].Points[1].SetValueXY(50, 0);
+                chart.Series["Eixos"].Points[2].SetValueXY(0, 0);
+                chart.Series["Eixos"].Points[3].SetValueXY(0, -50);
+                chart.Series["Eixos"].Points[4].SetValueXY(0, 50);  
             }
             chart.Series[series].Points.Clear();
             for (int j = 0; j < matriz.GetLength(1); j++)
@@ -38,6 +95,41 @@ namespace CalculadoraDeMatrizes
             }
             chart.Series[series].Points.AddXY(matriz[0, 0], matriz[1, 0]);
            
+           
+        }
+        /// <summary>
+        /// Lerp Function
+        /// </summary>
+        /// <param name="v0">Valor Inicial</param>
+        /// <param name="v1">Valor Desejado</param>
+        /// <param name="t">Interpolação</param>
+        /// <returns></returns>
+        public static float mathlerp(float v0, float v1, float t)
+        {
+            return (1 - t) * v0 + t * v1;
+        }
+
+        /// <summary>
+        /// Anima as matrizes que rotacionam
+        /// </summary>
+        /// <param name="matrix1">Matriz Inicial</param>
+        /// <param name="final">Matriz final</param>
+        /// <param name="lerp">Fator de animaçao</param>
+        /// <returns></returns>
+        public static float[,] AnimarMatrizes(float[,] matrix1 ,float[,]final,float lerp)
+        {
+            float[,] matrixfinal = new float[matrix1.GetLength(0), matrix1.GetLength(1)];
+            int lin = matrix1.GetLength(0);
+            int col = matrix1.GetLength(1);
+            for (int i = 0; i < lin; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    matrixfinal[i, j] = mathlerp(matrix1[i, j], final[i, j], lerp);
+                   
+                }
+            }
+            return matrixfinal;
         }
         /// <summary>
         /// Função para rotacionar uma forma a um angulo
